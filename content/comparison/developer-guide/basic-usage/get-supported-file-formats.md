@@ -29,7 +29,7 @@ The following GroupDocs.Comparison Cloud REST API resource has been used in the 
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
 
@@ -40,7 +40,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" -H  "accept: a
 
  Response
 
-```html 
+```html
 {
   "formats": [
     {
@@ -191,7 +191,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -204,12 +204,12 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Supported_Formats.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Supported_Formats.Java  >}}
 
 
 
@@ -217,7 +217,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -230,7 +230,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

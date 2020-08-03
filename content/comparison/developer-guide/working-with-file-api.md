@@ -42,7 +42,7 @@ This API allows you to download a file from [GroupDocs Cloud Storage](https://da
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/file/one-page.docx?storageName#MyStorage" -H  "accept: multipart/form-data" -H  "authorization: Bearer [Access Token]"
     
  ```
@@ -52,7 +52,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/file/one-page.d
 
  Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
@@ -75,7 +75,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -88,12 +88,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Download_File.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Download_File.Java  >}}
 
 
 
@@ -101,7 +101,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -114,7 +114,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -185,7 +185,7 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 
  Request
 
-```html 
+```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
  ```
@@ -195,7 +195,7 @@ curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/compariso
 
  Response
 
-```html 
+```html
 Http status code: 200 (Returns OK and list of errors, which is empty if success.)
 {
   "Uploaded": [
@@ -233,7 +233,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -246,12 +246,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Upload_File.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Upload_File.Java  >}}
 
 
 
@@ -259,7 +259,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -272,7 +272,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -343,7 +343,7 @@ This API allows you to delete specific file from [GroupDocs Cloud Storage](htt
 
  Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page1.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
  ```
@@ -353,7 +353,7 @@ curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/file/compari
 
  Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
@@ -376,7 +376,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -389,12 +389,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Delete_File.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Delete_File.Java  >}}
 
 
 
@@ -402,7 +402,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -415,7 +415,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -487,7 +487,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/copy/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
     
  ```
@@ -497,7 +497,7 @@ curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/copy/compa
 
  Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
@@ -520,7 +520,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -533,12 +533,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Copy_File.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Copy_File.Java  >}}
 
 
 
@@ -546,7 +546,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -559,7 +559,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -631,7 +631,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/move/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
     
  ```
@@ -641,7 +641,7 @@ curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/move/compa
 
  Response
 
-```html 
+```html
 {
   "Code": 200,
   "Status": "OK"
@@ -664,7 +664,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -677,12 +677,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Move_File.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Move_File.Java  >}}
 
 
 
@@ -690,7 +690,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -703,7 +703,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

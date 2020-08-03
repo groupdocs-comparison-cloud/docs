@@ -42,7 +42,7 @@ Curl example contains only 'updates' method call. For 'changes' method,  see ot
 
 
  Request
-```html 
+```html
 
 * First get JSON Web Token
 * Please get your App Key and App SID from https://dashboard.groupdocs.cloud/#/apps. Kindly place App Key in "client_secret" and App SID in "client_id" argument.
@@ -197,7 +197,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/updates" \
 
 
  Response
-```html 
+```html
 
 {
   "href": "https://api.groupdocs.cloud/v2.0/comparison/storage/file/output/result.docx",
@@ -218,7 +218,7 @@ Using an SDK (API client) is the quickest way for a developer to speed up the de
 ### SDK Examples ###
 
 
- C#
+C# 
 ```csharp 
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
@@ -249,8 +249,8 @@ var response # apiInstance.PutChangesDocument(new PutChangesDocumentRequest(opti
  ```
 
 
- Java
-```java 
+Java  
+```Java  
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
 String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
@@ -282,7 +282,7 @@ Link response # apiInstance.putChangesDocument(new PutChangesDocumentRequest(opt
  ```
 
 
- PHP
+PHP 
 ```php 
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
@@ -320,7 +320,7 @@ $response # $apiInstance->putChangesDocument($request);
 
 
  Node
-```html 
+```html
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
 global.comparison_cloud # require("groupdocs-comparison-cloud");
@@ -386,7 +386,7 @@ response # api_instance.put_changes_document(groupdocs_comparison_cloud.PutChang
  ```
 
 
- Ruby
+Ruby  
 ```ruby 
 
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples

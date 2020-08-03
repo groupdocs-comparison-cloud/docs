@@ -7,7 +7,6 @@ weight: 5
 description: ""
 keywords: ""
 ---
-
 {{< alert style="info" >}}
 You can easily create a trial account on GroupDocs.Comparison Cloud for evaluation. Please visit our [Trial for GroupDocs.Cloud document page](https://purchase.groupdocs.cloud/trial)
 {{< /alert >}}

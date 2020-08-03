@@ -33,7 +33,7 @@ The following GroupDocs.Comparison Cloud REST API resource has been used to [ge
 
  Request
 
-```html 
+```html
 curl -v "https://api.groupdocs.cloud/v1.0/comparison/compareDocuments/changes?appsid#XXXX&#x26;signature#XXX-XX" 
 -H "content-type: application/json" 
 -X POST -d "{'sourceFile':{'folder':'comparisons','name':'source.docx','password':''},'targetFiles':[{'folder':'comparisons','name':'target.docx','password':''}],'settings ':{'generateSummaryPage':true,'showDeletedContent':true,'styleChangeDetection':true,'insertedItemsStyle':{'color':'Blue','beginSeparatorString':'','endSeparatorString':'','bold':false,'italic':false,'strikeThrough':false},'deletedItemsStyle':{'color':'Red','beginSeparatorString':'','endSeparatorString':'','bold':false,'italic':false,'strikeThrough':false},'styleChangedItemsStyle':{'color':'Green','beginSeparatorString':'','endSeparatorString':'','bold':false,'italic':false,'strikeThrough':false},'wordsSeparatorChars':[],'detailLevel':'Low','useFramesForDelInsElements':false,'calculateComponentCoordinates':false,'markDeletedInsertedContentDeep':false},'changes':[{'id':0,'action':'Reject'},{'id':1,'action':'Reject'}]}"
@@ -44,7 +44,7 @@ curl -v "https://api.groupdocs.cloud/v1.0/comparison/compareDocuments/changes?ap
 
  Response
 
-```html 
+```html
 [
   {
     "id": 0,
@@ -104,7 +104,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -117,7 +117,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -130,12 +130,12 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes.java >}}
+{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes.Java  >}}
 
 
 
@@ -143,7 +143,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

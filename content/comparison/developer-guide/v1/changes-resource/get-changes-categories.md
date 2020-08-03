@@ -130,7 +130,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -143,7 +143,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -156,12 +156,12 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes_Categories.java >}}
+{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes_Categories.Java  >}}
 
 
 
@@ -169,7 +169,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

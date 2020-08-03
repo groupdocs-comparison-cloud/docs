@@ -37,7 +37,7 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 
  Request
-```html 
+```html
 
 * First get JSON Web Token
 * Please get your App Key and App SID from https://dashboard.groupdocs.cloud/#/apps. Kindly place App Key in "client_secret" and App SID in "client_id" argument.
@@ -84,7 +84,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
 
 
  Response
-```html 
+```html
 
 {
   "href": "https://api.groupdocs.cloud/v2.0/comparison/storage/file/output/result.docx",
@@ -105,7 +105,7 @@ Using an SDK (API client) is the quickest way for a developer to speed up the de
 ### SDK Examples ###
 
 
- C#
+C# 
 ```csharp 
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
@@ -154,8 +154,8 @@ var response # apiInstance.Comparisons(request);
  ```
 
 
- Java
-```java 
+Java  
+```Java  
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
 String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
@@ -200,7 +200,7 @@ Link response # apiInstance.comparisons(request);
  ```
 
 
- PHP
+PHP 
 ```php 
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
@@ -251,7 +251,7 @@ $response # $apiInstance->comparisons($request);
 
 
  Node
-```html 
+```html
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
 global.comparison_cloud # require("groupdocs-comparison-cloud");
@@ -328,7 +328,7 @@ response # api_instance.comparisons(request)
  ```
 
 
- Ruby
+Ruby  
 ```ruby 
 
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples

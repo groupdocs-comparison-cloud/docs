@@ -51,10 +51,8 @@ GroupDocs.Comparison Cloud is a REST API for comparison of documents with differ
 
 ## Full List of Issues Covering all Changes in this Release ##
 
-This is the first version of new generation GroupDocs.Comparison Cloud. 
+This is the first version of new generation GroupDocs.Comparison Cloud.  
 
 ## Public API and Backward Incompatible Changes ##
 
 This is the first version of new generation GroupDocs.Comparison Cloud.
-
- 

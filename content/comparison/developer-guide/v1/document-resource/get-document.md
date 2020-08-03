@@ -37,7 +37,7 @@ The following GroupDocs.Comparison Cloud REST API resource has been used to [ge
 
  Request
 
-```html 
+```html
 curl -v  "https://api.groupdocs.cloud/v1.0/comparison/compareDocuments?outPath#comparisons%2Fcomparedoutput.docx&#x26;appsid#XXXX&#x26;signature#XXX-XX"  
 -H "Content-Type: application/json" 
 -X POST -d  "{'sourceFile':{'folder':'comparisons','name':'source.docx','password':''},'targetFiles':[{'folder':'comparisons','name':'target.docx','password':''}],'settings
@@ -49,7 +49,7 @@ curl -v  "https://api.groupdocs.cloud/v1.0/comparison/compareDocuments?outPath#c
 
  Response
 
-```html 
+```html
  {
   "href": "https://api.groupdocs.cloud/storage/file/comparisons/output.docx",
   "rel": "self",
@@ -73,7 +73,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -86,7 +86,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -99,12 +99,12 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Document.java >}}
+{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Document.Java  >}}
 
 
 
@@ -112,7 +112,7 @@ The API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

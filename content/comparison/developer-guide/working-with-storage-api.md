@@ -38,7 +38,7 @@ This API intended for checking existence of cloud storage with given name from [
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/MyStorage/exist" -H  "accept: application/json" -H  "authorization: Bearer  [Access Token]"
     
  ```
@@ -48,7 +48,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/MyStorage/exist
 
  Response
 
-```html 
+```html
 {
   "exists": true
 }
@@ -70,7 +70,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -83,12 +83,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Storage_Exist.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Storage_Exist.Java  >}}
 
 
 
@@ -96,7 +96,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -109,7 +109,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -179,7 +179,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/exist/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
  ```
 
@@ -188,7 +188,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/exist/compariso
 
  Response
 
-```html 
+```html
 {
   "exists": true,
   "isFolder": true
@@ -213,7 +213,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -226,12 +226,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Object_Exists.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Object_Exists.Java  >}}
 
 
 
@@ -241,7 +241,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -254,7 +254,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -320,7 +320,7 @@ This API intended for getting total and used space of the[ GroupDocs Cloud Stora
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/disc?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
  ```
 
@@ -329,7 +329,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/disc?storageNam
 
  Response
 
-```html 
+```html
 {
   "usedSize": 31032368,
   "totalSize": 3221225472
@@ -352,7 +352,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -365,12 +365,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Disc_Usage.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Disc_Usage.Java  >}}
 
 
 
@@ -378,7 +378,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -391,7 +391,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -460,7 +460,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/version/one-page.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
  ```
 
@@ -469,7 +469,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/version/one-pag
 
  Response
 
-```html 
+```html
 {
   "value": [
     {
@@ -503,7 +503,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -516,12 +516,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_File_Versions.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_File_Versions.Java  >}}
 
 
 
@@ -529,7 +529,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -542,7 +542,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

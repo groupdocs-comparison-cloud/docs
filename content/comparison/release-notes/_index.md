@@ -7,8 +7,3 @@ weight: 3
 description: ""
 keywords: ""
 ---
-
-### Release Notes - GroupDocs.Comparison for Cloud ###
-
-
-

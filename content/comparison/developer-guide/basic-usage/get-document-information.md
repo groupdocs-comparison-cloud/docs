@@ -53,7 +53,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/info" \
 
 
  Response
-```html 
+```html
 
 {
   "format": "Microsoft Word Document",
@@ -74,7 +74,7 @@ The API is completely independent of your operating system, database system or d
 ### SDK Examples ###
 
 
- C#
+C# 
 ```csharp 
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
@@ -95,8 +95,8 @@ var response # apiInstance.GetDocumentInfo(request);
  ```
 
 
- Java
-```java 
+Java  
+```Java  
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
 String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
@@ -113,7 +113,7 @@ InfoResult response # apiInstance.getDocumentInfo(request);
  ```
 
 
- PHP
+PHP 
 ```php 
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
@@ -139,7 +139,7 @@ $response # $apiInstance->getDocumentInfo($request);
 
 
  Node
-```html 
+```html
 
 * For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
 global.comparison_cloud # require("groupdocs-comparison-cloud");
@@ -176,7 +176,7 @@ result # infoApi.get_document_info(request)
  ```
 
 
- Ruby
+Ruby  
 ```ruby 
 
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples

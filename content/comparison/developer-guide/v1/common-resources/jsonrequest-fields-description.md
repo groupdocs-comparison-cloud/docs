@@ -134,7 +134,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 
 ## DetailLevel enum: ##
 
-```html 
+```html
 
 Low, Middle, Hight
 
@@ -144,7 +144,7 @@ Low, Middle, Hight
 
 ## Action enum: ##
 
-```html 
+```html
 
 Accept, Reject
 
@@ -154,7 +154,7 @@ Accept, Reject
 
 ## TypeChanged enum ##
 
-```html 
+```html
 
 Inserted, Deleted, StyleChanged
 

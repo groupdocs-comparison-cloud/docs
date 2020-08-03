@@ -40,7 +40,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
  ```
@@ -50,7 +50,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparis
 
  Response
 
-```html 
+```html
 {
   "value": [
     {
@@ -131,7 +131,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -144,12 +144,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Files_List.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Files_List.Java  >}}
 
 
 
@@ -157,7 +157,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -170,7 +170,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -239,7 +239,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
  ```
@@ -249,7 +249,7 @@ curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/compari
 
  Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
@@ -272,7 +272,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -285,12 +285,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Create_Folder.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Create_Folder.Java  >}}
 
 
 
@@ -298,7 +298,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -311,7 +311,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -380,7 +380,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage&#x26;recursive#true" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
  ```
@@ -390,7 +390,7 @@ curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/compa
 
  Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
@@ -413,7 +413,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -426,12 +426,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Delete_Folder.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Delete_Folder.Java  >}}
 
 
 
@@ -439,7 +439,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -452,7 +452,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -522,7 +522,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/comparisondocs?destPath#comparisondocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
  ```
@@ -532,7 +532,7 @@ curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/com
 
  Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
@@ -555,7 +555,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -568,12 +568,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Copy_Folder.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Copy_Folder.Java  >}}
 
 
 
@@ -581,7 +581,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -594,7 +594,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 
@@ -664,7 +664,7 @@ Required. Can be passed as query string parameter or as part of the URL
 
  Request
 
-```html 
+```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/comparisondocs?destPath#comparisondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"  
  ```
 
@@ -673,7 +673,7 @@ curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/com
 
  Response
 
-```html 
+```html
 {  
   "code": 200,
   "status": "OK"
@@ -696,7 +696,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- C#
+C# 
 
 
 
@@ -709,12 +709,12 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Java
+Java  
 
 
 
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Move_Folder.java >}}
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Move_Folder.Java  >}}
 
 
 
@@ -722,7 +722,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- PHP
+PHP 
 
 
 
@@ -735,7 +735,7 @@ Our API is completely independent of your operating system, database system or d
 
 
 
- Ruby
+Ruby  
 
 
 

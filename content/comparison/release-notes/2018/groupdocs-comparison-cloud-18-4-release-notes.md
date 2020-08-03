@@ -29,27 +29,19 @@ Below the list of the most notable features improvements and fixes for GroupDocs
 * Improved absorbing table inComparison.PDF
 * Fix bug with ColumnMerger when image comparing
 * Implemented comparison of Html documents
-
-1. 
-11. Comparison of text
-11. Comparison of css styles
-11. Comparison of images
-11. Comparison of tables
-
+  * Comparison of text
+  * Comparison of css styles
+  * Comparison of images
+  * Comparison of tables
 * Fixed text overlapped output for PDF
 * Fixed fatal error in ParagraphDiffIndex on Words
 * Fixed issues with comparing tables in Words
 
 ## Full List of Issues Covering all Changes in this Release ##
 
- 
-
-|Key
-|---
-|Summary
-|Issue Type
-
-|COMPARISONCLOUD-64|[Add PHP SDK for GroupDocs.Comparison Cloud](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php) |New Feature
+|Key|Summary|Issue Type
+|---|---|---
+|COMPARISONCLOUD-64|[AddPHP  SDK for GroupDocs.Comparison Cloud](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php) |New Feature
 |COMPARISONNET-1461|Comparison.PDF: Implement annotations comparing|New Feature
 |COMPARISONNET-1478|Implement Comparison Imaging|New Feature
 |COMPARISONNET-1477|Implement the process absorbing of tables with merged cells|New Feature
@@ -73,9 +65,6 @@ Below the list of the most notable features improvements and fixes for GroupDocs
 |COMPARISONNET-1529|Issues with comparing data in tables|Bug
 |COMPARISONNET-1524|PPTX comparison output is hidden under some panel|Bug
 |COMPARISONNET-1523|PDF Comparison - scrambled/text overlapped output|Bug
-
-
- 
 
 ## Public API and Backward Incompatible Changes ##
 
