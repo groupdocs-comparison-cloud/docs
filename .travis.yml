@@ -26,10 +26,13 @@ before_install:
 install:
 - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.67.1/hugo_extended_0.67.1_Linux-64bit.deb
 - sudo dpkg -i hugo_extended_0.67.1_Linux-64bit.deb
+- sudo apt-get update
+- sudo apt install xmlstarlet
 
 script:
 - cp -r content/* $ROOT_DIR/content/
 - hugo --source $ROOT_DIR --minify --config config.toml
+- xmlstarlet ed --inplace -d "//*[*[contains(text(),'https://docs2.groupdocs.com/storage') or contains(text(),'https://docs2.groupdocs.com/total')]]" $SRC_DIR/product-sitemap.xml
 
 after_success:
 - scp -i ./deploy_key -r $SRC_DIR/$PRODUCT $USER@$HOST:$DEST_DIR
