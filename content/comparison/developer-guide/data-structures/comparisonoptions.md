@@ -14,8 +14,7 @@ ComparisonOptions data structure defines comparison options
 
 ComparisonOptions example:
 
-
-```javascript 
+```javascript
 
 {
   "SourceFile": {
@@ -94,11 +93,9 @@ ComparisonOptions example:
   "OutputPath": "string"
 }
 
- ```
+```
 
 
-
- 
 
 |Name|Description
 |---|---
@@ -107,7 +104,3 @@ ComparisonOptions example:
 |Settings|Comparison [settings]({{< ref "comparison/developer-guide/data-structures/settings.md" >}})
 |ChangeType|Changes type. Used only for Changes resource(/comparison/changes) (None, Modified, Inserted, Deleted, Added, NotModified, StyleChanged, Resized, Moved, MovedAndResized, ShiftedAndResized)
 |OutputPath|Path to the resultant document (if not specified the document will not be saved)
-
- 
-
-

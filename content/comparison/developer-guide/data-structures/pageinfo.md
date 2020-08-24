@@ -14,8 +14,7 @@ PageInfo data structure represents information about page
 
 PageInfo example:
 
-
-```javascript 
+```javascript
 
 {
   "Width": 0,
@@ -23,18 +22,10 @@ PageInfo example:
   "PageNumber": 0
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
 |Width|Page width
 |Height|Page height
 |PageNumber|Page number
-
- 
-
-

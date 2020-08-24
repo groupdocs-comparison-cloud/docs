@@ -14,8 +14,7 @@ ChangeInfo data structure returned by /comparison/changes API as output result.Â
 
 ChangeInfo example:
 
-
-```javascript 
+```javascript
 
 {
     "id": 0,
@@ -40,11 +39,9 @@ ChangeInfo example:
     }
   }
 
- ```
+```
 
 
-
- 
 
 |Name|Description
 |---|---
@@ -56,18 +53,7 @@ ChangeInfo example:
 |Authors|Array of authors who made this change (used for multi comparison)
 |PageInfo|[Description ]({{< ref "comparison/developer-guide/data-structures/pageinfo.md" >}})of page on which change is found
 |Box|[Description ]({{< ref "comparison/developer-guide/data-structures/rectangle.md" >}})of the place whereÂ change is found
-|
-StyleChangeInfo
-
-
-Array of style changes
+|StyleChangeInfo|Array of style changes
 |ChangedProperty|Name of changed style
 |OldValue|Value of changed style from source document
 |NewValue|Value of changed style from target document
-
-
- 
-
-
- 
-

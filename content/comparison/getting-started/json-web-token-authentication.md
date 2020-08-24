@@ -9,7 +9,7 @@ keywords: ""
 ---
 ## What is a JSON Web Token (JWT)? ##
 
-A JSON Web Token is used to send information that can be verified and trusted by means of a digital signature. It comprises a compact and URL-safe JSON object, which is cryptographically signed to verify its authenticity, and which can also be encrypted if the payload contains sensitive information.  
+A JSON Web Token is used to send information that can be verified and trusted by means of a digital signature. It comprises a compact and URL-safe JSON object, which is cryptographically signed to verify its authenticity, and which can also be encrypted if the payload contains sensitive information.
 Because of its compact structure, JWT is usually used in HTTP *Authorization* headers or URL query parameters.
 
 ## Structure of a JSON Web Token ##
@@ -96,8 +96,8 @@ Headers:
 Request
 
 ```html
-curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" 
--H  "accept: application/json" 
+curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats"
+-H  "accept: application/json"
 -H  "authorization: Bearer [Access Token]"
 ```
 

@@ -9,7 +9,7 @@ keywords: ""
 ---
 ## Create an account ##
 
-Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.  
+Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.
 
 ## Create an API client app ##
 
@@ -27,11 +27,11 @@ Use the **App SID** and **App key (secret key)** from the API app client you
 C#  
 {{< gist groupdocscloud 33ad9afbf76ac035c8552d2efe0ec895 Comparison_CSharp_Get_Changes.cs >}}
 
-PHP  
+PHP
 {{< gist groupdocscloud fb9d531a4ea5f0755dfd0e079b7801b5 Comparison_Php_Get_Changes.php >}}
 
-Java  
-{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes.Java  >}}
+Java
+{{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes.java >}}
 
-Ruby  
+Ruby
 {{< gist groupdocscloud 4e15a0a5e68b0d2755592a552488d1ec Comparison_Ruby_get_changes.rb >}}

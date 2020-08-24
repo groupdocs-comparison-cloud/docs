@@ -12,9 +12,7 @@ keywords: ""
 Note:  The features listed in this page are working only with GroupDocs.Comparison Cloud V1
 {{< /alert >}}
 
- 
+
 
 ### Common Resources ###
-
-
 

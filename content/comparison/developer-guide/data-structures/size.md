@@ -14,25 +14,16 @@ Size data structure used to specify comparison result size.
 
 Size example:
 
-
-```javascript 
+```javascript
 
 {
   "Width": 0,
   "Height": 0
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
 |Width|Width of item
 |Height|Height of item
-
- 
-
-

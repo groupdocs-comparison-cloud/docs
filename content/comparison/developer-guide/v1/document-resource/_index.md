@@ -14,5 +14,3 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 
 ### Document Resource ###
 
-
-

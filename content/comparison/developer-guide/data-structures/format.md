@@ -14,25 +14,16 @@ Format data structure describes supported file format
 
 Format example:
 
-
-```javascript 
+```javascript
 
 {
   "Extension": "string",
   "FileFormat": "string"
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
 |Extension|File format extension
 |FileFormat|File format name
-
- 
-
-

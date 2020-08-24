@@ -10,12 +10,11 @@ keywords: ""
 
 ## Settings ##
 
-Settings  data structure defines comparison process additional settings 
+Settings  data structure defines comparison process additional settings
 
 Settings example:
 
-
-```javascript 
+```javascript
 
 {
     "GenerateSummaryPage": true,
@@ -77,11 +76,7 @@ Settings example:
     "SensitivityOfComparison": 0
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -96,11 +91,8 @@ Settings example:
 |DetailsLevel|The comparison details level  (Low, Middle, High)
 |UseFramesForDelInsElements|Indicates whether to use frames for shapes in Word Processing and for rectangles in Image documents
 |CalculateComponentCoordinates|Indicates whether to calculate coordinates for changed components
-|MarkChangedContent|Indicates whether to use frames for shapes in Word Processing and for rectangles
-
-in Image documents
-|MarkNestedContent|Gets or sets a value indicating whether to mark the children of the deleted or
-inserted element as deleted or inserted
+|MarkChangedContent|Indicates whether to use frames for shapes in Word Processing and for rectangles in Image documents
+|MarkNestedContent|Gets or sets a value indicating whether to mark the children of the deleted or inserted element as deleted or inserted
 |CloneMetadata|Type of metadata to clone (Default, Source, Target, FileAuthor)
 |MetaData|User [metadata]({{< ref "comparison/developer-guide/data-structures/metadata.md" >}})
 |PasswordSaveOption|Type of password saving (None, Source, Target, User)
@@ -110,7 +102,3 @@ inserted element as deleted or inserted
 |HeaderFootersComparison|Control to turn on comparison of header/footer contents
 |PaperSize|The result document paper size (Default, A0, A1, ... A8)
 |SensitivityOfComparison|A sensitivity of comparison (1..100). Default is 75
-
- 
-
-

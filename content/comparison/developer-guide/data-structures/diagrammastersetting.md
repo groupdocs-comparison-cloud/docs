@@ -14,25 +14,16 @@ DiagramMasterSetting data structure used for setting master diagram for diagram 
 
 DiagramMasterSetting example:
 
-
-```javascript 
+```javascript
 
 {
   "MasterPath": "string",
   "UseSourceMaster": true
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
 |MasterPath|Path to custom master path
 |UseSourceMaster|Value of using master from source and target document together
-
- 
-
-

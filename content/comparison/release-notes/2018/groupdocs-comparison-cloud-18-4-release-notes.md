@@ -12,7 +12,7 @@ keywords: ""
 
 Below the list of the most notable features improvements and fixes for GroupDocs.Comparison Cloud 18.4 :
 
-* Introduced PHP SDK for GroupDocs.Comparison Cloud 
+* Introduced PHP SDK for GroupDocs.Comparison Cloud
 * Introduced comparison of annotations for PDF documents
 * Implemented page mapper for Note
 * Fixed bugs with positioning of components in Note

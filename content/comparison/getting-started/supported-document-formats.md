@@ -15,7 +15,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |---|---|---
 |MicroStation Design File (V7)|.[DGN](https://wiki.fileformat.com/cad/dgn/) | &#10004;
 |Autodesk Design Web Format|.[DWF](https://wiki.fileformat.com/cad/dwf/) | &#10004;
-|AutoCAD Drawing|.[DWG](https://wiki.fileformat.com/cad/dwg/) | &#10004; 
+|AutoCAD Drawing|.[DWG](https://wiki.fileformat.com/cad/dwg/) | &#10004;
 |AutoCAD Drawing Interchange|.[DXF](https://wiki.fileformat.com/cad/dxf/) | &#10004;
 |Industry Foundation Classes|.[IFC](https://wiki.fileformat.com/cad/ifc/) | &#10004;
 |Stereo Lithography|.[STL](https://wiki.fileformat.com/cad/stl/) | &#10004;
@@ -60,8 +60,8 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Format|File Extension|Compare
 |---|---|---
 |Bitmap Picture (BMP)|.[BMP](https://wiki.fileformat.com/image/bmp/) | &#10004;
-|Computer Graphics Metafile|.[CGM](https://wiki.fileformat.com/page-description-language/cgm/) | &#10004; 
-|Digital Imaging and Communications in Medicine (DICOM)|.[DCM](https://wiki.fileformat.com/image/dcm/) | &#10004; 
+|Computer Graphics Metafile|.[CGM](https://wiki.fileformat.com/page-description-language/cgm/) | &#10004;
+|Digital Imaging and Communications in Medicine (DICOM)|.[DCM](https://wiki.fileformat.com/image/dcm/) | &#10004;
 |Deja Vu (DjVu)|.[DJVU](https://wiki.fileformat.com/image/djvu/) | &#10004;
 |Digital Negative Specification|.[DNG](https://wiki.fileformat.com/image/dng/) | &#10004;
 |Windows Enhanced Metafile (EMF)|.[EMF](https://wiki.fileformat.com/image/emf/) | &#10004;
@@ -77,7 +77,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Adobe Photoshop Document (PSD)|.[PSD](https://wiki.fileformat.com/image/psd/) | &#10004;
 |Scalable Vector Graphics (SVG)|.[SVG](https://wiki.fileformat.com/page-description-language/svg/) | &#10004;
 |Tagged Image File Format (TIFF)|.[TIF](https://wiki.fileformat.com/image/tiff/), .[TIFF](https://wiki.fileformat.com/image/tiff/) | &#10004;
-|WebP Image|.[WEBP](https://wiki.fileformat.com/image/webp/) | &#10004; 
+|WebP Image|.[WEBP](https://wiki.fileformat.com/image/webp/) | &#10004;
 |Windows Metafile (WMF)|.[WMF](https://wiki.fileformat.com/image/wmf/) | &#10004;
 
 ### Markup Formats ###
@@ -85,7 +85,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Format|File Extension|Compare
 |---|---|---
 |HyperText Markup Language (HTML)|.[HTML](https://wiki.fileformat.com/web/) | &#10004;
-|Mime HTML (MHTML)|.[MHT](https://wiki.fileformat.com/web/mhtml/), .[MHTML](https://wiki.fileformat.com/web/mhtml/) | &#10004; 
+|Mime HTML (MHTML)|.[MHT](https://wiki.fileformat.com/web/mhtml/), .[MHTML](https://wiki.fileformat.com/web/mhtml/) | &#10004;
 |Extensible Markup Language|.[XML](https://wiki.fileformat.com/web/xml/) | &#10004;
 
 ### Note Formats ###
@@ -99,14 +99,14 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Format|File Extension|Compare
 |---|---|---
 |Adobe Portable Document Format (PDF)|.[PDF](https://wiki.fileformat.com/view/pdf/) | &#10004;
-|LaTeX Source Document|.[TEX](https://wiki.fileformat.com/page-description-language/tex/) | &#10004; 
+|LaTeX Source Document|.[TEX](https://wiki.fileformat.com/page-description-language/tex/) | &#10004;
 |Microsoft XML Paper Specification (XPS)|.[XPS](https://wiki.fileformat.com/page-description-language/xps/) | &#10004;
 
 ### Presentation Formats ###
 
 |Format|File Extension|Compare
 |---|---|---
-|OpenDocument Presentation|.[ODP](https://wiki.fileformat.com/presentation/odp/) | &#10004; 
+|OpenDocument Presentation|.[ODP](https://wiki.fileformat.com/presentation/odp/) | &#10004;
 |OpenDocument Presentation Template|.[OTP](https://wiki.fileformat.com/presentation/otp/) | &#10004;
 |Microsoft PowerPoint Macro-Enabled Template|.[POTM](https://wiki.fileformat.com/presentation/potm/) | &#10004;
 |Microsoft PowerPoint Template|.[POTX](https://wiki.fileformat.com/presentation/potx/) | &#10004;

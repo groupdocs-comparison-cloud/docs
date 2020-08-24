@@ -14,8 +14,7 @@ UpdatesOptions data structure defines comparison options
 
 UpdatesOptions example:
 
-
-```javascript 
+```javascript
 
 {
   "SourceFile": {
@@ -122,11 +121,7 @@ UpdatesOptions example:
   ]
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -136,7 +131,3 @@ UpdatesOptions example:
 |ChangeType|Changes type. Used only for Changes resource(/comparison/changes) (None, Modified, Inserted, Deleted, Added, NotModified, StyleChanged, Resized, Moved, MovedAndResized, ShiftedAndResized)
 |OutputPath|Path to the resultant document (if not specified the document will not be saved)
 |Changes|Changes to apply or reject. Used only for updates resource (/comparison/updates)
-
- 
-
-

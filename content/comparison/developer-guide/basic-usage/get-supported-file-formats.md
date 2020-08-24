@@ -8,13 +8,6 @@ description: ""
 keywords: ""
 ---
 
-
-
-
-
-
-# Get Supported File Formats #
-
 GroupDocs.Comparison Cloud REST APIs support document compare tools to compare source and destination files of supported formats to get high-quality output in quickly and reliably. To get a list of supported formats, You can use the below API.
 
 ## Resource ##
@@ -23,20 +16,12 @@ The following GroupDocs.Comparison Cloud REST API resource has been used in the 
 
 ## cURL Example ##
 
-
-
-
-
  Request
 
 ```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
-
- ```
-
-
-
+```
 
  Response
 
@@ -174,12 +159,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" -H  "accept: a
   ]
 }
 
- ```
-
-
-
-
-
+```
 
 ## SDKs ##
 
@@ -187,85 +167,26 @@ The API is completely independent of your operating system, database system or d
 
 ### Get List of Supported File Formats ###
 
-
-
-
-
-C# 
-
-
-
+C#
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Get_Supported_Formats.cs >}}
 
+Java
 
+{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Supported_Formats.java >}}
 
-
-
-
-
-Java  
-
-
-
-
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Supported_Formats.Java  >}}
-
-
-
-
-
-
-
-PHP 
-
-
-
+PHP
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Get_Supported_Formats.php >}}
 
-
-
-
-
-
-
-Ruby  
-
-
-
+Ruby
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Get_Supported_Formats.rb >}}
 
-
-
-
-
-
-
  Node.js
-
-
-
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Get_Supported_Formats.js >}}
 
-
-
-
-
-
-
  Python
 
-
-
-
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Get_Supported_Formats.py >}}
-
-
-
-
-
-
-

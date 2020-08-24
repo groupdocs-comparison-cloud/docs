@@ -14,8 +14,7 @@ Metadata data structure used for setting output document metadata.
 
 Metadata example:
 
-
-```javascript 
+```javascript
 
 {
   "Author": "string",
@@ -23,18 +22,10 @@ Metadata example:
   "Company": "string"
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
 |Author|Value of document Author
 |LastSaveBy|Value of last save by author of document
 |Company|Value of Company of document
-
- 
-
-

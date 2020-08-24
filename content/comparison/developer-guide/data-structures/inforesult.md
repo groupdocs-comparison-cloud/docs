@@ -14,8 +14,7 @@ InfoResult data structure represents document information
 
 InfoResult example:
 
-
-```javascript 
+```javascript
 
 {
   "Format": "string",
@@ -24,11 +23,7 @@ InfoResult example:
   "PageCount": 0
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -36,7 +31,3 @@ InfoResult example:
 |Extension|Document file extension
 |Size|Document file size
 |PageCount|Pages count
-
- 
-
-

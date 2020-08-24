@@ -25,29 +25,29 @@ Install [GroupDocs.Comparison-Cloud](https://www.nuget.org/packages/GroupDocs.co
 
 ```html
 PM> Install-Package GroupDocs.Comparison-Cloud
- ```
+```
 
 {{< alert style="info" >}}
 Complete source code of GroupDocs.Comparison Cloud SDK for .Net is freely available on the [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet). Please see the GroupDocs.Comparison Cloud SDK for .NET [Examples here](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet/tree/master/GroupDocs.Comparison.Cloud.Sdk.Test).{{< /alert >}}
 
-**GroupDocs.Comparison for Cloud SDK forPHP ** allows you to incorporate GroupDocs.Comparison Cloud services in yourPHP  applications quickly and easily.
+**GroupDocs.Comparison for Cloud SDK forPHP** allows you to incorporate GroupDocs.Comparison Cloud services in yourPHP  applications quickly and easily.
 
 groupdocs-comparison-cloud is available on Packagist as the [groupdocs-comparison-cloud](https://packagist.org/packages/groupdocscloud/groupdocs-comparison-cloud) package. Run the following command:
 
 ```html
 composer require groupdocscloud/groupdocs-comparison-cloud
- ```
+```
 
 To use the SDK, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
 
 ```html
 require_once('vendor/autoload.php');
- ```
+```
 
 {{< alert style="info" >}}
 Complete source code of GroupDocs.Comparison Cloud SDK forPHP  is freely available on [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php). Please see the GroupDocs.Comparison Cloud SDK for PHP [Examples here](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php/tree/master/tests/GroupDocs/Comparison/ApiTests).{{< /alert >}}
 
-**GroupDocs.Comparison Cloud SDK forJava ** allows you to incorporate GroupDocs.Comparison Cloud services in yourJava  applications quickly and easily.
+**GroupDocs.Comparison Cloud SDK forJava** allows you to incorporate GroupDocs.Comparison Cloud services in yourJava  applications quickly and easily.
 
 You can directly include the source code of GroupDocs.Comparison Cloud SDK forJava  in your own project, the source code is available from [here](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java).
 
@@ -61,7 +61,7 @@ Alternatively, you can use [**Maven**](https://repository.groupdocs.cloud/webapp
     <name>GroupDocs Artifact Repository</name>
     <url>http://repository.groupdocs.cloud/repo</url>
 </repository>
- ```
+```
 
 #### Maven Dependency ####
 
@@ -93,7 +93,7 @@ $ mvn eclipse:eclipse -DdownloadSources#true -DdownloadJavadocs#false
 **pom.xml**
 
 ```html
-<build>  
+<build>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -105,7 +105,7 @@ $ mvn eclipse:eclipse -DdownloadSources#true -DdownloadJavadocs#false
         </plugin>
     </plugins>
 </build>
- ```
+```
 
 **Direct Download**
 
@@ -113,11 +113,11 @@ $ mvn eclipse:eclipse -DdownloadSources#true -DdownloadJavadocs#false
 Complete source code of GroupDocs.Comparison Cloud SDK forJava  is freely available on the [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java). Please see the GroupDocs.Comparison Cloud SDK forJava  [Examples here](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java/tree/master/src/test/java/com/groupdocs/cloud/comparison/api).
 {{< /alert >}}
 
-**GroupDocs.Comparison Cloud SDK forRuby  ** allows you to incorporate GroupDocs.Comparison Cloud services in yourRuby   applications quickly and easily. It is available on [RubyGem distribution](https://rubygems.org/gems/groupdocs_comparison_cloud) package. Run the following command::
+**GroupDocs.Comparison Cloud SDK forRuby** allows you to incorporate GroupDocs.Comparison Cloud services in yourRuby   applications quickly and easily. It is available on [RubyGem distribution](https://rubygems.org/gems/groupdocs_comparison_cloud) package. Run the following command::
 
 ```html
 gem install groupdocs_cloud_comparison
- ```
+```
 
 {{< alert style="info" >}}
 Complete source code of GroupDocs.Comparison Cloud SDK forRuby   is freely available on the [GitHub](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby).

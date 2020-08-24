@@ -12,28 +12,12 @@ keywords: ""
 Note:  The features listed in this page are working only with GroupDocs.Comparison Cloud V1
 {{< /alert >}}
 
-
-
-
-
-
-
-
-
-
-# JsonRequest Fields Description #
-
- 
-
 |**Name**|**Type**|**Description**
 |---|---|---
 |sourceFile|File Object|Information about source file
 |targetFiles|File Object[]|Information about target file(s)
 |settings|ComparisonSettings Object|Comparison settings
 |changes|ChangeInfo Object[]|Changes for apply or discard. Used only for Changes resource.
-
-
- 
 
 ## File Object fields ##
 
@@ -42,9 +26,6 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |folder|string|Path to the folder with file
 |name|string|File name
 |password|string|Password for encrypted documents
-
-
- 
 
 ## ComparisonSettings Object fields ##
 
@@ -66,9 +47,6 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |PasswordSaveOption|PasswordSaveOption enum|Set type of password save
 |Password|string|Set user Password to result document
 
-
- 
-
 ## ItemsStyle Object fields ##
 
 |**Name**|**Type**|**Description**
@@ -79,9 +57,6 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |bold|bool|Bold style for changed components
 |italic|bool|Italic style for changed components
 |strikeThrough|bool|Strike through style for changed components
-
-
- 
 
 ## ChangeInfo Object fields ##
 
@@ -94,18 +69,12 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |authors|string[]|Array of authors who made this change (used for multi comparison)
 |styleChanges|styleChangeInfo Object[]|Array of style changes
 
-
- 
-
 ## ComparisonChangesCategoryObject fields ##
 
 |**Name**|**Type**|**Description**
 |---|---|---
 |Category|string|Name of category
 |Changes|ChangeInfo[]|Array of ChangeInfo objects
-
-
- 
 
 ## StyleChangeInfo Object fields ##
 
@@ -114,9 +83,6 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |changedProperty|string|Name of changed style
 |oldValue|string|Value of changed style from source document
 |newValue|string|Value of changed style from target document
-
-
- 
 
 ## MetaData Object field ##
 
@@ -127,30 +93,21 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |Company|string|Value of Company of document
 
 
-**
-**
-
- 
-
-## DetailLevel enum: ##
+## DetailLevel enum ##
 
 ```html
 
 Low, Middle, Hight
 
- ```
+```
 
- 
-
-## Action enum: ##
+## Action enum ##
 
 ```html
 
 Accept, Reject
 
- ```
-
- 
+```
 
 ## TypeChanged enum ##
 
@@ -158,4 +115,4 @@ Accept, Reject
 
 Inserted, Deleted, StyleChanged
 
- ```
+```

@@ -14,8 +14,7 @@ Rectangle data structure describes rectangle
 
 Rectangle example:
 
-
-```javascript 
+```javascript
 
 {
    "Height": 0,
@@ -24,11 +23,7 @@ Rectangle example:
    "Y": 0
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -36,7 +31,3 @@ Rectangle example:
 |Width|Rectangle width
 |X|X coordinate
 |Y|Y coordinate
-
- 
-
-

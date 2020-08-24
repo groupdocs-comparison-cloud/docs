@@ -14,8 +14,7 @@ Link data structure represents output document information
 
 Link example:
 
-
-```javascript 
+```javascript
 
 {
   "href": "string",
@@ -24,11 +23,7 @@ Link example:
   "title": "string"
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -36,7 +31,3 @@ Link example:
 |Rel|Contains file path in the cloud storage
 |Type|Output type ('file')
 |Title|File name
-
- 
-
-

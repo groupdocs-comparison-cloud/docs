@@ -14,7 +14,7 @@ This page contains release notes for GroupDocs.Comparison Cloud 19.5
 
 ## GroupDocs.Comparison Cloud V2 ##
 
-GroupDocs.Comparison Cloud is REST API provides methods to compare most popular file formats (Word, Excel, PowerPoint, PDF, Images, Email, HTML, Note).  
+GroupDocs.Comparison Cloud is REST API provides methods to compare most popular file formats (Word, Excel, PowerPoint, PDF, Images, Email, HTML, Note).
 The difference of V2 version from V1 is more simplified API with less methods and options. Also internal cloud solution based in modern micro-service architecture. In new version, the API methods working with cloud storage. API methods take input documents from storage and put results there.
 
 ## API Sections Overview ##

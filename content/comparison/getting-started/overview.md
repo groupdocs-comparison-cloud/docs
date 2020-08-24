@@ -7,9 +7,9 @@ weight: 1
 description: ""
 keywords: ""
 ---
-GroupDocs.Comparison Cloud is a REST API that provides an ability to detect differences between source and target files for changes at paragraphs, words and characters levels. Can identify styling and formatting changes - like bold, italic, underlines, strike-troughs, font types, etc.  
-Every particular difference between compared document can be applied or rejected and the exported to a final document.  
-GroupDocs.Comparison Cloud allows to obtain basic information about source document - file type, size, pages count etc.  
+GroupDocs.Comparison Cloud is a REST API that provides an ability to detect differences between source and target files for changes at paragraphs, words and characters levels. Can identify styling and formatting changes - like bold, italic, underlines, strike-troughs, font types, etc.
+Every particular difference between compared document can be applied or rejected and the exported to a final document.
+GroupDocs.Comparison Cloud allows to obtain basic information about source document - file type, size, pages count etc.
 Once comparison process is complete, you can save a differences summary report which lists all changes found between compared documents.
 
 ## API Endpoint Groups Overview ##
@@ -28,9 +28,9 @@ The GroupDocs.Comparison Cloud API is secured and requires authentication. Devel
 
 ## SDKs ##
 
-Checkout our GitHub [repository](https://github.com/groupdocs-comparison-cloud) for a complete list of GroupDocs.Comparison Cloud SDKs along with working examples, to get you started in no time.  
+Checkout our GitHub [repository](https://github.com/groupdocs-comparison-cloud) for a complete list of GroupDocs.Comparison Cloud SDKs along with working examples, to get you started in no time.
 
-At the moment following SDKs are provided:  
+At the moment following SDKs are provided:
 
 * .NET ([Sources](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet), [NuGet Package](https://www.nuget.org/packages/GroupDocs.Comparison-Cloud), [samples](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples))
 * Java ([Sources](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java), [Jar](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-comparison-cloud), [samples](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples))

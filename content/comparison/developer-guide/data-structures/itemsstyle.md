@@ -14,8 +14,7 @@ ItemsStyle data structure used for styling comparison differences.
 
 ItemsStyle example:
 
-
-```javascript 
+```javascript
 
 {
   "FontColor": "string",
@@ -28,11 +27,7 @@ ItemsStyle example:
   "Underline": true
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -44,7 +39,3 @@ ItemsStyle example:
 |Italic|Italic style for changed components
 |StrikeThrough|Strike through style for changed components
 |Underline|Underline style for changed components
-
- 
-
-

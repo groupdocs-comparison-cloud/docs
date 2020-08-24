@@ -14,8 +14,7 @@ FileInfo data structure used for input files description in various comparison c
 
 FileInfo example:
 
-
-```javascript 
+```javascript
 
 {
     "FilePath": "string",
@@ -24,11 +23,7 @@ FileInfo example:
     "Password": "string"
 }
 
- ```
-
-
-
- 
+```
 
 |Name|Description
 |---|---
@@ -36,7 +31,3 @@ FileInfo example:
 |VersionId|File Version, can be null or omitted.
 |StorageName|Name of the cloud storage. Can be omitted, then default storage used.
 |Password|The password for password-protected documents (docx, pdf, etc)
-
- 
-
-
