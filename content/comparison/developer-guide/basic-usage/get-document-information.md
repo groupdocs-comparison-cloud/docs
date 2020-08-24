@@ -67,20 +67,20 @@ C#
 
 ```csharp
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
-string MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-var configuration # new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyAppSid, MyAppKey);
 
-var apiInstance # new InfoApi(configuration);
-var fileInfo # new FileInfo
+var apiInstance = new InfoApi(configuration);
+var fileInfo = new FileInfo
 {
-    FilePath # "source_files/word/source.docx"
+    FilePath = "source_files/word/source.docx"
 };
-var request # new GetDocumentInfoRequest(fileInfo);
+var request = new GetDocumentInfoRequest(fileInfo);
 
-var response # apiInstance.GetDocumentInfo(request);
+var response = apiInstance.GetDocumentInfo(request);
 
 ```
 
@@ -88,17 +88,17 @@ Java
 
 ```Java
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
-String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-Configuration configuration # new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
 
-InfoApi apiInstance # new InfoApi(configuration);
-FileInfo fileInfo # new FileInfo();
+InfoApi apiInstance = new InfoApi(configuration);
+FileInfo fileInfo = new FileInfo();
 fileInfo.setFilePath("source_files/word/source.docx");
-GetDocumentInfoRequest request # new GetDocumentInfoRequest(fileInfo);
-InfoResult response # apiInstance.getDocumentInfo(request);
+GetDocumentInfoRequest request = new GetDocumentInfoRequest(fileInfo);
+InfoResult response = apiInstance.getDocumentInfo(request);
 
 ```
 
@@ -106,24 +106,24 @@ PHP
 
 ```php
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
 use GroupDocs\Comparison\Model;
 use GroupDocs\Comparison\Model\Requests;
 
-$AppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-$configuration # new GroupDocs\Comparison\Configuration();
+$configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($AppSid);
 $configuration->setAppKey($AppKey);
 
 $apiInstance# new GroupDocs\Comparison\InfoApi($configuration);
 
-$fileInfo # new Model\FileInfo();
+$fileInfo = new Model\FileInfo();
 $fileInfo->setFilePath("source_files/word/source.docx");
 
-$request # new Requests\GetDocumentInfoRequest($fileInfo);
-$response # $apiInstance->getDocumentInfo($request);
+$request = new Requests\GetDocumentInfoRequest($fileInfo);
+$response = $apiInstance->getDocumentInfo($request);
 
 ```
 
@@ -131,18 +131,18 @@ $response # $apiInstance->getDocumentInfo($request);
 
 ```javascript
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
-global.comparison_cloud # require("groupdocs-comparison-cloud");
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
+global.comparison_cloud = require("groupdocs-comparison-cloud");
 
-global.appSid # "XXXX-XXXX-XXXX-XXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey # "XXXXXXXXXXXXXXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-global.infoApi # comparison_cloud.InfoApi.fromKeys(appSid, appKey);
+global.infoApi = comparison_cloud.InfoApi.fromKeys(appSid, appKey);
 
-let fileInfo # new comparison_cloud.FileInfo();
-fileInfo.filePath # "source_files/word/source.docx";
-let request # new comparison_cloud.GetDocumentInfoRequest(fileInfo);
-let response # await infoApi.getDocumentInfo(request);
+let fileInfo = new comparison_cloud.FileInfo();
+fileInfo.filePath = "source_files/word/source.docx";
+let request = new comparison_cloud.GetDocumentInfoRequest(fileInfo);
+let response = await infoApi.getDocumentInfo(request);
 
 ```
 
@@ -153,15 +153,15 @@ let response # await infoApi.getDocumentInfo(request);
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-infoApi # groupdocs_comparison_cloud.InfoApi.from_keys(app_sid, app_key)
+infoApi = groupdocs_comparison_cloud.InfoApi.from_keys(app_sid, app_key)
 
-file_info # groupdocs_comparison_cloud.FileInfo()
-file_info.file_path # "source_files/word/source.docx"
-request # groupdocs_comparison_cloud.GetDocumentInfoRequest(file_info)
-result # infoApi.get_document_info(request)
+file_info = groupdocs_comparison_cloud.FileInfo()
+file_info.file_path = "source_files/word/source.docx"
+request = groupdocs_comparison_cloud.GetDocumentInfoRequest(file_info)
+result = infoApi.get_document_info(request)
 
 ```
 
@@ -172,15 +172,15 @@ Ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
 
-$app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-infoApi # GroupDocsComparisonCloud::InfoApi.from_keys($app_sid, $app_key)
+infoApi = GroupDocsComparisonCloud::InfoApi.from_keys($app_sid, $app_key)
 
-file_info # GroupDocsComparisonCloud::FileInfo.new
-file_info.file_path # "source_files/word/source.docx"
-request # GroupDocsComparisonCloud::GetDocumentInfoRequest.new(file_info)
-response # infoApi.get_document_info(request)
+file_info = GroupDocsComparisonCloud::FileInfo.new
+file_info.file_path = "source_files/word/source.docx"
+request = GroupDocsComparisonCloud::GetDocumentInfoRequest.new(file_info)
+response = infoApi.get_document_info(request)
 
 ```
 

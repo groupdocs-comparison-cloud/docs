@@ -94,40 +94,40 @@ C#
 
 ```csharp
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
-string MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-var configuration # new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyAppSid, MyAppKey);
 
-var apiInstance # new CompareApi(configuration);
-var options # new ComparisonOptions
+var apiInstance = new CompareApi(configuration);
+var options = new ComparisonOptions
 {
-    SourceFile # new FileInfo
+    SourceFile = new FileInfo
     {
-        FilePath # "source_files/word/source.docx"
+        FilePath = "source_files/word/source.docx"
     },
-    TargetFiles # new List<FileInfo> {
+    TargetFiles = new List<FileInfo> {
         new FileInfo {
-            FilePath # "target_files/word/target.docx"
+            FilePath = "target_files/word/target.docx"
         },
         new FileInfo {
-            FilePath # "target_files/word/target_1.docx"
+            FilePath = "target_files/word/target_1.docx"
         },
         new FileInfo {
-            FilePath # "target_files/word/target_2.docx"
+            FilePath = "target_files/word/target_2.docx"
         }
     },
-    Settings # new Settings {
-        InsertedItemsStyle # new ItemsStyle
+    Settings = new Settings {
+        InsertedItemsStyle = new ItemsStyle
         {
-            FontColor # "16711680"
+            FontColor = "16711680"
         }
     },
-    OutputPath # "output/result.docx"
+    OutputPath = "output/result.docx"
 };
-var request # new ComparisonsRequest(options);
-var response # apiInstance.Comparisons(request);
+var request = new ComparisonsRequest(options);
+var response = apiInstance.Comparisons(request);
 
 ```
 
@@ -135,28 +135,28 @@ Java
 
 ```Java
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
-String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-Configuration configuration # new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
 
-CompareApi apiInstance # new CompareApi(configuration);
-FileInfo sourceFileInfo # new FileInfo();
+CompareApi apiInstance = new CompareApi(configuration);
+FileInfo sourceFileInfo = new FileInfo();
 sourceFileInfo.setFilePath("source_files/word/source.docx");
-FileInfo targetFileInfo1 # new FileInfo();
+FileInfo targetFileInfo1 = new FileInfo();
 targetFileInfo1.setFilePath("target_files/word/target.docx");
-FileInfo targetFileInfo2 # new FileInfo();
+FileInfo targetFileInfo2 = new FileInfo();
 targetFileInfo2.setFilePath("target_files/word/target_1.docx");
-FileInfo targetFileInfo3 # new FileInfo();
+FileInfo targetFileInfo3 = new FileInfo();
 targetFileInfo3.setFilePath("target_files/word/target_2.docx");
 
-ItemsStyle insertedItemsStyle # new ItemsStyle();
+ItemsStyle insertedItemsStyle = new ItemsStyle();
 insertedItemsStyle.setFontColor("16711680");
-Settings settings # new Settings();
+Settings settings = new Settings();
 settings.setInsertedItemsStyle(insertedItemsStyle);
 
-ComparisonOptions options # new ComparisonOptions();
+ComparisonOptions options = new ComparisonOptions();
 options.setSourceFile(sourceFileInfo);
 options.addTargetFilesItem(targetFileInfo1);
 options.addTargetFilesItem(targetFileInfo2);
@@ -164,8 +164,8 @@ options.addTargetFilesItem(targetFileInfo3);
 options.setSettings(settings);
 options.setOutputPath("output/result.docx");
 
-ComparisonsRequest request # new ComparisonsRequest(options);
-Link response # apiInstance.comparisons(request);
+ComparisonsRequest request = new ComparisonsRequest(options);
+Link response = apiInstance.comparisons(request);
 
 ```
 
@@ -173,38 +173,38 @@ PHP
 
 ```php
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
 use GroupDocs\Comparison\Model;
 use GroupDocs\Comparison\Model\Requests;
 
-$AppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-$configuration # new GroupDocs\Comparison\Configuration();
+$configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($AppSid);
 $configuration->setAppKey($AppKey);
 
 $apiInstance# new GroupDocs\Comparison\CompareApi($configuration);
 
-$sourceFile # new Model\FileInfo();
+$sourceFile = new Model\FileInfo();
 $sourceFile->setFilePath("source_files/word/source.docx");
-$targetFile # new Model\FileInfo();
+$targetFile = new Model\FileInfo();
 $targetFile->setFilePath("target_files/word/target.docx");
-$targetFile1 # new Model\FileInfo();
+$targetFile1 = new Model\FileInfo();
 $targetFile1->setFilePath("target_files/word/target_1.docx");
-$targetFile2 # new Model\FileInfo();
+$targetFile2 = new Model\FileInfo();
 $targetFile2->setFilePath("target_files/word/target_2.docx");
-$options # new Model\ComparisonOptions();
+$options = new Model\ComparisonOptions();
 $options->setSourceFile($sourceFile);
 $options->setTargetFiles([$targetFile, $targetFile1, $targetFile2]);
 $options->setOutputPath("output/result.docx");
-$insertedItemsStyle # new Model\ItemsStyle();
+$insertedItemsStyle = new Model\ItemsStyle();
 $insertedItemsStyle->setFontColor("16711680");
-$settings # new Model\Settings();
+$settings = new Model\Settings();
 $settings->setInsertedItemsStyle($insertedItemsStyle);
 $options->setSettings($settings);
-$request # new Requests\ComparisonsRequest($options);
-$response # $apiInstance->comparisons($request);
+$request = new Requests\ComparisonsRequest($options);
+$response = $apiInstance->comparisons($request);
 
 ```
 
@@ -212,33 +212,33 @@ $response # $apiInstance->comparisons($request);
 
 ```javascript
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
-global.comparison_cloud # require("groupdocs-comparison-cloud");
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
+global.comparison_cloud = require("groupdocs-comparison-cloud");
 
-global.appSid # "XXXX-XXXX-XXXX-XXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey # "XXXXXXXXXXXXXXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
 global.compareApi# comparison_cloud.CompareApi.fromKeys(appSid, appKey);
 
-let source # new comparison_cloud.FileInfo();
-source.filePath # "source_files/word/source.docx";
-let target # new comparison_cloud.FileInfo();
-target.filePath # "target_files/word/target.docx";
-let target1 # new comparison_cloud.FileInfo();
-target1.filePath # "target_files/word/target_1.docx";
-let target2 # new comparison_cloud.FileInfo();
-target2.filePath # "target_files/word/target_2.docx";
-let settings # new comparison_cloud.Settings();
-settings.insertedItemsStyle # new comparison_cloud.ItemsStyle();
-settings.insertedItemsStyle.fontColor # "16711680";
-let options # new comparison_cloud.ComparisonOptions();
-options.sourceFile # source;
-options.targetFiles # [target, target1, target2];
-options.outputPath # "output/result.docx";
-options.settings # settings;
+let source = new comparison_cloud.FileInfo();
+source.filePath = "source_files/word/source.docx";
+let target = new comparison_cloud.FileInfo();
+target.filePath = "target_files/word/target.docx";
+let target1 = new comparison_cloud.FileInfo();
+target1.filePath = "target_files/word/target_1.docx";
+let target2 = new comparison_cloud.FileInfo();
+target2.filePath = "target_files/word/target_2.docx";
+let settings = new comparison_cloud.Settings();
+settings.insertedItemsStyle = new comparison_cloud.ItemsStyle();
+settings.insertedItemsStyle.fontColor = "16711680";
+let options = new comparison_cloud.ComparisonOptions();
+options.sourceFile = source;
+options.targetFiles = [target, target1, target2];
+options.outputPath = "output/result.docx";
+options.settings = settings;
 
-let request # new comparison_cloud.ComparisonsRequest(options);
-let response # await compareApi.comparisons(request);
+let request = new comparison_cloud.ComparisonsRequest(options);
+let response = await compareApi.comparisons(request);
 
 ```
 
@@ -249,30 +249,30 @@ let response # await compareApi.comparisons(request);
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-api_instance # groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
+api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
 
-source # groupdocs_comparison_cloud.FileInfo()
-source.file_path # "source_files/word/source.docx"
-target # groupdocs_comparison_cloud.FileInfo()
-target.file_path # "target_files/word/target.docx"
-target1 # groupdocs_comparison_cloud.FileInfo()
-target1.file_path # "target_files/word/target_1.docx"
-target2 # groupdocs_comparison_cloud.FileInfo()
-target2.file_path # "target_files/word/target_2.docx"
-options # groupdocs_comparison_cloud.ComparisonOptions()
-options.source_file # source
-options.target_files # [target, target1, target2]
-options.output_path # "output/result.docx"
-settings # groupdocs_comparison_cloud.Settings()
-settings.inserted_items_style # groupdocs_comparison_cloud.ItemsStyle()
-settings.inserted_items_style.font_color # "16711680"
-options.settings # settings
+source = groupdocs_comparison_cloud.FileInfo()
+source.file_path = "source_files/word/source.docx"
+target = groupdocs_comparison_cloud.FileInfo()
+target.file_path = "target_files/word/target.docx"
+target1 = groupdocs_comparison_cloud.FileInfo()
+target1.file_path = "target_files/word/target_1.docx"
+target2 = groupdocs_comparison_cloud.FileInfo()
+target2.file_path = "target_files/word/target_2.docx"
+options = groupdocs_comparison_cloud.ComparisonOptions()
+options.source_file = source
+options.target_files = [target, target1, target2]
+options.output_path = "output/result.docx"
+settings = groupdocs_comparison_cloud.Settings()
+settings.inserted_items_style = groupdocs_comparison_cloud.ItemsStyle()
+settings.inserted_items_style.font_color = "16711680"
+options.settings = settings
 
-request # groupdocs_comparison_cloud.ComparisonsRequest(options)
-response # api_instance.comparisons(request)
+request = groupdocs_comparison_cloud.ComparisonsRequest(options)
+response = api_instance.comparisons(request)
 
 ```
 
@@ -283,29 +283,29 @@ Ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
 
-$app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-apiInstance # GroupDocsComparisonCloud::CompareApi.from_config($config)
+apiInstance = GroupDocsComparisonCloud::CompareApi.from_config($config)
 
-source # GroupDocsComparisonCloud::FileInfo.new
-source.file_path # "source_files/word/source.docx"
-target # GroupDocsComparisonCloud::FileInfo.new
-target.file_path # "target_files/word/target.docx"
-target1 # GroupDocsComparisonCloud::FileInfo.new
-target1.file_path # "target_files/word/target_1.docx"
-target2 # GroupDocsComparisonCloud::FileInfo.new
-target2.file_path # "target_files/word/target_2.docx"
-options # GroupDocsComparisonCloud::ComparisonOptions.new
-options.source_file # source
-options.target_files # [target, target1, target2]
-options.output_path # "output/result.docx"
-settings # GroupDocsComparisonCloud::Settings.new
-settings.inserted_items_style # GroupDocsComparisonCloud::ItemsStyle.new
-settings.inserted_items_style.font_color # "16711680"
-options.settings # settings
+source = GroupDocsComparisonCloud::FileInfo.new
+source.file_path = "source_files/word/source.docx"
+target = GroupDocsComparisonCloud::FileInfo.new
+target.file_path = "target_files/word/target.docx"
+target1 = GroupDocsComparisonCloud::FileInfo.new
+target1.file_path = "target_files/word/target_1.docx"
+target2 = GroupDocsComparisonCloud::FileInfo.new
+target2.file_path = "target_files/word/target_2.docx"
+options = GroupDocsComparisonCloud::ComparisonOptions.new
+options.source_file = source
+options.target_files = [target, target1, target2]
+options.output_path = "output/result.docx"
+settings = GroupDocsComparisonCloud::Settings.new
+settings.inserted_items_style = GroupDocsComparisonCloud::ItemsStyle.new
+settings.inserted_items_style.font_color = "16711680"
+options.settings = settings
 
-request # GroupDocsComparisonCloud::ComparisonsRequest.new(options)
-response # apiInstance.comparisons(request)
+request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
+response = apiInstance.comparisons(request)
 
 ```

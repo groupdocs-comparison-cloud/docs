@@ -210,30 +210,30 @@ C#
 
 ```csharp
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
-string MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-var configuration # new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyAppSid, MyAppKey);
 
-var apiInstance # new CompareApi(configuration);
-var options # new UpdatesOptions
+var apiInstance = new CompareApi(configuration);
+var options = new UpdatesOptions
 {
-    SourceFile # new FileInfo {FilePath # "source_files/word/source.docx"},
-    TargetFiles # new List<FileInfo> {new FileInfo {FilePath # "target_files/word/target.docx"}},
-    OutputPath # "output/result.docx"
+    SourceFile = new FileInfo {FilePath = "source_files/word/source.docx"},
+    TargetFiles = new List<FileInfo> {new FileInfo {FilePath = "target_files/word/target.docx"}},
+    OutputPath = "output/result.docx"
 };
 
-var changes # apiInstance.PostChanges(new PostChangesRequest(options));
+var changes = apiInstance.PostChanges(new PostChangesRequest(options));
 
 foreach (var change in changes)
-    change.ComparisonAction # ChangeInfo.ComparisonActionEnum.Reject;
+    change.ComparisonAction = ChangeInfo.ComparisonActionEnum.Reject;
 
-changes[0].ComparisonAction # ChangeInfo.ComparisonActionEnum.Accept;
+changes[0].ComparisonAction = ChangeInfo.ComparisonActionEnum.Accept;
 
-options.Changes # changes;
+options.Changes = changes;
 
-var response # apiInstance.PutChangesDocument(new PutChangesDocumentRequest(options));
+var response = apiInstance.PutChangesDocument(new PutChangesDocumentRequest(options));
 
 ```
 
@@ -241,32 +241,32 @@ Java
 
 ```Java
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
-String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-Configuration configuration # new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
 
-CompareApi apiInstance # new CompareApi(configuration);
-FileInfo sourceFileInfo # new FileInfo();
+CompareApi apiInstance = new CompareApi(configuration);
+FileInfo sourceFileInfo = new FileInfo();
 sourceFileInfo.setFilePath("source_files/word/source.docx");
-FileInfo targetFileInfo # new FileInfo();
+FileInfo targetFileInfo = new FileInfo();
 targetFileInfo.setFilePath("target_files/word/target.docx");
 
-UpdatesOptions options # new UpdatesOptions();
+UpdatesOptions options = new UpdatesOptions();
 options.setSourceFile(sourceFileInfo);
 options.addTargetFilesItem(targetFileInfo);
 options.setOutputPath("output/result.docx");
 
-PostChangesRequest request # new PostChangesRequest(options);
+PostChangesRequest request = new PostChangesRequest(options);
 
-List<ChangeInfo> changes # apiInstance.postChanges(request);
+List<ChangeInfo> changes = apiInstance.postChanges(request);
 for (ChangeInfo change : changes) {
     change.setComparisonAction(ComparisonActionEnum.REJECT);
 }
 changes.get(0).setComparisonAction(ComparisonActionEnum.REJECT);
 options.setChanges(changes);
-Link response # apiInstance.putChangesDocument(new PutChangesDocumentRequest(options));
+Link response = apiInstance.putChangesDocument(new PutChangesDocumentRequest(options));
 
 ```
 
@@ -274,36 +274,36 @@ PHP
 
 ```php
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
 use GroupDocs\Comparison\Model;
 use GroupDocs\Comparison\Model\Requests;
 
-$AppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-$configuration # new GroupDocs\Comparison\Configuration();
+$configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($AppSid);
 $configuration->setAppKey($AppKey);
 
 $apiInstance# new GroupDocs\Comparison\CompareApi($configuration);
 
-$sourceFile # new Model\FileInfo();
+$sourceFile = new Model\FileInfo();
 $sourceFile->setFilePath("source_files/word/source.docx");
-$targetFile # new Model\FileInfo();
+$targetFile = new Model\FileInfo();
 $targetFile->setFilePath("target_files/word/target.docx");
-$options # new Model\UpdatesOptions();
+$options = new Model\UpdatesOptions();
 $options->setSourceFile($sourceFile);
 $options->setTargetFiles([$targetFile]);
 $options->setOutputPath("output/result.docx");
 
-$changes # $apiInstance->postChanges(new Requests\PostChangesRequest($options));
+$changes = $apiInstance->postChanges(new Requests\PostChangesRequest($options));
 for ($i#0; $i < count($changes); $i++) {
     $changes[$i]->setComparisonAction(Model\ChangeInfo::COMPARISON_ACTION_REJECT);
 }
 $changes[0]->setComparisonAction(Model\ChangeInfo::COMPARISON_ACTION_ACCEPT);
 $options->setChanges($changes);
-$request # new Requests\PutChangesDocumentRequest($options);
-$response # $apiInstance->putChangesDocument($request);
+$request = new Requests\PutChangesDocumentRequest($options);
+$response = $apiInstance->putChangesDocument($request);
 
 ```
 
@@ -311,33 +311,33 @@ $response # $apiInstance->putChangesDocument($request);
 
 ```javascript
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
-global.comparison_cloud # require("groupdocs-comparison-cloud");
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
+global.comparison_cloud = require("groupdocs-comparison-cloud");
 
-global.appSid # "XXXX-XXXX-XXXX-XXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey # "XXXXXXXXXXXXXXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-global.compareApi # comparison_cloud.CompareApi.fromKeys(appSid, appKey);
+global.compareApi = comparison_cloud.CompareApi.fromKeys(appSid, appKey);
 
-let source # new comparison_cloud.FileInfo();
-source.filePath # "source_files/word/source.docx";
-let target # new comparison_cloud.FileInfo();
-target.filePath # "target_files/word/target.docx";
+let source = new comparison_cloud.FileInfo();
+source.filePath = "source_files/word/source.docx";
+let target = new comparison_cloud.FileInfo();
+target.filePath = "target_files/word/target.docx";
 
-let options # new comparison_cloud.UpdatesOptions();
-options.sourceFile # source;
-options.targetFiles # [target];
-options.outputPath # "output/result.docx";
+let options = new comparison_cloud.UpdatesOptions();
+options.sourceFile = source;
+options.targetFiles = [target];
+options.outputPath = "output/result.docx";
 
-let changes # await compareApi.postChanges(new comparison_cloud.PostChangesRequest(options));
+let changes = await compareApi.postChanges(new comparison_cloud.PostChangesRequest(options));
 
 changes.forEach(change #> {
-    change.comparisonAction # comparison_cloud.ChangeInfo.ComparisonActionEnum.Reject;
+    change.comparisonAction = comparison_cloud.ChangeInfo.ComparisonActionEnum.Reject;
 });
-changes[0].comparisonAction # comparison_cloud.ChangeInfo.ComparisonActionEnum.Accept;
-options.changes # changes;
+changes[0].comparisonAction = comparison_cloud.ChangeInfo.ComparisonActionEnum.Accept;
+options.changes = changes;
 
-let response # await compareApi.putChangesDocument(new comparison_cloud.PutChangesDocumentRequest(options));
+let response = await compareApi.putChangesDocument(new comparison_cloud.PutChangesDocumentRequest(options));
 
 ```
 
@@ -348,29 +348,29 @@ let response # await compareApi.putChangesDocument(new comparison_cloud.PutChang
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-api_instance # groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
+api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
 
-source # groupdocs_comparison_cloud.FileInfo()
-source.file_path # "source_files/word/source.docx"
-target # groupdocs_comparison_cloud.FileInfo()
-target.file_path # "target_files/word/target.docx"
-options # groupdocs_comparison_cloud.UpdatesOptions()
-options.source_file # source
-options.target_files # [target]
-options.output_path # "output/result.docx"
+source = groupdocs_comparison_cloud.FileInfo()
+source.file_path = "source_files/word/source.docx"
+target = groupdocs_comparison_cloud.FileInfo()
+target.file_path = "target_files/word/target.docx"
+options = groupdocs_comparison_cloud.UpdatesOptions()
+options.source_file = source
+options.target_files = [target]
+options.output_path = "output/result.docx"
 
-changes # api_instance.post_changes(groupdocs_comparison_cloud.PostChangesRequest(options))
+changes = api_instance.post_changes(groupdocs_comparison_cloud.PostChangesRequest(options))
 
 for change in changes:
-    change.comparison_action # "Reject"
-changes[0].comparison_action # "Accept"
+    change.comparison_action = "Reject"
+changes[0].comparison_action = "Accept"
 
-options.changes # changes
+options.changes = changes
 
-response # api_instance.put_changes_document(groupdocs_comparison_cloud.PutChangesDocumentRequest(options))
+response = api_instance.put_changes_document(groupdocs_comparison_cloud.PutChangesDocumentRequest(options))
 
 ```
 
@@ -381,28 +381,28 @@ Ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
 
-$app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-api_instance # GroupDocsComparisonCloud::CompareApi.from_keys($app_sid, $app_key)
+api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($app_sid, $app_key)
 
-source # GroupDocsComparisonCloud::FileInfo.new
-source.file_path # "source_files/word/source.docx"
-target # GroupDocsComparisonCloud::FileInfo.new
-target.file_path # "target_files/word/target.docx"
-options # GroupDocsComparisonCloud::UpdatesOptions.new
-options.source_file # source
-options.target_files # [target]
-options.output_path # "output/result.docx"
+source = GroupDocsComparisonCloud::FileInfo.new
+source.file_path = "source_files/word/source.docx"
+target = GroupDocsComparisonCloud::FileInfo.new
+target.file_path = "target_files/word/target.docx"
+options = GroupDocsComparisonCloud::UpdatesOptions.new
+options.source_file = source
+options.target_files = [target]
+options.output_path = "output/result.docx"
 
-changes # apiInstance.post_changes(GroupDocsComparisonCloud::PostChangesRequest.new(options))
+changes = apiInstance.post_changes(GroupDocsComparisonCloud::PostChangesRequest.new(options))
 for change in changes do
-    change.comparison_action # "Reject"
+    change.comparison_action = "Reject"
 end
-changes[0].comparison_action # "Accept"
+changes[0].comparison_action = "Accept"
 
-options.changes # changes
+options.changes = changes
 
-response # apiInstance.put_changes_document(GroupDocsComparisonCloud::PutChangesDocumentRequest.new(options))
+response = apiInstance.put_changes_document(GroupDocsComparisonCloud::PutChangesDocumentRequest.new(options))
 
 ```

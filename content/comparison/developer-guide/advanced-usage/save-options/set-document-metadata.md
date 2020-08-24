@@ -98,38 +98,38 @@ C#
 
 ```csharp
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
-string MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
+string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-var configuration # new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyAppSid, MyAppKey);
 
-var apiInstance # new CompareApi(configuration);
-var options # new ComparisonOptions
+var apiInstance = new CompareApi(configuration);
+var options = new ComparisonOptions
 {
-    SourceFile # new FileInfo
+    SourceFile = new FileInfo
     {
-        FilePath # "source_files/word/source.docx"
+        FilePath = "source_files/word/source.docx"
     },
-    TargetFiles # new List<FileInfo> {
+    TargetFiles = new List<FileInfo> {
         new FileInfo {
-            FilePath # "target_files/word/target.docx"
+            FilePath = "target_files/word/target.docx"
         }
     },
-    Settings # new Settings {
-        CloneMetadata # Settings.CloneMetadataEnum.FileAuthor,
-        MetaData # new Metadata
+    Settings = new Settings {
+        CloneMetadata = Settings.CloneMetadataEnum.FileAuthor,
+        MetaData = new Metadata
         {
-            Author # "Tom",
-            Company # "GroupDocs",
-            LastSaveBy # "Jack"
+            Author = "Tom",
+            Company = "GroupDocs",
+            LastSaveBy = "Jack"
         }
     },
-    OutputPath # "output/result.docx"
+    OutputPath = "output/result.docx"
 };
 
-var request # new ComparisonsRequest(options);
-var response # apiInstance.Comparisons(request);
+var request = new ComparisonsRequest(options);
+var response = apiInstance.Comparisons(request);
 
 ```
 
@@ -137,35 +137,35 @@ Java
 
 ```Java
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
-String MyAppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
+String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-Configuration configuration # new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyAppSid, MyAppKey);
 
-CompareApi apiInstance # new CompareApi(configuration);
-FileInfo sourceFileInfo # new FileInfo();
+CompareApi apiInstance = new CompareApi(configuration);
+FileInfo sourceFileInfo = new FileInfo();
 sourceFileInfo.setFilePath("source_files/word/source.docx");
-FileInfo targetFileInfo # new FileInfo();
+FileInfo targetFileInfo = new FileInfo();
 targetFileInfo.setFilePath("target_files/word/target.docx");
 
-Metadata metadata # new Metadata();
+Metadata metadata = new Metadata();
 metadata.setAuthor("Tom");
 metadata.setCompany("GroupDocs");
 metadata.setLastSaveBy("Jack");
-Settings settings # new Settings();
+Settings settings = new Settings();
 settings.setCloneMetadata(CloneMetadataEnum.FILEAUTHOR);
 settings.setMetaData(metadata);
 
-ComparisonOptions options # new ComparisonOptions();
+ComparisonOptions options = new ComparisonOptions();
 options.setSourceFile(sourceFileInfo);
 options.addTargetFilesItem(targetFileInfo);
 options.setSettings(settings);
 options.setOutputPath("output/result.docx");
 
-ComparisonsRequest request # new ComparisonsRequest(options);
+ComparisonsRequest request = new ComparisonsRequest(options);
 
-Link response # apiInstance.comparisons(request);
+Link response = apiInstance.comparisons(request);
 
 ```
 
@@ -173,38 +173,38 @@ PHP
 
 ```php
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
 use GroupDocs\Comparison\Model;
 use GroupDocs\Comparison\Model\Requests;
 
-$AppSid # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey # ""; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-$configuration # new GroupDocs\Comparison\Configuration();
+$configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($AppSid);
 $configuration->setAppKey($AppKey);
 
 $apiInstance# new GroupDocs\Comparison\CompareApi($configuration);
 
-$sourceFile # new Model\FileInfo();
+$sourceFile = new Model\FileInfo();
 $sourceFile->setFilePath("source_files/word/source.docx");
-$targetFile # new Model\FileInfo();
+$targetFile = new Model\FileInfo();
 $targetFile->setFilePath("target_files/word/target.docx");
-$options # new Model\ComparisonOptions();
+$options = new Model\ComparisonOptions();
 $options->setSourceFile($sourceFile);
 $options->setTargetFiles([$targetFile]);
 $options->setOutputPath("output/result.docx");
-$metadata # new Model\Metadata();
+$metadata = new Model\Metadata();
 $metadata->setAuthor("Tom");
 $metadata->setCompany("GroupDocs");
 $metadata->setLastSaveBy("Jack");
-$settings # new Model\Settings();
+$settings = new Model\Settings();
 $settings->setMetaData($metadata);
 $settings->setCloneMetadata(Model\Settings::CLONE_METADATA_FILE_AUTHOR);
 $options->setSettings($settings);
 
-$request # new Requests\ComparisonsRequest($options);
-$response # $apiInstance->comparisons($request);
+$request = new Requests\ComparisonsRequest($options);
+$response = $apiInstance->comparisons($request);
 
 ```
 
@@ -212,32 +212,32 @@ $response # $apiInstance->comparisons($request);
 
 ```javascript
 
-* For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
-global.comparison_cloud # require("groupdocs-comparison-cloud");
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
+global.comparison_cloud = require("groupdocs-comparison-cloud");
 
-global.appSid # "XXXX-XXXX-XXXX-XXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey # "XXXXXXXXXXXXXXXX"; * Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-global.compareApi # comparison_cloud.CompareApi.fromKeys(appSid, appKey);
+global.compareApi = comparison_cloud.CompareApi.fromKeys(appSid, appKey);
 
-let source # new comparison_cloud.FileInfo();
-source.filePath # "source_files/word/source.docx";
-let target # new comparison_cloud.FileInfo();
-target.filePath # "target_files/word/target.docx";
-let settings # new comparison_cloud.Settings();
-settings.metadata # new comparison_cloud.Metadata();
-settings.metadata.author # "Tom";
-settings.metadata.company # "GroupDocs";
-settings.metadata.lastSaveBy # "Jack";
-settings.cloneMetadata # comparison_cloud.Settings.CloneMetadataEnum.FileAuthor;
-let options # new comparison_cloud.ComparisonOptions();
-options.sourceFile # source;
-options.targetFiles # [target];
-options.outputPath # "output/result.docx";
-options.settings # settings;
+let source = new comparison_cloud.FileInfo();
+source.filePath = "source_files/word/source.docx";
+let target = new comparison_cloud.FileInfo();
+target.filePath = "target_files/word/target.docx";
+let settings = new comparison_cloud.Settings();
+settings.metadata = new comparison_cloud.Metadata();
+settings.metadata.author = "Tom";
+settings.metadata.company = "GroupDocs";
+settings.metadata.lastSaveBy = "Jack";
+settings.cloneMetadata = comparison_cloud.Settings.CloneMetadataEnum.FileAuthor;
+let options = new comparison_cloud.ComparisonOptions();
+options.sourceFile = source;
+options.targetFiles = [target];
+options.outputPath = "output/result.docx";
+options.settings = settings;
 
-let request # new comparison_cloud.ComparisonsRequest(options);
-let response # await compareApi.comparisons(request);
+let request = new comparison_cloud.ComparisonsRequest(options);
+let response = await compareApi.comparisons(request);
 
 ```
 
@@ -248,28 +248,28 @@ let response # await compareApi.comparisons(request);
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-api_instance # groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
+api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
 
-source # groupdocs_comparison_cloud.FileInfo()
-source.file_path # "source_files/word/source.docx"
-target # groupdocs_comparison_cloud.FileInfo()
-target.file_path # "target_files/word/target.docx"
-options # groupdocs_comparison_cloud.ComparisonOptions()
-options.source_file # source
-options.target_files # [target]
-options.output_path # "output/result.docx"
-settings # groupdocs_comparison_cloud.Settings()
-settings.meta_data # groupdocs_comparison_cloud.Metadata()
-settings.meta_data.author # "Tom"
-settings.meta_data.company # "GroupDocs"
-settings.meta_data.last_save_by # "Jack"
-options.settings # settings
+source = groupdocs_comparison_cloud.FileInfo()
+source.file_path = "source_files/word/source.docx"
+target = groupdocs_comparison_cloud.FileInfo()
+target.file_path = "target_files/word/target.docx"
+options = groupdocs_comparison_cloud.ComparisonOptions()
+options.source_file = source
+options.target_files = [target]
+options.output_path = "output/result.docx"
+settings = groupdocs_comparison_cloud.Settings()
+settings.meta_data = groupdocs_comparison_cloud.Metadata()
+settings.meta_data.author = "Tom"
+settings.meta_data.company = "GroupDocs"
+settings.meta_data.last_save_by = "Jack"
+options.settings = settings
 
-request # groupdocs_comparison_cloud.ComparisonsRequest(options)
-response # api_instance.comparisons(request)
+request = groupdocs_comparison_cloud.ComparisonsRequest(options)
+response = api_instance.comparisons(request)
 
 ```
 
@@ -280,28 +280,28 @@ Ruby
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
 
-$app_sid # "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key # "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
 
-api_instance # GroupDocsComparisonCloud::CompareApi.from_keys($app_sid, $app_key)
+api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($app_sid, $app_key)
 
-source # GroupDocsComparisonCloud::FileInfo.new
-source.file_path # "source_files/word/source.docx"
-target # GroupDocsComparisonCloud::FileInfo.new
-target.file_path # "target_files/word/target.docx"
-options # GroupDocsComparisonCloud::ComparisonOptions.new
-options.source_file # source
-options.target_files # [target]
-options.output_path # "output/result.docx"
-settings # GroupDocsComparisonCloud::Settings.new
-settings.meta_data # GroupDocsComparisonCloud::Metadata.new
-settings.meta_data.author # "Tom"
-settings.meta_data.company # "GroupDocs"
-settings.meta_data.last_save_by # "Jack"
-settings.clone_metadata # "FileAuthor"
-options.settings # settings
+source = GroupDocsComparisonCloud::FileInfo.new
+source.file_path = "source_files/word/source.docx"
+target = GroupDocsComparisonCloud::FileInfo.new
+target.file_path = "target_files/word/target.docx"
+options = GroupDocsComparisonCloud::ComparisonOptions.new
+options.source_file = source
+options.target_files = [target]
+options.output_path = "output/result.docx"
+settings = GroupDocsComparisonCloud::Settings.new
+settings.meta_data = GroupDocsComparisonCloud::Metadata.new
+settings.meta_data.author = "Tom"
+settings.meta_data.company = "GroupDocs"
+settings.meta_data.last_save_by = "Jack"
+settings.clone_metadata = "FileAuthor"
+options.settings = settings
 
-request # GroupDocsComparisonCloud::ComparisonsRequest.new(options)
-response # apiInstance.comparisons(request)
+request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
+response = apiInstance.comparisons(request)
 
 ```
