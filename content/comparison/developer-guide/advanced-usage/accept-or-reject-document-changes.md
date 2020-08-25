@@ -32,7 +32,7 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 Curl example contains only 'updates' method call. For 'changes' method,  see other examples
 
- Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 
@@ -187,7 +187,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/updates" \
 
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 
@@ -198,7 +198,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/updates" \
   "title": "result.docx"
 }
 
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -206,7 +206,7 @@ Using an SDK (API client) is the quickest way for a developer to speed up the de
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 ```csharp
 
@@ -237,7 +237,7 @@ var response = apiInstance.PutChangesDocument(new PutChangesDocumentRequest(opti
 
 ```
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```Java
 
@@ -270,7 +270,7 @@ Link response = apiInstance.putChangesDocument(new PutChangesDocumentRequest(opt
 
 ```
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 ```php
 
@@ -307,7 +307,7 @@ $response = $apiInstance->putChangesDocument($request);
 
 ```
 
- Node
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 ```javascript
 
@@ -341,7 +341,7 @@ let response = await compareApi.putChangesDocument(new comparison_cloud.PutChang
 
 ```
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 ```python
 
@@ -374,7 +374,7 @@ response = api_instance.put_changes_document(groupdocs_comparison_cloud.PutChang
 
 ```
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 ```ruby
 
@@ -406,3 +406,5 @@ options.changes = changes
 response = apiInstance.put_changes_document(GroupDocsComparisonCloud::PutChangesDocumentRequest.new(options))
 
 ```
+
+{{< /tab >}} {{< /tabs >}}

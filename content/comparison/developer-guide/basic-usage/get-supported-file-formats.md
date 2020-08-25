@@ -16,14 +16,14 @@ The following GroupDocs.Comparison Cloud REST API resource has been used in the 
 
 ## cURL Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 {
@@ -159,7 +159,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/formats" -H  "accept: a
   ]
 }
 
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -167,26 +167,28 @@ The API is completely independent of your operating system, database system or d
 
 ### Get List of Supported File Formats ###
 
-C#
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Get_Supported_Formats.cs >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Supported_Formats.java >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Get_Supported_Formats.php >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Get_Supported_Formats.rb >}}
 
- Node.js
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Get_Supported_Formats.js >}}
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Get_Supported_Formats.py >}}
+
+{{< /tab >}} {{< /tabs >}}

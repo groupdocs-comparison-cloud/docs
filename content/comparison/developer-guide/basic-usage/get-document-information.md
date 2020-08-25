@@ -24,7 +24,7 @@ The following GroupDocs.Viewer Cloud REST API resource has been used to get [do
 
 ## cURL REST Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 * First get JSON Web Token
 * Please get your App Key and App SID from https://dashboard.groupdocs.cloud/#/apps. Kindly place App Key in "client_secret" and App SID in "client_id" argument.
@@ -44,7 +44,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/info" \
          'FilePath': 'source_files/word/source.docx'
     }"
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 
@@ -55,7 +55,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/info" \
   "pageCount": 1
 }
 
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -63,7 +63,7 @@ The API is completely independent of your operating system, database system or d
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 ```csharp
 
@@ -84,7 +84,7 @@ var response = apiInstance.GetDocumentInfo(request);
 
 ```
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```Java
 
@@ -102,7 +102,7 @@ InfoResult response = apiInstance.getDocumentInfo(request);
 
 ```
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 ```php
 
@@ -127,7 +127,7 @@ $response = $apiInstance->getDocumentInfo($request);
 
 ```
 
- Node
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 ```javascript
 
@@ -146,7 +146,7 @@ let response = await infoApi.getDocumentInfo(request);
 
 ```
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 ```python
 
@@ -165,7 +165,7 @@ result = infoApi.get_document_info(request)
 
 ```
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 ```ruby
 
@@ -183,4 +183,6 @@ request = GroupDocsComparisonCloud::GetDocumentInfoRequest.new(file_info)
 response = infoApi.get_document_info(request)
 
 ```
+
+{{< /tab >}} {{< /tabs >}}
 

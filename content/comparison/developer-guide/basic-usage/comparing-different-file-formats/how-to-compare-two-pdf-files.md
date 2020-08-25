@@ -28,7 +28,7 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 ## cURL REST Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 
@@ -60,7 +60,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
 
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 
@@ -71,7 +71,7 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
   "title": "result.pdf"
 }
 
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -79,7 +79,7 @@ Using an SDK (API client) is the quickest way for a developer to speed up the de
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 ```csharp
 
@@ -101,7 +101,7 @@ var response = apiInstance.Comparisons(request);
 
 ```
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```Java
 
@@ -128,7 +128,7 @@ Link response = apiInstance.comparisons(request);
 
 ```
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 ```php
 
@@ -159,7 +159,7 @@ $response = $apiInstance->comparisons($request);
 
 ```
 
- Node
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 ```javascript
 
@@ -185,7 +185,7 @@ let response = await compareApi.comparisons(request);
 
 ```
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 ```python
 
@@ -211,7 +211,7 @@ response = api_instance.comparisons(request)
 
 ```
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 ```ruby
 
@@ -236,3 +236,5 @@ request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
 response = apiInstance.comparisons(request)
 
 ```
+
+{{< /tab >}} {{< /tabs >}}

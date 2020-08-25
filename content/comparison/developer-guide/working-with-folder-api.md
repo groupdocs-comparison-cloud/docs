@@ -25,14 +25,14 @@ This API allows you to get a list of all files of a specific folder from the 
 
 ## cURL Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 {
@@ -96,7 +96,7 @@ curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparis
   ]
 }
 
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -104,29 +104,31 @@ Our API is completely independent of your operating system, database system or d
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Get_Files_List.cs >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Files_List.java >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Get_Files_List.php >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Get_Files_List.rb >}}
 
- Node.js
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Get_Files_List.js >}}
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Get_Files_List.py >}}
+
+{{< /tab >}} {{< /tabs >}}
 
 # Create a New Folder #
 
@@ -147,21 +149,21 @@ Required. Can be passed as query string parameter or as part of the URL
 
 ## cURL Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="2" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 {
   "code": 200,
   "status": "OK"
 }
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -169,29 +171,31 @@ Our API is completely independent of your operating system, database system or d
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="11" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Create_Folder.cs >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Create_Folder.java >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Create_Folder.php >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Create_Folder.rb >}}
 
- Node.js
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Create_Folder.js >}}
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Create_Folder.py >}}
+
+{{< /tab >}} {{< /tabs >}}
 
 # Delete a Particular Folder #
 
@@ -210,20 +214,20 @@ This API allows you to delete a particular Folder in the specified Cloud Storage
 
 ## cURL Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="3" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage&#x26;recursive#true" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 {
   "code": 200,
   "status": "OK"
 }
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -231,29 +235,31 @@ Our API is completely independent of your operating system, database system or d
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="12" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Delete_Folder.cs >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Delete_Folder.java >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Delete_Folder.php >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Delete_Folder.rb >}}
 
- Node.js
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Delete_Folder.js >}}
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Delete_Folder.py >}}
+
+{{< /tab >}} {{< /tabs >}}
 
 # Copy  Specific Folder #
 
@@ -274,21 +280,21 @@ This API allows you to copy a Folder to another location in the GroupDocs Cloud 
 
 ## cURL Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="4" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/comparisondocs?destPath#comparisondocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 {
   "code": 200,
   "status": "OK"
 }
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -296,29 +302,31 @@ Our API is completely independent of your operating system, database system or d
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="13" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Copy_Folder.cs >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Copy_Folder.java >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Copy_Folder.php >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Copy_Folder.rb >}}
 
- Node.js
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Copy_Folder.js >}}
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Copy_Folder.py >}}
+
+{{< /tab >}} {{< /tabs >}}
 
 # Move a Specific Folder #
 
@@ -339,20 +347,20 @@ This API allows you to move a Folder to another location in the GroupDocs Cloud 
 
 ## cURL Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="5" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/comparisondocs?destPath#comparisondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 {
   "code": 200,
   "status": "OK"
 }
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -360,26 +368,28 @@ Our API is completely independent of your operating system, database system or d
 
 ### SDK Examples ###
 
-C#
+{{< tabs tabTotal="6" tabID="14" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
 {{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Move_Folder.cs >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Move_Folder.java >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
 {{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Move_Folder.php >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Move_Folder.rb >}}
 
- Node.js
+{{< /tab >}} {{< tab tabNum="4" >}}
 
 {{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Move_Folder.js >}}
 
- Python
+{{< /tab >}} {{< tab tabNum="5" >}}
 
 {{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Move_Folder.py >}}
+
+{{< /tab >}} {{< /tabs >}}

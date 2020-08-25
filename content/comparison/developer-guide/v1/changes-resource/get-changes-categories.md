@@ -34,7 +34,7 @@ enum ComparisonCategoriesType
 
 ## cURL REST Example ##
 
- Request
+{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 ```html
 curl -v "https:~/~/api.groupdocs.cloud/v1.0/comparison/compareDocuments/changes/categories?categoriesType#ByTypeChanged&appsid#XXXX&signature#XXX-XX"
@@ -44,7 +44,7 @@ curl -v "https:~/~/api.groupdocs.cloud/v1.0/comparison/compareDocuments/changes/
  -X POST -d "{'sourceFile':{'folder':'comparisons','name':'source.docx','password':''},'targetFiles':[{'folder':'comparisons','name':'target.docx','password':''}]}"
 ```
 
- Response
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 ```html
 [
@@ -99,7 +99,7 @@ curl -v "https:~/~/api.groupdocs.cloud/v1.0/comparison/compareDocuments/changes/
  ]
  }
 ]
-```
+{{< /tab >}} {{< /tabs >}}
 
 ## SDKs ##
 
@@ -107,20 +107,20 @@ The API is completely independent of your operating system, database system or d
 
 ### Get Changes Categories from Compared Documents ###
 
-C#
+{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
 
  
 {{< gist groupdocscloud 33ad9afbf76ac035c8552d2efe0ec895 Comparison_CSharp_Get_Changes_Categories.cs >}}
 
-PHP
+{{< /tab >}} {{< tab tabNum="3" >}}
 
  
 {{< gist groupdocscloud fb9d531a4ea5f0755dfd0e079b7801b5 Comparison_Php_Get_Changes_Categories.php >}}
 
-Java
+{{< /tab >}} {{< tab tabNum="2" >}}
 
 {{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes_Categories.java >}}
 
-Ruby
+{{< /tab >}} {{< tab tabNum="6" >}}
 
 {{< gist groupdocscloud 4e15a0a5e68b0d2755592a552488d1ec Comparison_Ruby_get_changes_categories.rb >}}
