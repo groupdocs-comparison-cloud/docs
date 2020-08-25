@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## Rectangle ##
-
 Rectangle data structure describes rectangle
 
 Rectangle example:

@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## Settings ##
-
 Settings  data structure defines comparison process additional settings
 
 Settings example:

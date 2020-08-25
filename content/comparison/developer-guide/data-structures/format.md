@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## Format ##
-
 Format data structure describes supported file format
 
 Format example:

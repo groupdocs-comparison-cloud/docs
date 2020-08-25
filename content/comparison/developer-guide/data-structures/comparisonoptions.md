@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## ComparisonOptions ##
-
 ComparisonOptions data structure defines comparison options
 
 ComparisonOptions example:
@@ -94,8 +92,6 @@ ComparisonOptions example:
 }
 
 ```
-
-
 
 |Name|Description
 |---|---

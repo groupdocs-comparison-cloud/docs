@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## ItemsStyle ##
-
 ItemsStyle data structure used for styling comparison differences.
 
 ItemsStyle example:

@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## UpdatesOptions ##
-
 UpdatesOptions data structure defines comparison options
 
 UpdatesOptions example:

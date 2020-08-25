@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## InfoResult ##
-
 InfoResult data structure represents document information
 
 InfoResult example:

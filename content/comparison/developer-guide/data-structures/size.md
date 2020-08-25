@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## Size ##
-
 Size data structure used to specify comparison result size.
 
 Size example:

@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## ChangeInfo ##
-
 ChangeInfo data structure returned by /comparison/changes API as output result. Also used by /comparison/updates API as input.
 
 ChangeInfo example:
@@ -40,8 +38,6 @@ ChangeInfo example:
   }
 
 ```
-
-
 
 |Name|Description
 |---|---

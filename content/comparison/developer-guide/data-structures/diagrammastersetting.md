@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## DiagramMasterSetting ##
-
 DiagramMasterSetting data structure used for setting master diagram for diagram comparison result.
 
 DiagramMasterSetting example:

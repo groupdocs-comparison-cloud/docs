@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## FileInfo ##
-
 FileInfo data structure used for input files description in various comparison cloud API methods.
 
 FileInfo example:

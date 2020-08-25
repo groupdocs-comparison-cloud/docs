@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## Link ##
-
 Link data structure represents output document information
 
 Link example:

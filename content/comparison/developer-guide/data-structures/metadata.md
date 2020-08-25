@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## Metadata ##
-
 Metadata data structure used for setting output document metadata.
 
 Metadata example:

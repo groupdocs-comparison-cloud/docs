@@ -8,8 +8,6 @@ description: ""
 keywords: ""
 ---
 
-## PageInfo ##
-
 PageInfo data structure represents information about page
 
 PageInfo example:
