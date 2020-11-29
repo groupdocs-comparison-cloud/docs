@@ -27,7 +27,7 @@ The following GroupDocs.Viewer Cloud REST API resource has been used to get [do
 {{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 * First get JSON Web Token
-* Please get your App Key and App SID from https://dashboard.groupdocs.cloud/#/apps. Kindly place App Key in "client_secret" and App SID in "client_id" argument.
+* Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
 -d "grant_type#client_credentials&client_id#xxxx&client_secret#xxxx" \
@@ -68,10 +68,10 @@ The API is completely independent of your operating system, database system or d
 ```csharp
 
 // For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
-string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+string MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-var configuration = new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyClientId, MyClientSecret);
 
 var apiInstance = new InfoApi(configuration);
 var fileInfo = new FileInfo
@@ -89,10 +89,10 @@ var response = apiInstance.GetDocumentInfo(request);
 ```Java
 
 // For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
-String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+String MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-Configuration configuration = new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyClientId, MyClientSecret);
 
 InfoApi apiInstance = new InfoApi(configuration);
 FileInfo fileInfo = new FileInfo();
@@ -110,12 +110,12 @@ InfoResult response = apiInstance.getDocumentInfo(request);
 use GroupDocs\Comparison\Model;
 use GroupDocs\Comparison\Model\Requests;
 
-$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$ClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$ClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 $configuration = new GroupDocs\Comparison\Configuration();
-$configuration->setAppSid($AppSid);
-$configuration->setAppKey($AppKey);
+$configuration->setAppSid($ClientId);
+$configuration->setAppKey($ClientSecret);
 
 $apiInstance# new GroupDocs\Comparison\InfoApi($configuration);
 
@@ -134,10 +134,10 @@ $response = $apiInstance->getDocumentInfo($request);
 // For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
 global.comparison_cloud = require("groupdocs-comparison-cloud");
 
-global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-global.infoApi = comparison_cloud.InfoApi.fromKeys(appSid, appKey);
+global.infoApi = comparison_cloud.InfoApi.fromKeys(clientId, clientSecret);
 
 let fileInfo = new comparison_cloud.FileInfo();
 fileInfo.filePath = "source_files/word/source.docx";
@@ -153,10 +153,10 @@ let response = await infoApi.getDocumentInfo(request);
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-infoApi = groupdocs_comparison_cloud.InfoApi.from_keys(app_sid, app_key)
+infoApi = groupdocs_comparison_cloud.InfoApi.from_keys(client_id, client_secret)
 
 file_info = groupdocs_comparison_cloud.FileInfo()
 file_info.file_path = "source_files/word/source.docx"
@@ -172,10 +172,10 @@ result = infoApi.get_document_info(request)
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
 
-$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-infoApi = GroupDocsComparisonCloud::InfoApi.from_keys($app_sid, $app_key)
+infoApi = GroupDocsComparisonCloud::InfoApi.from_keys($client_id, $client_secret)
 
 file_info = GroupDocsComparisonCloud::FileInfo.new
 file_info.file_path = "source_files/word/source.docx"

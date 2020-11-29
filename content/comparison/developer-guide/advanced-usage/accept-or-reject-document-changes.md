@@ -37,7 +37,7 @@ Curl example contains only 'updates' method call. For 'changes' method,  see ot
 ```html
 
 * First get JSON Web Token
-* Please get your App Key and App SID from https://dashboard.groupdocs.cloud/#/apps. Kindly place App Key in "client_secret" and App SID in "client_id" argument.
+* Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
 -d "grant_type#client_credentials&client_id#xxxx&client_secret#xxxx" \
@@ -211,10 +211,10 @@ Using an SDK (API client) is the quickest way for a developer to speed up the de
 ```csharp
 
 // For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
-string MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-string MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+string MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+string MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-var configuration = new Configuration(MyAppSid, MyAppKey);
+var configuration = new Configuration(MyClientId, MyClientSecret);
 
 var apiInstance = new CompareApi(configuration);
 var options = new UpdatesOptions
@@ -242,10 +242,10 @@ var response = apiInstance.PutChangesDocument(new PutChangesDocumentRequest(opti
 ```Java
 
 // For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
-String MyAppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-String MyAppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+String MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+String MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-Configuration configuration = new Configuration(MyAppSid, MyAppKey);
+Configuration configuration = new Configuration(MyClientId, MyClientSecret);
 
 CompareApi apiInstance = new CompareApi(configuration);
 FileInfo sourceFileInfo = new FileInfo();
@@ -278,12 +278,12 @@ Link response = apiInstance.putChangesDocument(new PutChangesDocumentRequest(opt
 use GroupDocs\Comparison\Model;
 use GroupDocs\Comparison\Model\Requests;
 
-$AppSid = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$AppKey = ""; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$ClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$ClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 $configuration = new GroupDocs\Comparison\Configuration();
-$configuration->setAppSid($AppSid);
-$configuration->setAppKey($AppKey);
+$configuration->setAppSid($ClientId);
+$configuration->setAppKey($ClientSecret);
 
 $apiInstance# new GroupDocs\Comparison\CompareApi($configuration);
 
@@ -314,10 +314,10 @@ $response = $apiInstance->putChangesDocument($request);
 // For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
 global.comparison_cloud = require("groupdocs-comparison-cloud");
 
-global.appSid = "XXXX-XXXX-XXXX-XXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-global.appKey = "XXXXXXXXXXXXXXXX"; // Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-global.compareApi = comparison_cloud.CompareApi.fromKeys(appSid, appKey);
+global.compareApi = comparison_cloud.CompareApi.fromKeys(clientId, clientSecret);
 
 let source = new comparison_cloud.FileInfo();
 source.filePath = "source_files/word/source.docx";
@@ -348,10 +348,10 @@ let response = await compareApi.putChangesDocument(new comparison_cloud.PutChang
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(app_sid, app_key)
+api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(client_id, client_secret)
 
 source = groupdocs_comparison_cloud.FileInfo()
 source.file_path = "source_files/word/source.docx"
@@ -381,10 +381,10 @@ response = api_instance.put_changes_document(groupdocs_comparison_cloud.PutChang
 # For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
 
-$app_sid = "XXXX-XXXX-XXXX-XXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
-$app_key = "XXXXXXXXXXXXXXXX" # Get AppKey and AppSID from https://dashboard.groupdocs.cloud
+$client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($app_sid, $app_key)
+api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($client_id, $client_secret)
 
 source = GroupDocsComparisonCloud::FileInfo.new
 source.file_path = "source_files/word/source.docx"

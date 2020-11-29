@@ -9,19 +9,21 @@ keywords: ""
 ---
 ## Create an account ##
 
-Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud/#/) to create a free account.
+Creating an account is very simple. Go to [Dashboard](https://dashboard.groupdocs.cloud) to create a free account.\
+We're using Single Sign On across our websites, therefore, if you already have an account with our services, you can use it to also acccess the [Dashboard](https://dashboard.groupdocs.cloud).
 
 ## Create an API client app ##
 
-Before you can make any requests to GroupDocs for Cloud API you need to get APP SID and APP key (secret key). This will will be used to invoke GroupDocs for Cloud API. You can get it from default Application or create new Application from My Apps tab of [GroupDocs for Cloud Dashboard](https://dashboard.groupdocs.cloud).
+Before you can make any requests to GroupDocs Cloud API you need to get a **Client Id** and a **Client Secret**.
+This will will be used to invoke GroupDocs Cloud API. You can get it by creating a new [Application](https://dashboard.groupdocs.cloud/applications).
 
 ## Install the SDK of your choice ##
 
-GroupDocs for Cloud SDK is written in different languages, all you need to get started is adding our [SDK]({{< ref "comparison/getting-started/available-sdks.md" >}}) to your existing project.
+GroupDocs Cloud SDK is written in different languages, all you need to get started is adding our [SDK]({{< ref "comparison/getting-started/available-sdks.md" >}}) to your existing project.
 
 ## Make an API request from the SDK of your choice ##
 
-Use the **App SID** and **App key (secret key)** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Comparison Cloud.
+Use the **Client Id** and the **Client Secret** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Comparison Cloud.
 
 {{< alert style="info" >}}The GitHub repository for [GroupDocs.Comparison Cloud](https://github.com/groupdocs-comparison-cloud) has a complete set of examples, demonstrating our API capabilities.{{< /alert >}}
 
