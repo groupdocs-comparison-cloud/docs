@@ -50,7 +50,7 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 * Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
--d "grant_type#client_credentials&client_id#xxxx&client_secret#xxxx" \
+-d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Accept: application/json"
 
@@ -157,7 +157,7 @@ $configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($ClientId);
 $configuration->setAppKey($ClientSecret);
 
-$apiInstance# new GroupDocs\Comparison\CompareApi($configuration);
+$apiInstance = new GroupDocs\Comparison\CompareApi($configuration);
 
 $sourceFile = new Model\FileInfo();
 $sourceFile->setFilePath("source_files/word/source.docx");

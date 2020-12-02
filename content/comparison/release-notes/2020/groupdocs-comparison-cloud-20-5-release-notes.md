@@ -7,6 +7,11 @@ weight: 1
 description: ""
 keywords: ""
 ---
+
+{{< alert style="info" >}}
+This page contains release notes for GroupDocs.Comparison Cloud 20.5
+{{< /alert >}}
+
 ### Major Features ###
 
 * Added ability to get document information

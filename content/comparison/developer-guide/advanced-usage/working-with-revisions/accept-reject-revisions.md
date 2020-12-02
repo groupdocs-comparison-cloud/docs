@@ -1,26 +1,26 @@
 ---
-id: "set-password-for-resultant-document"
-url: "comparison/set-password-for-resultant-document"
-title: "Set password for resultant document"
+id: "accept-reject-revisions"
+url: "comparison/accept-reject-revisions"
+title: "Accept or reject revisions"
 productName: "GroupDocs.Comparison Cloud"
-weight: 10
+weight: 2
 description: ""
 keywords: ""
 ---
 
 # Introduction #
 
-GroupDocs.Comparison Cloud allows to protect resultant document with password.
+GroupDocs.Comparison Cloud allows to accept or reject revisions from Word document and save the result.
 
-The following code snippet demonstrates how to compare documents and protect resultant document with password
+The following code sample demonstrates how to accept all revisions.
 
 ## API Usage ##
 
 There are steps that usage of GroupDocs.Comparison Cloud consists of:
 
 1. Upload input documents into cloud storage
-1. Compare documents or get document info
-1. Download comparison result document from storage
+1. Call API method with options
+1. Download comparison result document from storage (if any)
 
 Steps 1 and 3 are storage operations, please refer to this [File API documentation]({{< ref "comparison/developer-guide/working-with-file-api.md" >}}) for usage details.
 
@@ -32,48 +32,49 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 ```html
 
-* First get JSON Web Token
-* Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
+// First get JSON Web Token
+// Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
 -d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Accept: application/json"
-
-* cURL example to get document information
-curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
--X POST \
+  
+// cURL example to get document information
+curl -v "https://api.groupdocs.cloud/v2.0/comparison/revisions" \
+-X PUT \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -H "Authorization: Bearer <jwt token>"
 -d "{
   'SourceFile': {
-    'FilePath': 'source_files\\word\\source.docx'
+    'FilePath': 'source_files/word/source_with_revs.docx'
   },
-  'TargetFiles': [
+  'Revisions': [
     {
-      'FilePath': 'target_files\\word\\target.docx'
-    }
+      'Id': 0,
+      'action': 'Accept'
+    },
+    {
+      'Id': 1,
+      'action': 'Accept'
+    },
   ],
-  'OutputPath': 'output/result.docx',
-  'Settings': {
-    'PasswordSaveOption': 'User',
-    'Password': '3333'
-  }
+  'OutputPath': 'output/result.docx'
 }"
 
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
-```html
-
+```javascript
 {
   "href": "https://api.groupdocs.cloud/v2.0/comparison/storage/file/output/result.docx",
   "rel": "output/result.docx",
   "type": "file",
   "title": "result.docx"
 }
+```
 
 {{< /tab >}} {{< /tabs >}}
 
@@ -92,28 +93,25 @@ string MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashbo
 string MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 var configuration = new Configuration(MyClientId, MyClientSecret);
+  
+var apiInstance = new ReviewApi(configuration);
 
-var apiInstance = new CompareApi(configuration);
-var options = new ComparisonOptions
+var options = new ApplyRevisionsOptions
 {
-    SourceFile = new FileInfo
-    {
-        FilePath = "source_files/word/source.docx"
-    },
-    TargetFiles = new List<FileInfo> {
-        new FileInfo {
-            FilePath = "target_files/word/target.docx"
-        }
-    },
-    Settings = new Settings {
-        PasswordSaveOption = Settings.PasswordSaveOptionEnum.User,
-        Password = "3333"
-    },
+    SourceFile = new FileInfo {FilePath = "source_files/word/source_with_revs.docx" },
     OutputPath = "output/result.docx"
 };
 
-var request = new ComparisonsRequest(options);
-var response = apiInstance.Comparisons(request);
+var revisions = apiInstance.GetRevisions(new GetRevisionsRequest(options.SourceFile));
+
+foreach (var revision in revisions)
+    revision.Action = RevisionInfo.ActionEnum.Accept;
+
+options.Revisions = revisions;
+
+var response = apiInstance.ApplyRevisions(new ApplyRevisionsRequest(options));
+
+Console.WriteLine("ApplyRevisions: Output file link: " + response.Href);
 
 ```
 
@@ -126,28 +124,26 @@ String MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashbo
 String MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 Configuration configuration = new Configuration(MyClientId, MyClientSecret);
+  
+ReviewApi apiInstance = new ReviewApi(configuration);
 
-CompareApi apiInstance = new CompareApi(configuration);
-var options = new ComparisonOptions
-{
-    SourceFile = new FileInfo
-    {
-        FilePath = "source_files/word/source.docx"
-    },
-    TargetFiles = new List<FileInfo> {
-        new FileInfo {
-            FilePath = "target_files/word/target.docx"
-        }
-    },
-    Settings = new Settings {
-        PasswordSaveOption = Settings.PasswordSaveOptionEnum.User,
-        Password = "3333"
-    },
-    OutputPath = "output/result.docx"
-};
+FileInfo sourceFileInfo = new FileInfo();
+sourceFileInfo.setFilePath("source_files/word/source_with_revs.docx");
 
-var request = new ComparisonsRequest(options);
-var response = apiInstance.Comparisons(request);
+ApplyRevisionsOptions options = new ApplyRevisionsOptions();
+options.setSourceFile(sourceFileInfo);
+options.setOutputPath("output/result.docx");
+
+GetRevisionsRequest request = new GetRevisionsRequest(sourceFileInfo);
+List<RevisionInfo> rInfos = apiInstance.getRevisions(request);
+
+for (RevisionInfo rInfo : rInfos) {
+    rInfo.setAction(ActionEnum.ACCEPT);
+}
+options.setRevisions(rInfos);
+Link response = apiInstance.applyRevisions(new ApplyRevisionsRequest(options));
+
+System.out.println("Output file link: " + response.getHref());
 
 ```
 
@@ -166,23 +162,23 @@ $configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($ClientId);
 $configuration->setAppKey($ClientSecret);
 
-$apiInstance = new GroupDocs\Comparison\CompareApi($configuration);
+$apiInstance= new GroupDocs\Comparison\ReviewApi($configuration);
 
 $sourceFile = new Model\FileInfo();
-$sourceFile->setFilePath("source_files/word/source.docx");
-$targetFile = new Model\FileInfo();
-$targetFile->setFilePath("target_files/word/target.docx");
-$options = new Model\ComparisonOptions();
+$sourceFile->setFilePath("source_files/word/source_with_revs.docx");
+$options = new Model\ApplyRevisionsOptions();
 $options->setSourceFile($sourceFile);
-$options->setTargetFiles([$targetFile]);
 $options->setOutputPath("output/result.docx");
-$settings = new Model\Settings();
-$settings->setPasswordSaveOption(Model\Settings::PASSWORD_SAVE_OPTION_USER);
-$settings->setPassword("3333");
-$options->setSettings($settings);
 
-$request = new Requests\ComparisonsRequest($options);
-$response = $apiInstance->comparisons($request);
+$revisions = $apiInstance->getRevisions(new Requests\GetRevisionsRequest($sourceFile));
+for ($i=0; $i < count($revisions); $i++) { 
+    $revisions[$i]->setAction(Model\RevisionInfo::ACTION_ACCEPT);
+}
+$options->setRevisions($revisions);
+$request = new Requests\ApplyRevisionsRequest($options);
+$response = $apiInstance->applyRevisions($request);
+
+echo "Output file link: ", $response->getHref();
 
 ```
 
@@ -196,23 +192,25 @@ global.comparison_cloud = require("groupdocs-comparison-cloud");
 global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-global.compareApi = comparison_cloud.CompareApi.fromKeys(clientId, clientSecret);
+global.reviewApi = comparison_cloud.ReviewApi.fromKeys(clientId, clientSecret);
 
 let source = new comparison_cloud.FileInfo();
-source.filePath = "source_files/word/source.docx";
-let target = new comparison_cloud.FileInfo();
-target.filePath = "target_files/word/target.docx";
-let settings = new comparison_cloud.Settings();
-settings.password = "3333";
-settings.passwordSaveOption = comparison_cloud.Settings.PasswordSaveOptionEnum.User;
-let options = new comparison_cloud.ComparisonOptions();
-options.sourceFile = source;
-options.targetFiles = [target];
-options.outputPath = "output/result.docx";
-options.settings = settings;
+source.filePath = "source_files/word/source_with_revs.docx";
 
-let request = new comparison_cloud.ComparisonsRequest(options);
-let response = await compareApi.comparisons(request);
+let options = new comparison_cloud.ApplyRevisionsOptions();
+options.sourceFile = source;
+options.outputPath = "output/result.docx";
+
+let request = new comparison_cloud.GetRevisionsRequest(source);     
+let revisions = await reviewApi.getRevisions(request);
+
+revisions.forEach(revision => {
+    revision.action = comparison_cloud.RevisionInfo.ActionEnum.Accept;
+});
+options.revisions = revisions;
+
+let response = await reviewApi.applyRevisions(new comparison_cloud.ApplyRevisionsRequest(options));
+console.log("Output file link: " + response.href);
 
 ```
 
@@ -226,23 +224,24 @@ import groupdocs_comparison_cloud
 client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(client_id, client_secret)
+api_instance = groupdocs_comparison_cloud.ReviewApi.from_keys(client_id, client_secret)
 
 source = groupdocs_comparison_cloud.FileInfo()
-source.file_path = "source_files/word/source.docx"
-target = groupdocs_comparison_cloud.FileInfo()
-target.file_path = "target_files/word/target.docx"
-options = groupdocs_comparison_cloud.ComparisonOptions()
+source.file_path = "source_files/word/source_with_revs.docx"
+options = groupdocs_comparison_cloud.ApplyRevisionsOptions()
 options.source_file = source
-options.target_files = [target]
 options.output_path = "output/result.docx"
-settings = groupdocs_comparison_cloud.Settings()
-settings.password_save_option = "User"
-settings.password = "3333"
-options.settings = settings
 
-request = groupdocs_comparison_cloud.ComparisonsRequest(options)
-response = api_instance.comparisons(request)
+revisions = api_instance.get_revisions(groupdocs_comparison_cloud.GetRevisionsRequest(source))
+
+for revision in revisions:
+    revision.action = "Accept"
+
+options.revisions = revisions
+
+response = api_instance.apply_revisions(groupdocs_comparison_cloud.ApplyRevisionsRequest(options))
+
+print("Output file link: " + response.href)
 
 ```
 
@@ -256,23 +255,27 @@ require 'groupdocs_comparison_cloud'
 $client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 $client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($client_id, $client_secret)
+api_instance = GroupDocsComparisonCloud::ReviewApi.from_keys($client_id, $client_secret)
 
 source = GroupDocsComparisonCloud::FileInfo.new
-source.file_path = "source_files/word/source.docx"
-target = GroupDocsComparisonCloud::FileInfo.new
-target.file_path = "target_files/word/target.docx"
-options = GroupDocsComparisonCloud::ComparisonOptions.new
-options.source_file = source
-options.target_files = [target]
-options.output_path = "output/result.docx"
-settings = GroupDocsComparisonCloud::Settings.new
-settings.password_save_option = "User"
-settings.password = "3333"
-options.settings = settings
+source.file_path = "source_files/word/source_with_revs.docx"
 
-request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
-response = apiInstance.comparisons(request)
+options = GroupDocsComparisonCloud::ApplyRevisionsOptions.new
+options.source_file = source
+options.output_path = "output/result.docx"
+
+request = GroupDocsComparisonCloud::GetRevisionsRequest.new(source)    
+revisions = apiInstance.get_revisions(request)
+
+for revision in revisions do
+    revision.action = "Accept"
+end
+
+options.revisions = revisions
+
+response = apiInstance.apply_revisions(GroupDocsComparisonCloud::ApplyRevisionsRequest.new(options))
+
+puts("Output file link: " + response.href)
 
 ```
 

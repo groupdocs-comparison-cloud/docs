@@ -1,26 +1,26 @@
 ---
-id: "how-to-compare-two-pdf-files"
-url: "comparison/how-to-compare-two-pdf-files"
-title: "How to compare two PDF files"
+id: "get-list-of-revisions"
+url: "comparison/get-list-of-revisions"
+title: "Get list of revisions"
 productName: "GroupDocs.Comparison Cloud"
-weight: 10
+weight: 1
 description: ""
 keywords: ""
 ---
 
 # Introduction #
 
-Comparing different file types is very simple, just upload compared files into the storage and call comparisons method.
+GroupDocs.Comparison Cloud allows to obtain list of revisions from Word document.
 
- Here is an example how to compare PDF files.
+The following code sample demonstrates how to get list of all revisions.
 
 ## API Usage ##
 
 There are steps that usage of GroupDocs.Comparison Cloud consists of:
 
 1. Upload input documents into cloud storage
-1. Compare documents or get document info
-1. Download comparison result document from storage
+1. Call API method
+1. Download comparison result document from storage (if any)
 
 Steps 1 and 3 are storage operations, please refer to this [File API documentation]({{< ref "comparison/developer-guide/working-with-file-api.md" >}}) for usage details.
 
@@ -32,44 +32,46 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 ```html
 
-* First get JSON Web Token
-* Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
+// First get JSON Web Token
+// Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
 -d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
 -H "Content-Type: application/x-www-form-urlencoded" \
 -H "Accept: application/json"
-
-* cURL example to get document information
-curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
+  
+// cURL example to get document information
+curl -v "https://api.groupdocs.cloud/v2.0/comparison/revisions" \
 -X POST \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -H "Authorization: Bearer <jwt token>"
 -d "{
-  'SourceFile': {
-    'FilePath': 'source_files/pdf/source.pdf'
-  },
-  'TargetFiles': [
-    {
-      'FilePath': 'target_files/pdf/target.pdf'
-    }
-  ],
-  'OutputPath': 'output/result.pdf'
-}"
+    'FilePath': 'source_files/word/source_with_revs.docx'
+  }"
 
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
-```html
-
-{
-  "href": "https://api.groupdocs.cloud/v2.0/comparison/storage/file/output/result.pdf",
-  "rel": "output/result.pdf",
-  "type": "file",
-  "title": "result.pdf"
-}
+```javascript
+[
+  {
+    "id": 0,
+    "action": "None",
+    "text": "\rsssssssss",
+    "author": "GroupDpcs",
+    "type": "Insertion"
+  },
+  {
+    "id": 1,
+    "action": "None",
+    "text": "Many students, scholars and members of the \u0013 HYPERLINK \"https://en.wikipedia.org/wiki/Minister_(Christianity)\" \\o \"Minister (Christianity)\" \u0014Christian clergy\u0015 speak Latin fluently, and it is taught in primary, secondary and post-secondary educational institutions around the world.\u0013 HYPERLINK \"https://en.wikipedia.org/wiki/Latin\" \\l \"cite_note-4\" \u0014[4]\u0015\u0013 HYPERLINK \"https://en.wikipedia.org/wiki/Latin\" \\l \"cite_note-5\" \u0014[5]\u0015\r",
+    "author": "GroupDocs",
+    "type": "Deletion"
+  }
+]
+```
 
 {{< /tab >}} {{< /tabs >}}
 
@@ -88,16 +90,18 @@ string MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashbo
 string MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 var configuration = new Configuration(MyClientId, MyClientSecret);
+  
+var apiInstance = new ReviewApi(configuration);
 
-var apiInstance = new CompareApi(configuration);
-var options = new ComparisonOptions
-{
-    SourceFile = new FileInfo {FilePath = "source_files/pdf/source.pdf"},
-    TargetFiles = new List<FileInfo> {new FileInfo {FilePath = "target_files/pdf/target.pdf"}},
-    OutputPath = "output/result.pdf"
-};
-var request = new ComparisonsRequest(options);
-var response = apiInstance.Comparisons(request);
+var sourceFile = new FileInfo
+    {
+        FilePath = "source_files/word/source_with_revs.docx"
+    };
+
+var request = new GetRevisionsRequest(sourceFile);
+
+var revisions = apiInstance.GetRevisions(request);
+Console.WriteLine("GetListOfRevisions: Revisions count: " + revisions.Count);
 
 ```
 
@@ -110,21 +114,17 @@ String MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashbo
 String MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
 Configuration configuration = new Configuration(MyClientId, MyClientSecret);
+  
+ReviewApi apiInstance = new ReviewApi(configuration);
 
-CompareApi apiInstance = new CompareApi(configuration);
 FileInfo sourceFileInfo = new FileInfo();
-sourceFileInfo.setFilePath("source_files/pdf/source.pdf");
-FileInfo targetFileInfo = new FileInfo();
-targetFileInfo.setFilePath("target_files/pdf/target.pdf");
+sourceFileInfo.setFilePath("source_files/word/source_with_revs.docx");
 
-ComparisonOptions options = new ComparisonOptions();
-options.setSourceFile(sourceFileInfo);
-options.addTargetFilesItem(targetFileInfo);
-options.setOutputPath("output/result.pdf");
+GetRevisionsRequest request = new GetRevisionsRequest(sourceFileInfo);
 
-ComparisonsRequest request = new ComparisonsRequest(options);
+List<RevisionInfo> rInfos = apiInstance.getRevisions(request);
 
-Link response = apiInstance.comparisons(request);
+System.out.println("Revisions count: " + rInfos.size());
 
 ```
 
@@ -143,19 +143,14 @@ $configuration = new GroupDocs\Comparison\Configuration();
 $configuration->setAppSid($ClientId);
 $configuration->setAppKey($ClientSecret);
 
-$apiInstance = new GroupDocs\Comparison\CompareApi($configuration);
+$apiInstance= new GroupDocs\Comparison\ReviewApi($configuration);
 
 $sourceFile = new Model\FileInfo();
-$sourceFile->setFilePath("source_files/pdf/source.pdf");
-$targetFile = new Model\FileInfo();
-$targetFile->setFilePath("target_files/pdf/target.pdf");
-$options = new Model\ComparisonOptions();
-$options->setSourceFile($sourceFile);
-$options->setTargetFiles([$targetFile]);
-$options->setOutputPath("output/result.pdf");
+$sourceFile->setFilePath("source_files/word/source_with_revs.docx");
 
-$request = new Requests\ComparisonsRequest($options);
-$response = $apiInstance->comparisons($request);
+$revisions = $apiInstance->getRevisions(new Requests\GetRevisionsRequest($sourceFile));
+echo "Revisions count: ", count($revisions);
+echo "\n";
 
 ```
 
@@ -169,19 +164,15 @@ global.comparison_cloud = require("groupdocs-comparison-cloud");
 global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-global.compareApi = comparison_cloud.CompareApi.fromKeys(clientId, clientSecret);
+global.reviewApi = comparison_cloud.ReviewApi.fromKeys(clientId, clientSecret);
 
 let source = new comparison_cloud.FileInfo();
-source.filePath = "source_files/pdf/source.pdf";
-let target = new comparison_cloud.FileInfo();
-target.filePath = "target_files/pdf/target.pdf";
-let options = new comparison_cloud.ComparisonOptions();
-options.sourceFile = source;
-options.targetFiles = [target];
-options.outputPath = "output/result.pdf";
+source.filePath = "source_files/word/source_with_revs.docx";
 
-let request = new comparison_cloud.ComparisonsRequest(options);
-let response = await compareApi.comparisons(request);
+let request = new comparison_cloud.GetRevisionsRequest(source);     
+let revisions = await reviewApi.getRevisions(request);
+
+console.log("Revisions count: " + revisions.length);
 
 ```
 
@@ -195,19 +186,14 @@ import groupdocs_comparison_cloud
 client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(client_id, client_secret)
+api_instance = groupdocs_comparison_cloud.ReviewApi.from_keys(client_id, client_secret)
 
 source = groupdocs_comparison_cloud.FileInfo()
-source.file_path = "source_files/pdf/source.pdf"
-target = groupdocs_comparison_cloud.FileInfo()
-target.file_path = "target_files/pdf/target.pdf"
-options = groupdocs_comparison_cloud.ComparisonOptions()
-options.source_file = source
-options.target_files = [target]
-options.output_path = "output/result.pdf"
+source.file_path = "source_files/word/source_with_revs.docx"
 
-request = groupdocs_comparison_cloud.ComparisonsRequest(options)
-response = api_instance.comparisons(request)
+revisions = api_instance.get_revisions(groupdocs_comparison_cloud.GetRevisionsRequest(source))
+
+print("Revisions count: " + str(len(revisions)))
 
 ```
 
@@ -221,19 +207,15 @@ require 'groupdocs_comparison_cloud'
 $client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 $client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($client_id, $client_secret)
+api_instance = GroupDocsComparisonCloud::ReviewApi.from_keys($client_id, $client_secret)
 
 source = GroupDocsComparisonCloud::FileInfo.new
-source.file_path = "source_files/pdf/source.pdf"
-target = GroupDocsComparisonCloud::FileInfo.new
-target.file_path = "target_files/pdf/target.pdf"
-options = GroupDocsComparisonCloud::ComparisonOptions.new
-options.source_file = source
-options.target_files = [target]
-options.output_path = "output/result.pdf"
+source.file_path = "source_files/word/source_with_revs.docx"
 
-request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
-response = apiInstance.comparisons(request)
+request = GroupDocsComparisonCloud::GetRevisionsRequest.new(source)
+revisions = apiInstance.get_revisions(request)
+
+puts("Revisions count: " + revisions.length.to_s)
 
 ```
 

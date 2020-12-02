@@ -3,9 +3,15 @@ id: "groupdocs-comparison-cloud-20-7-release-notes"
 url: "comparison/groupdocs-comparison-cloud-20-7-release-notes"
 title: "GroupDocs.Comparison Cloud 20.7 Release Notes"
 productName: "GroupDocs.Comparison Cloud"
+weight: 2
 description: ""
 keywords: ""
 ---
+
+{{< alert style="info" >}}
+This page contains release notes for GroupDocs.Comparison Cloud 20.7
+{{< /alert >}}
+
 ### Major Features ###
 
 * This is a maintainance release
