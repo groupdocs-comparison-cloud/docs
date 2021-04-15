@@ -166,13 +166,17 @@ global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from 
 
 global.reviewApi = comparison_cloud.ReviewApi.fromKeys(clientId, clientSecret);
 
-let source = new comparison_cloud.FileInfo();
-source.filePath = "source_files/word/source_with_revs.docx";
+try {
+ let source = new comparison_cloud.FileInfo();
+ source.filePath = "source_files/word/source_with_revs.docx";
 
-let request = new comparison_cloud.GetRevisionsRequest(source);     
-let revisions = await reviewApi.getRevisions(request);
+ let request = new comparison_cloud.GetRevisionsRequest(source);  
+ let revisions = await reviewApi.getRevisions(request);
 
-console.log("Revisions count: " + revisions.length);
+ console.log("Revisions count: " + revisions.length);
+} catch (error) {
+ console.log(error.message);
+}
 
 ```
 

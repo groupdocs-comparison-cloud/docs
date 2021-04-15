@@ -194,17 +194,23 @@ global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from 
 
 global.compareApi = comparison_cloud.CompareApi.fromKeys(clientId, clientSecret);
 
-let source = new comparison_cloud.FileInfo();
-source.filePath = "source_files/word/source.docx";
-let target = new comparison_cloud.FileInfo();
-target.filePath = "target_files/word/target.docx";
-let options = new comparison_cloud.ComparisonOptions();
-options.sourceFile = source;
-options.targetFiles = [target];
-options.outputPath = "output/result.docx";
+try {
+ let source = new comparison_cloud.FileInfo();
+ source.filePath = "source_files/word/source.docx";
+ let target = new comparison_cloud.FileInfo();
+ target.filePath = "target_files/word/target.docx";  
+ let options = new comparison_cloud.ComparisonOptions();
+ options.sourceFile = source;
+ options.targetFiles = [target];
+ options.outputPath = "output/result.docx";
 
-let request = new comparison_cloud.PostChangesRequest(options);
-let changes = await compareApi.postChanges(request);
+ let request = new comparison_cloud.PostChangesRequest(options);  
+ let changes = await compareApi.postChanges(request);
+
+ console.log("Changes count: " + changes.length);
+} catch (error) {
+ console.log(error.message);
+}
 
 ```
 

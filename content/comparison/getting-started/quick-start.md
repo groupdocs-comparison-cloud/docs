@@ -45,7 +45,24 @@ Use the **Client Id** and the **Client Secret** from the API app client you 
 
 {{< /tab >}} {{< tab tabNum="4" >}}
 
-{{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Get_Supported_Formats.js >}}
+```javascript
+
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples
+global.comparison_cloud = require("groupdocs-comparison-cloud");
+
+global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+
+global.infoApi = comparison_cloud.InfoApi.fromKeys(clientId, clientSecret);
+
+try {
+ let response = await infoApi.getSupportedFileFormats();
+ console.log("Formats count: " + response.formats.length); 
+} catch (error) {
+ console.log(error.message);
+}
+
+```
 
 {{< /tab >}} {{< tab tabNum="5" >}}
 

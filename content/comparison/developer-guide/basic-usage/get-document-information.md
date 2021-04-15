@@ -27,7 +27,7 @@ The following GroupDocs.Viewer Cloud REST API resource has been used to get [do
 {{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
 
 * First get JSON Web Token
-* Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
+* Please get your Client Id and Client Secret from <https://dashboard.groupdocs.cloud/applications>. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
 -X POST \
 -d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
@@ -139,10 +139,17 @@ global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from 
 
 global.infoApi = comparison_cloud.InfoApi.fromKeys(clientId, clientSecret);
 
-let fileInfo = new comparison_cloud.FileInfo();
-fileInfo.filePath = "source_files/word/source.docx";
-let request = new comparison_cloud.GetDocumentInfoRequest(fileInfo);
-let response = await infoApi.getDocumentInfo(request);
+try {
+ let fileInfo = new comparison_cloud.FileInfo();
+ fileInfo.filePath = "source_files/word/source.docx";
+
+ let request = new comparison_cloud.GetDocumentInfoRequest(fileInfo);  
+
+ let response = await infoApi.getDocumentInfo(request);
+ console.log("GetDocumentInformation completed: " + response.pageCount);   
+} catch (error) {
+ console.log(error.message);   
+}
 
 ```
 
@@ -185,4 +192,3 @@ response = infoApi.get_document_info(request)
 ```
 
 {{< /tab >}} {{< /tabs >}}
-

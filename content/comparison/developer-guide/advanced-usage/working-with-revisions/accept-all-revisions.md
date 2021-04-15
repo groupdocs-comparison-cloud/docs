@@ -169,16 +169,20 @@ global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from 
 
 global.reviewApi = comparison_cloud.ReviewApi.fromKeys(clientId, clientSecret);
 
-let source = new comparison_cloud.FileInfo();
-source.filePath = "source_files/word/source_with_revs.docx";
- 
-let options = new comparison_cloud.ApplyRevisionsOptions();
-options.sourceFile = source;
-options.acceptAll = true;
-options.outputPath = "output/result.docx";
+try {
+ let source = new comparison_cloud.FileInfo();
+ source.filePath = "source_files/word/source_with_revs.docx";
 
-let response = await reviewApi.applyRevisions(new comparison_cloud.ApplyRevisionsRequest(options));
-console.log("Output file link: " + response.href);
+ let options = new comparison_cloud.ApplyRevisionsOptions();
+ options.sourceFile = source;
+ options.acceptAll = true;
+ options.outputPath = "output/result.docx";
+ 
+ let response = await reviewApi.applyRevisions(new comparison_cloud.ApplyRevisionsRequest(options));
+ console.log("Output file link: " + response.href);
+} catch (error) {
+ console.log(error.message);
+}
 
 ```
 

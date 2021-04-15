@@ -194,23 +194,27 @@ global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from 
 
 global.reviewApi = comparison_cloud.ReviewApi.fromKeys(clientId, clientSecret);
 
-let source = new comparison_cloud.FileInfo();
-source.filePath = "source_files/word/source_with_revs.docx";
+try {
+ let source = new comparison_cloud.FileInfo();
+ source.filePath = "source_files/word/source_with_revs.docx";
 
-let options = new comparison_cloud.ApplyRevisionsOptions();
-options.sourceFile = source;
-options.outputPath = "output/result.docx";
+ let options = new comparison_cloud.ApplyRevisionsOptions();
+ options.sourceFile = source;
+ options.outputPath = "output/result.docx";
+ 
+ let request = new comparison_cloud.GetRevisionsRequest(source);  
+ let revisions = await reviewApi.getRevisions(request);
 
-let request = new comparison_cloud.GetRevisionsRequest(source);     
-let revisions = await reviewApi.getRevisions(request);
+ revisions.forEach(revision => {
+  revision.action = comparison_cloud.RevisionInfo.ActionEnum.Accept;
+ }); 
+ options.revisions = revisions;
 
-revisions.forEach(revision => {
-    revision.action = comparison_cloud.RevisionInfo.ActionEnum.Accept;
-});
-options.revisions = revisions;
-
-let response = await reviewApi.applyRevisions(new comparison_cloud.ApplyRevisionsRequest(options));
-console.log("Output file link: " + response.href);
+ let response = await reviewApi.applyRevisions(new comparison_cloud.ApplyRevisionsRequest(options));
+ console.log("Output file link: " + response.href);
+} catch (error) {
+ console.log(error.message);
+} 
 
 ```
 

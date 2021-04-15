@@ -187,19 +187,26 @@ global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from 
 
 global.compareApi = comparison_cloud.CompareApi.fromKeys(clientId, clientSecret);
 
-source = groupdocs_comparison_cloud.FileInfo()
-source.file_path = "source_files/word/source_protected.docx"
-source.password = "1231"
-target = groupdocs_comparison_cloud.FileInfo()
-target.file_path = "target_files/word/target_protected.docx"
-target.password = "5784"
-options = groupdocs_comparison_cloud.ComparisonOptions()
-options.source_file = source
-options.target_files = [target]
-options.output_path = "output/result.docx"
+try {
+ let source = new comparison_cloud.FileInfo();
+ source.filePath = "source_files/word/source_protected.docx";
+ source.password = "1231";
+ let target = new comparison_cloud.FileInfo();
+ target.filePath = "target_files/word/target_protected.docx";
+ target.password = "5784";
+ 
+ let options = new comparison_cloud.ComparisonOptions();
+ options.sourceFile = source;
+ options.targetFiles = [target];
+ options.outputPath = "output/result.docx";
 
-request = groupdocs_comparison_cloud.ComparisonsRequest(options)
-response = api_instance.comparisons(request)
+ let request = new comparison_cloud.ComparisonsRequest(options);  
+
+ let response = await compareApi.comparisons(request);
+ console.log("Output file link: " + response.href);
+} catch (error) {
+ console.log(error.message);
+}
 
 ```
 
