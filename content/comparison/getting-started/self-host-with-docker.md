@@ -41,12 +41,12 @@ In case you don't have license keys you can omit LICENSE_PUBLIC_KEY and LICENSE_
 ```powershell
 
 docker run `
-В  В  -p 8080:80 `
-В  В  -v "${pwd}/data:/data" `
-В  В  -e "LICENSE_PUBLIC_KEY#public_key" `
-В  В  -e "LICENSE_PRIVATE_KEY#private_key" `
-В  В  --name comparison_cloud `
-В  В  groupdocs/comparison-cloud
+    -p 8080:80 `
+    -v "${pwd}/data:/data" `
+    -e "LICENSE_PUBLIC_KEY#public_key" `
+    -e "LICENSE_PRIVATE_KEY#private_key" `
+    --name comparison_cloud `
+    groupdocs/comparison-cloud
 
 ```
 
@@ -55,12 +55,12 @@ docker run `
 ```bash
 
 docker run \
-В В В В -p 8080:80 \
-В В В В -v $(pwd)/data:/data \
-В В В В -e LICENSE_PUBLIC_KEY#public_key \
-В В В В -e LICENSE_PRIVATE_KEY#private_key \
-В В В В --name comparison_cloud \
-В В В В groupdocs/comparison-cloud
+    -p 8080:80 \
+    -v $(pwd)/data:/data \
+    -e LICENSE_PUBLIC_KEY#public_key \
+    -e LICENSE_PRIVATE_KEY#private_key \
+    --name comparison_cloud \
+    groupdocs/comparison-cloud
 
 ```
 
@@ -120,28 +120,28 @@ The authentication is required in case you're going to use SDK. To enable authen
 
 ```powershell
 docker run `
-В В В В -p 8080:80 `
-В В В В -v "${pwd}/data:/data" `
-В В В В -e "LICENSE_PUBLIC_KEY#public_key" `
-В В В В -e "LICENSE_PRIVATE_KEY#private_key" `
-В В В В -e "client_id=client_id" `
-В В В В -e "client_secret=client_secret" `
-В В В В --name comparison_cloud `
-В В В В groupdocs/comparison-cloud
+    -p 8080:80 `
+    -v "${pwd}/data:/data" `
+    -e "LICENSE_PUBLIC_KEY#public_key" `
+    -e "LICENSE_PRIVATE_KEY#private_key" `
+    -e "client_id=client_id" `
+    -e "client_secret=client_secret" `
+    --name comparison_cloud `
+    groupdocs/comparison-cloud
 ```
 
 {{< /tab >}} {{< tab tabNum="2" >}}
 
 ```bash
 docker run \
-В В В В -p 8080:80 \
-В В В В -v $(pwd)/data:/data \
-В В В В -e LICENSE_PUBLIC_KEY#public_key \
-В В В В -e LICENSE_PRIVATE_KEY#private_key \
-В В В В -e client_id=client_id \
-В В В В -e client_secret=client_secret \
-В В В В --name comparison_cloud \
-В В В В groupdocs/comparison-cloud
+    -p 8080:80 \
+    -v $(pwd)/data:/data \
+    -e LICENSE_PUBLIC_KEY#public_key \
+    -e LICENSE_PRIVATE_KEY#private_key \
+    -e client_id=client_id \
+    -e client_secret=client_secret \
+    --name comparison_cloud \
+    groupdocs/comparison-cloud
 ```
 
 {{< /tab >}} {{< /tabs >}}
