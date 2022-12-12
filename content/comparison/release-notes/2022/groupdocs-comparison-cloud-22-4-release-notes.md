@@ -3,7 +3,7 @@ id: "groupdocs-comparison-cloud-22-4-release-notes"
 url: "comparison/groupdocs-comparison-cloud-22-4-release-notes"
 title: "GroupDocs.Comparison Cloud 22.4 Release Notes"
 productName: "GroupDocs.Comparison Cloud"
-weight: 1
+weight: 2
 description: ""
 keywords: ""
 ---
