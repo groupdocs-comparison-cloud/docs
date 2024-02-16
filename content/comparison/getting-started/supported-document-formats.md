@@ -6,10 +6,12 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 2
 description: ""
 keywords: ""
+toc: True
 ---
+
 GroupDocs.Comparison Cloud API supports following document formats:
 
-### CAD Formats ###
+## CAD Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -20,7 +22,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Industry Foundation Classes|.[IFC](https://wiki.fileformat.com/cad/ifc/) | &#10004;
 |Stereo Lithography|.[STL](https://wiki.fileformat.com/cad/stl/) | &#10004;
 
-### Diagram Formats ###
+## Diagram Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -38,14 +40,14 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Microsoft Visio 2003-2010 XML Stencil|.[VSX](https://wiki.fileformat.com/image/vsx/) | &#10004;
 |Microsoft Visio 2003-2010 XML Template|.[VTX](https://wiki.fileformat.com/image/vtx/) | &#10004;
 
-### Ebook Formats ###
+## Ebook Formats
 
 |Format|File Extension|Compare
 |---|---|---
 |Electronic Publication (EPUB)|.[EPUBG](https://wiki.fileformat.com/ebook/epub/) | &#10004;
 |Mobipocket e-book format|.[MOBI](https://wiki.fileformat.com/ebook/mobi/) | &#10004;
 
-### Email Formats ###
+## Email Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -55,7 +57,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Microsoft Outlook Offline Storage Table|.[OST](https://wiki.fileformat.com/email/ost/) | &#10004;
 |Microsoft Outlook Personal Storage Table|.[PST](https://wiki.fileformat.com/email/pst/) | &#10004;
 
-### Image Formats ###
+## Image Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -80,7 +82,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |WebP Image|.[WEBP](https://wiki.fileformat.com/image/webp/) | &#10004;
 |Windows Metafile (WMF)|.[WMF](https://wiki.fileformat.com/image/wmf/) | &#10004;
 
-### Markup Formats ###
+## Markup Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -88,13 +90,13 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Mime HTML (MHTML)|.[MHT](https://wiki.fileformat.com/web/mhtml/), .[MHTML](https://wiki.fileformat.com/web/mhtml/) | &#10004;
 |Extensible Markup Language|.[XML](https://wiki.fileformat.com/web/xml/) | &#10004;
 
-### Note Formats ###
+## Note Formats
 
 |Format|File Extension|Compare
 |---|---|---
 |Microsoft OneNote|.[ONE](https://wiki.fileformat.com/note-taking/one/) | &#10004;
 
-### PDF Formats ###
+## PDF Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -102,7 +104,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |LaTeX Source Document|.[TEX](https://wiki.fileformat.com/page-description-language/tex/) | &#10004;
 |Microsoft XML Paper Specification (XPS)|.[XPS](https://wiki.fileformat.com/page-description-language/xps/) | &#10004;
 
-### Presentation Formats ###
+## Presentation Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -117,14 +119,14 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Microsoft PowerPoint Macro-Enabled Presentation|.[PPTM](https://wiki.fileformat.com/presentation/pptm/) | &#10004;
 |Microsoft PowerPoint Presentation|.[PPTX](https://wiki.fileformat.com/presentation/pptx/) | &#10004;
 
-### Project Management Formats ###
+## Project Management Formats
 
 |Format|File Extension|Compare
 |---|---|---
 |Microsoft Project Document|.[MPP](https://wiki.fileformat.com/project-management/mpp/) | &#10004;
 |Microsoft Project Template|.[MPT](https://wiki.fileformat.com/project-management/mpt/) | &#10004;
 
-### Spreadsheet Formats ###
+## Spreadsheet Formats
 
 |Format|File Extension|Compare
 |---|---|---
@@ -139,7 +141,7 @@ GroupDocs.Comparison Cloud API supports following document formats:
 |Microsoft Excel Template|.[XLTM](https://wiki.fileformat.com/spreadsheet/xltm/) | &#10004;
 |Microsoft Excel Template|.[XLTX](https://wiki.fileformat.com/spreadsheet/xltx/) | &#10004;
 
-### Word Processing Formats ###
+## Word Processing Formats
 
 |Format|File Extension|Compare
 |---|---|---

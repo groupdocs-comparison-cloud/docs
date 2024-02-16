@@ -5,5 +5,6 @@ title: "Comparing different file formats"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
 

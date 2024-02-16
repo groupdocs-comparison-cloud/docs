@@ -6,20 +6,21 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 7
 description: ""
 keywords: ""
+toc: True
 ---
-## Create Account ##
+## Create Account
 
 For details on how to create a new account please check [Create a new Account](https://id.containerize.com/signup).
 
-## Apply Client Id and Client Secret ##
+## Apply Client Id and Client Secret
 
-For details on how to get Client Id and Client Secret please check [Create New App and Get Client Id and Client Secret]({{< ref "total/getting-started/ui-topics/creating-and-managing-application.md" >}}).
+For details on how to get Client Id and Client Secret please check [Create New App and Get Client Id and Client Secret]({{< ref "total/ui-topics/creating-and-managing-application.md" >}}).
 
-## Free Plan ##
+## Free Plan
 
 Our free plan allows you to use Cloud APIs as you would normally. It only applies the limitation to the data that can be processed with the APIs.  For details on the free plan please check [Free Trial Plan](https://purchase.groupdocs.cloud/trial). For pricing please check [Cloud APIs Pricing](https://purchase.groupdocs.cloud/pricing).
 
-## Paid Plan ##
+## Paid Plan
 
 The free plan simply becomes [paid plan](https://purchase.groupdocs.cloud/pricing) when you upgrade your plan for any paid account. Please follow below steps to upgrade your free plan to paid plan:
 

@@ -6,9 +6,8 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 10
 description: ""
 keywords: ""
+toc: True
 ---
-
-# Introduction #
 
 Changes detection algorithms used by **GroupDocs.Comparison Cloud** allows to detect changes in different document parts and blocks:
 
@@ -28,7 +27,7 @@ Changes styling coloring scheme can be customized if needed, changed text blocks
 
 The following code snippet demonstrates the simplest case of documents comparison using couple lines of code.
 
-## API Usage ##
+## API usage
 
 There are steps that usage of GroupDocs.Comparison Cloud consists of:
 
@@ -40,11 +39,11 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 [Swagger UI](https://apireference.groupdocs.cloud/comparison/) lets you call this REST API directly from the browser.
 
-## cURL REST Example ##
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
+{{< tabs "example1">}} {{< tab "Request" >}}
 
-```html
+```bash
 
 * First get JSON Web Token
 * Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
@@ -74,9 +73,9 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Response" >}}
 
-```html
+```json
 
 {
   "href": "https://api.groupdocs.cloud/v2.0/comparison/storage/file/output/result.docx",
@@ -84,16 +83,16 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/comparisons" \
   "type": "file",
   "title": "result.docx"
 }
-
+```
 {{< /tab >}} {{< /tabs >}}
 
-## SDKs ##
+## SDK example
 
 Using an SDK (API client) is the quickest way for a developer to speed up the development. An SDK takes care of a lot of low-level details of making requests and handling responses and lets you focus on writing code specific to your particular project. Check out our [GitHub repository](https://github.com/groupdocs-comparison-cloud) for a complete list of GroupDocs.Comparison Cloud SDKs along with working examples, to get you started in no time. Please check [Available SDKs]({{< ref "comparison/getting-started/available-sdks.md" >}}) article to learn how to add an SDK to your project.
 
-### SDK Examples ###
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 
@@ -115,7 +114,7 @@ var response = apiInstance.Comparisons(request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java" >}}
 
 ```Java
 
@@ -142,7 +141,7 @@ Link response = apiInstance.comparisons(request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 
@@ -173,7 +172,7 @@ $response = $apiInstance->comparisons($request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 
@@ -205,7 +204,7 @@ try {
 
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 
@@ -231,7 +230,7 @@ response = api_instance.comparisons(request)
 
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 

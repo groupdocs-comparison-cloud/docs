@@ -6,6 +6,7 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 1
 description: ""
 keywords: ""
+toc: True
 ---
 
 {{< alert style="info" >}}
@@ -19,7 +20,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |settings|ComparisonSettings Object|Comparison settings
 |changes|ChangeInfo Object[]|Changes for apply or discard. Used only for Changes resource.
 
-## File Object fields ##
+## File Object fields
 
 |**Name**|**Type**|**Description**
 |---|---|---
@@ -27,7 +28,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |name|string|File name
 |password|string|Password for encrypted documents
 
-## ComparisonSettings Object fields ##
+## ComparisonSettings Object fields
 
 |**Name**|**Type**|**Description**
 |---|---|---
@@ -47,7 +48,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |PasswordSaveOption|PasswordSaveOption enum|Set type of password save
 |Password|string|Set user Password to result document
 
-## ItemsStyle Object fields ##
+## ItemsStyle Object fields
 
 |**Name**|**Type**|**Description**
 |---|---|---
@@ -58,7 +59,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |italic|bool|Italic style for changed components
 |strikeThrough|bool|Strike through style for changed components
 
-## ChangeInfo Object fields ##
+## ChangeInfo Object fields
 
 |**Name**|**Type**|**Description**
 |---|---|---
@@ -69,14 +70,14 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |authors|string[]|Array of authors who made this change (used for multi comparison)
 |styleChanges|styleChangeInfo Object[]|Array of style changes
 
-## ComparisonChangesCategoryObject fields ##
+## ComparisonChangesCategoryObject fields
 
 |**Name**|**Type**|**Description**
 |---|---|---
 |Category|string|Name of category
 |Changes|ChangeInfo[]|Array of ChangeInfo objects
 
-## StyleChangeInfo Object fields ##
+## StyleChangeInfo Object fields
 
 |**Name**|**Type**|**Description**
 |---|---|---
@@ -84,7 +85,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |oldValue|string|Value of changed style from source document
 |newValue|string|Value of changed style from target document
 
-## MetaData Object field ##
+## MetaData Object field
 
 |**Name**|**Type**|**Description**
 |---|---|---
@@ -93,7 +94,7 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 |Company|string|Value of Company of document
 
 
-## DetailLevel enum ##
+## DetailLevel enum
 
 ```html
 
@@ -101,7 +102,7 @@ Low, Middle, Hight
 
 ```
 
-## Action enum ##
+## Action enum
 
 ```html
 
@@ -109,7 +110,7 @@ Accept, Reject
 
 ```
 
-## TypeChanged enum ##
+## TypeChanged enum
 
 ```html
 

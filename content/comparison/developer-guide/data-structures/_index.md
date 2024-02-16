@@ -5,4 +5,5 @@ title: "Data structures"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---

@@ -5,5 +5,6 @@ title: "Save options"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
 

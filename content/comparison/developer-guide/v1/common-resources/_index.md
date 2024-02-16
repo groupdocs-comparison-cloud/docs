@@ -6,6 +6,7 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 1
 description: ""
 keywords: ""
+toc: True
 ---
 
 {{< alert style="info" >}}
@@ -14,5 +15,5 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 
 
 
-### Common Resources ###
+### Common Resources
 

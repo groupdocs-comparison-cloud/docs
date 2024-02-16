@@ -5,5 +5,6 @@ title: "Compare multiple documents"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
 

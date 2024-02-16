@@ -6,6 +6,7 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 1
 description: ""
 keywords: ""
+toc: True
 ---
 
 {{< alert style="info" >}}
@@ -14,11 +15,11 @@ Note:  The features listed in this page are working only with GroupDocs.Compari
 
 You can compare documents and get list of changes categories by providing the [JsonRequest Object]({{< ref "comparison/developer-guide/v1/common-resources/jsonrequest-fields-description.md" >}}) data in request body.
 
-## Resource ##
+## Resource
 
 The following GroupDocs.Comparison Cloud REST API resource has been used to [get compared documents changes categories](https://apireference.groupdocs.cloud/comparison/#!/Changes/PostCategoriesChanges).
 
-### Enumeration of categories of changes ###
+### Enumeration of categories of changes
 
 ```bash
 
@@ -32,95 +33,95 @@ enum ComparisonCategoriesType
 
 ```
 
-## cURL REST Example ##
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
+{{< tabs "example1">}} {{< tab "Request" >}}
 
-```html
+```bash
 curl -v "https:~/~/api.groupdocs.cloud/v1.0/comparison/compareDocuments/changes/categories?categoriesType#ByTypeChanged&appsid#XXXX&signature#XXX-XX"
 
 -H "content-type: application/json"
 
- -X POST -d "{'sourceFile':{'folder':'comparisons','name':'source.docx','password':''},'targetFiles':[{'folder':'comparisons','name':'target.docx','password':''}]}"
+-X POST -d "{'sourceFile':{'folder':'comparisons','name':'source.docx','password':''},'targetFiles':[{'folder':'comparisons','name':'target.docx','password':''}]}"
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Response" >}}
 
-```html
+```json
 [
- {
- "category": "Deleted",
- "changes": [
- {
- "id": 0,
- "type": "Deleted",
- "text": "digital ",
- "authors": [
- "Rizwan"
- ],
- "action": "None",
- "styleChanges": []
- },
- {
- "id": 1,
- "type": "Deleted",
- "text": "Executive ",
- "authors": [
- "Rizwan"
- ],
- "action": "None",
- "styleChanges": []
- },
- {
- "id": 3,
- "type": "Deleted",
- "text": "",
- "authors": [
- "Rizwan"
- ],
- "action": "None",
- "styleChanges": []
- }
- ]
- },
- {
- "category": "Inserted",
- "changes": [
- {
- "id": 2,
- "type": "Inserted",
- "text": "",
- "authors": [
- "Rizwan"
- ],
- "action": "None",
- "styleChanges": []
- }
- ]
- }
+  {
+    "category": "Deleted",
+    "changes": [
+      {
+        "id": 0,
+        "type": "Deleted",
+        "text": "digital ",
+        "authors": [
+            "Rizwan"
+        ],
+        "action": "None",
+        "styleChanges": []
+      },
+      {
+        "id": 1,
+        "type": "Deleted",
+        "text": "Executive ",
+        "authors": [
+            "Rizwan"
+        ],
+        "action": "None",
+        "styleChanges": []
+      },
+      {
+        "id": 3,
+        "type": "Deleted",
+        "text": "",
+        "authors": [
+            "Rizwan"
+        ],
+        "action": "None",
+        "styleChanges": []
+      }
+    ]
+  },
+  {
+      "category": "Inserted",
+      "changes": [
+        {
+          "id": 2,
+          "type": "Inserted",
+          "text": "",
+          "authors": [
+              "Rizwan"
+          ],
+          "action": "None",
+          "styleChanges": []
+        }
+      ]
+  }
 ]
+```
 {{< /tab >}} {{< /tabs >}}
-
-## SDKs ##
+## SDK example
 
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-comparison-cloud).
 
-### Get Changes Categories from Compared Documents ###
+### Get Changes Categories from Compared Documents
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
-
+{{< tabs "example2">}} {{< tab "C#" >}}
  
 {{< gist groupdocscloud 33ad9afbf76ac035c8552d2efe0ec895 Comparison_CSharp_Get_Changes_Categories.cs >}}
 
-{{< /tab >}} {{< tab tabNum="3" >}}
-
+{{< /tab >}} {{< tab "PHP" >}}
  
 {{< gist groupdocscloud fb9d531a4ea5f0755dfd0e079b7801b5 Comparison_Php_Get_Changes_Categories.php >}}
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java" >}}
 
 {{< gist groupdocscloud dde5dbd092bef3a3ac74848342ee4f64 Comparison_Java_Get_Changes_Categories.java >}}
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 {{< gist groupdocscloud 4e15a0a5e68b0d2755592a552488d1ec Comparison_Ruby_get_changes_categories.rb >}}
+
+{{< /tab >}} {{< /tabs >}}

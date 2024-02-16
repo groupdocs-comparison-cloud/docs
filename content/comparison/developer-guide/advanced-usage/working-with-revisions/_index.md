@@ -5,5 +5,6 @@ title: "Working with revisions"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
 

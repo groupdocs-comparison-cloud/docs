@@ -6,9 +6,8 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 2
 description: ""
 keywords: ""
+toc: True
 ---
-
-# Introduction #
 
 GroupDocs.Comparison Cloud provides an ability to apply or discard specific changes between source and target files and save result with (or without) selected changes.
 
@@ -16,7 +15,7 @@ GroupDocs.Comparison Cloud provides an ability to apply or discard specific cha
 
 The following code sample shows how to accept/reject changes.
 
-## API Usage ##
+## API usage
 
 There are steps that usage of GroupDocs.Comparison Cloud consists of:
 
@@ -24,17 +23,17 @@ There are steps that usage of GroupDocs.Comparison Cloud consists of:
 1. Compare documents or get document info
 1. Download comparison result document from storage
 
-Steps 1 and 3 are storage operations, please refer to this [File API documentation>>path:/comparisoncloud/developer-guide/working-with-file-api/) for usage details.
+Steps 1 and 3 are storage operations, please refer to this [File API documentation]({{< ref "comparison/developer-guide/working-with-file-api.md" >}}) for usage details.
 
 [Swagger UI](https://apireference.groupdocs.cloud/comparison/) lets you call this REST API directly from the browser.
 
-## cURL REST Example ##
+## cURL example
 
 Curl example contains only 'updates' method call. For 'changes' method,  see other examples
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
+{{< tabs "example1">}} {{< tab "Request" >}}
 
-```html
+```bash
 
 * First get JSON Web Token
 * Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
@@ -187,9 +186,9 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/updates" \
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Response" >}}
 
-```html
+```json
 
 {
   "href": "https://api.groupdocs.cloud/v2.0/comparison/storage/file/output/result.docx",
@@ -198,15 +197,15 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/updates" \
   "title": "result.docx"
 }
 
+```
 {{< /tab >}} {{< /tabs >}}
 
-## SDKs ##
+## SDK example
 
-Using an SDK (API client) is the quickest way for a developer to speed up the development. An SDK takes care of a lot of low-level details of making requests and handling responses and lets you focus on writing code specific to your particular project. Check out our [GitHub repository](https://github.com/groupdocs-comparison-cloud) for a complete list of GroupDocs.Comparison Cloud SDKs along with working examples, to get you started in no time. Please check [Available SDKs>>path:/comparisoncloud/getting-started/available-sdks/) article to learn how to add an SDK to your project.
+Using an SDK (API client) is the quickest way for a developer to speed up the development. An SDK takes care of a lot of low-level details of making requests and handling responses and lets you focus on writing code specific to your particular project. Check out our [GitHub repository](https://github.com/groupdocs-comparison-cloud) for a complete list of GroupDocs.Comparison Cloud SDKs along with working examples, to get you started in no time. Please check [Available SDKs]({{< ref "comparison/getting-started/available-sdks.md" >}}) article to learn how to add an SDK to your project.
 
-### SDK Examples ###
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 
@@ -237,7 +236,7 @@ var response = apiInstance.PutChangesDocument(new PutChangesDocumentRequest(opti
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java" >}}
 
 ```Java
 
@@ -270,7 +269,7 @@ Link response = apiInstance.putChangesDocument(new PutChangesDocumentRequest(opt
 
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 
@@ -307,7 +306,7 @@ $response = $apiInstance->putChangesDocument($request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 
@@ -346,7 +345,7 @@ try {
 
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 
@@ -379,7 +378,7 @@ response = api_instance.put_changes_document(groupdocs_comparison_cloud.PutChang
 
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 

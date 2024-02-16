@@ -5,9 +5,8 @@ title: "Get Document Information"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
-
-# Introduction #
 
 This REST API allows to obtain basic information about the document and it's properties.
 
@@ -18,14 +17,14 @@ It returns [InfoResult]({{< ref "comparison/developer-guide/data-structures/info
 * File size
 * Pages count
 
-## Resource ##
+## Resource
 
 The following GroupDocs.Viewer Cloud REST API resource has been used to get [document information](https://apireference.groupdocs.cloud/comparison/#/Info/GetDocumentInfo).
 
-## cURL REST Example ##
+## cURL example
 
-{{< tabs tabTotal="2" tabID="1" tabName1="Request" tabName2="Response" >}} {{< tab tabNum="1" >}}
-
+{{< tabs "example1">}} {{< tab "Request" >}}
+```bash
 * First get JSON Web Token
 * Please get your Client Id and Client Secret from <https://dashboard.groupdocs.cloud/applications>. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
 curl -v "https://api.groupdocs.cloud/connect/token" \
@@ -43,27 +42,26 @@ curl -v "https://api.groupdocs.cloud/v2.0/comparison/info" \
 -d "{
          'FilePath': 'source_files/word/source.docx'
     }"
+```
+{{< /tab >}} {{< tab "Response" >}}
 
-{{< /tab >}} {{< tab tabNum="2" >}}
-
-```html
-
+```json
 {
   "format": "Microsoft Word Document",
   "extension": ".docx",
   "size": 23059,
   "pageCount": 1
 }
-
+```
 {{< /tab >}} {{< /tabs >}}
 
-## SDKs ##
+## SDK example
 
 The API is completely independent of your operating system, database system or development language. We provide and support API SDKs in many development languages in order to make it even easier to integrate. You can see our available SDKs list [here](https://github.com/groupdocs-comparison-cloud).
 
-### SDK Examples ###
 
-{{< tabs tabTotal="6" tabID="10" tabName1="C#" tabName2="Java" tabName3="PHP" tabName4="Node.js" tabName5="Python" tabName6="Ruby" >}} {{< tab tabNum="1" >}}
+
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
 
@@ -84,7 +82,7 @@ var response = apiInstance.GetDocumentInfo(request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="2" >}}
+{{< /tab >}} {{< tab "Java" >}}
 
 ```Java
 
@@ -102,7 +100,7 @@ InfoResult response = apiInstance.getDocumentInfo(request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="3" >}}
+{{< /tab >}} {{< tab "PHP" >}}
 
 ```php
 
@@ -127,7 +125,7 @@ $response = $apiInstance->getDocumentInfo($request);
 
 ```
 
-{{< /tab >}} {{< tab tabNum="4" >}}
+{{< /tab >}} {{< tab "Node.js" >}}
 
 ```javascript
 
@@ -153,7 +151,7 @@ try {
 
 ```
 
-{{< /tab >}} {{< tab tabNum="5" >}}
+{{< /tab >}} {{< tab "Python" >}}
 
 ```python
 
@@ -172,7 +170,7 @@ result = infoApi.get_document_info(request)
 
 ```
 
-{{< /tab >}} {{< tab tabNum="6" >}}
+{{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
 

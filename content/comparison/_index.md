@@ -5,5 +5,6 @@ title: "GroupDocs.Comparison Cloud"
 productName: "GroupDocs.Comparison Cloud"
 description: ""
 keywords: ""
+toc: True
 ---
 
