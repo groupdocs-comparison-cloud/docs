@@ -6,5 +6,4 @@ productName: "GroupDocs.Comparison Cloud"
 weight: 2
 description: ""
 keywords: ""
-toc: True
 ---
