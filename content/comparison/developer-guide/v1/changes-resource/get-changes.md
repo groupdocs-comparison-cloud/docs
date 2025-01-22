@@ -101,3 +101,4 @@ The API is completely independent of your operating system, database system or d
 
 {{< gist groupdocscloud 4e15a0a5e68b0d2755592a552488d1ec Comparison_Ruby_get_changes.rb >}}
 
+{{< /tab >}} {{< /tabs >}}

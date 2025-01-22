@@ -40,6 +40,7 @@ At the moment following SDKs are provided:
 * Node.js ([Sources](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node), [samples](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-node-samples))
 * Python ([Sources](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python), [samples](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples))
 * Ruby ([Sources](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby), [samples](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples))
+* Apex ([Sources](https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-apex))
 
 ## API Explorer
 
