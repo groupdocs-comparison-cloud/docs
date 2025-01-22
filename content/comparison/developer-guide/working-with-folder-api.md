@@ -105,27 +105,160 @@ Our API is completely independent of your operating system, database system or d
 
 {{< tabs "example2">}} {{< tab "C#" >}}
 
-{{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Get_Files_List.cs >}}
+```csharp
+using System;
+using GroupDocs.Comparison.Cloud.Sdk.Api;
+using GroupDocs.Comparison.Cloud.Sdk.Client;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+{
+	// Get Files List
+	class Get_Files_List
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new GetFilesListRequest("Comparisondocs", Common.MyStorage);
+
+				var response = apiInstance.GetFilesList(request);
+				Console.WriteLine("Expected response type is FilesList: " + response.Value.Count.ToString());
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Files_List.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.comparison.api.*;
+import com.groupdocs.cloud.comparison.client.ApiException;
+import com.groupdocs.cloud.comparison.model.FilesList;
+import com.groupdocs.cloud.comparison.model.*;
+import com.groupdocs.cloud.comparison.model.requests.*;
+import examples.Utils;
+
+public class Comparison_Java_Get_Files_List {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			GetFilesListRequest request = new GetFilesListRequest("Comparisondocs", Utils.MYStorage);
+			FilesList response = apiInstance.getFilesList(request);
+			System.out.println("Expected response type is FilesList.");
+			for (StorageFile storageFile : response.getValue()) {
+				System.out.println("Files: " + storageFile.getPath());
+			}
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Get_Files_List.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Comparison\Model\Requests\GetFilesListRequest("comparisondocs", CommonUtils::$MyStorage);
+		$response = $apiInstance->getFilesList($request);
+		
+		echo "Expected response type is FilesList.", "<br />";
+
+		foreach($response->getValue() as $storageFile) {
+          echo "Files: ", $storageFile->getPath(), "<br />";
+		}
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Get_Files_List.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Get_Files_List()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::GetFilesListRequest.new("comparisondocs/sample.docx", $myStorage)
+    $response = $api.get_files_list($request)
+
+    puts("Expected response type is FilesList: " + ($response).to_s)
+  end
+end
+```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Get_Files_List.js >}}
+```js
+"use strict";
+class Comparison_Node_Get_Files_List {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_comparison_cloud_1.GetFilesListRequest("Comparisondocs/sample.docx", myStorage);
+		folderApi.getFilesList(request)
+			.then(function (response) {
+				console.log("Expected response type is FilesList: " + response.value.length);
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Comparison_Node_Get_Files_List;
+
+```
 
 {{< /tab >}} {{< tab "Python" >}}
 
-{{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Get_Files_List.py >}}
+```python
+# Import modules
+import groupdocs_comparison_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Comparison_Python_Get_Files_List:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_comparison_cloud.GetFilesListRequest("comparisondocs\\sample.docx", Common_Utilities.myStorage)
+            response = api.get_files_list(request)
+            
+            print("Expected response type is FilesList: " + str(response))
+        except groupdocs_comparison_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}} {{< /tabs >}}
 
@@ -171,27 +304,151 @@ Our API is completely independent of your operating system, database system or d
 
 {{< tabs "example4">}} {{< tab "C#" >}}
 
-{{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Create_Folder.cs >}}
+```csharp
+using System;
+using GroupDocs.Comparison.Cloud.Sdk.Api;
+using GroupDocs.Comparison.Cloud.Sdk.Client;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+{
+	// Create Folder
+	class Create_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new CreateFolderRequest("", Common.MyStorage);
+
+				apiInstance.CreateFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Comparisondocs' folder created.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Create_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.comparison.api.*;
+import com.groupdocs.cloud.comparison.client.ApiException;
+import com.groupdocs.cloud.comparison.model.requests.*;
+import examples.Utils;
+
+public class Comparison_Java_Create_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			CreateFolderRequest request = new CreateFolderRequest("Comparisondocs", Utils.MYStorage);
+			apiInstance.createFolder(request);
+			System.out.println("Expected response type is Void: 'Comparisondocs' folder created.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Create_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Comparison\Model\Requests\CreateFolderRequest("comparisondocs", CommonUtils::$MyStorage);
+		$apiInstance->createFolder($request);
+		
+		echo "Expected response type is Void: 'comparisondocs' folder created.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Create_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Create_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::CreateFolderRequest.new("comparisondocs", $myStorage)
+    $response = $api.create_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs' folder created.")
+  end
+end
+```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Create_Folder.js >}}
+```js
+"use strict";
+class Comparison_Node_Create_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_comparison_cloud_1.CreateFolderRequest("Comparisondocs", myStorage);
+		folderApi.createFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Comparisondocs' folder created.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Comparison_Node_Create_Folder;
+
+```
 
 {{< /tab >}} {{< tab "Python" >}}
 
-{{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Create_Folder.py >}}
+```python
+# Import modules
+import groupdocs_comparison_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Comparison_Python_Create_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_comparison_cloud.CreateFolderRequest("comparisondocs", Common_Utilities.myStorage)
+            api.create_folder(request)
+            
+            print("Expected response type is Void: 'comparisondocs' folder created.")
+        except groupdocs_comparison_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}} {{< /tabs >}}
 
@@ -234,27 +491,152 @@ Our API is completely independent of your operating system, database system or d
 
 {{< tabs "example6">}} {{< tab "C#" >}}
 
-{{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Delete_Folder.cs >}}
+```csharp
+using System;
+using GroupDocs.Comparison.Cloud.Sdk.Api;
+using GroupDocs.Comparison.Cloud.Sdk.Client;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+{
+	// Delete Folder
+	class Delete_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new DeleteFolderRequest("Comparisondocs/Comparisondocs1", Common.MyStorage, true);
+
+				apiInstance.DeleteFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Comparisondocs/Comparisondocs1' folder deleted recusrsively.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Delete_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.comparison.api.*;
+import com.groupdocs.cloud.comparison.client.ApiException;
+import com.groupdocs.cloud.comparison.model.requests.*;
+import examples.Utils;
+
+public class Comparison_Java_Delete_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			DeleteFolderRequest request = new DeleteFolderRequest("Comparisondocs\\Comparisondocs1", Utils.MYStorage, true);
+			apiInstance.deleteFolder(request);
+			System.out
+					.println("Expected response type is Void: 'Comparisondocs/Comparisondocs1' folder deleted recusrsively.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Delete_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Comparison\Model\Requests\DeleteFolderRequest("comparisondocs1\\comparisondocs1", CommonUtils::$MyStorage, true);
+		$apiInstance->deleteFolder($request);
+		
+		echo "Expected response type is Void: 'comparisondocs1/comparisondocs1' folder deleted recursively.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Delete_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Delete_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::DeleteFolderRequest.new("comparisondocs1", $myStorage, true)
+    $response = $api.delete_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs/comparisondocs1' folder deleted recursively.")
+  end
+end
+```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Delete_Folder.js >}}
+```js
+"use strict";
+class Comparison_Node_Delete_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_comparison_cloud_1.DeleteFolderRequest("Comparisondocs/Comparisondocs1", myStorage, true);
+		folderApi.deleteFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Comparisondocs/Comparisondocs1' folder deleted recursively.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Comparison_Node_Delete_Folder;
+
+```
 
 {{< /tab >}} {{< tab "Python" >}}
 
-{{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Delete_Folder.py >}}
+```python
+# Import modules
+import groupdocs_comparison_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Comparison_Python_Delete_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_comparison_cloud.DeleteFolderRequest("comparisondocs\\comparisondocs1", Common_Utilities.myStorage, True)
+            api.delete_folder(request)
+            
+            print("Expected response type is Void: 'comparisondocs/comparisondocs1' folder deleted recursively.")
+        except groupdocs_comparison_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}} {{< /tabs >}}
 
@@ -300,27 +682,152 @@ Our API is completely independent of your operating system, database system or d
 
 {{< tabs "example8">}} {{< tab "C#" >}}
 
-{{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Copy_Folder.cs >}}
+```csharp
+using System;
+using GroupDocs.Comparison.Cloud.Sdk.Api;
+using GroupDocs.Comparison.Cloud.Sdk.Client;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+
+namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+{
+	// Copy Folder
+	class Copy_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new CopyFolderRequest("Comparisondocs", "Comparisondocs1", Common.MyStorage, Common.MyStorage);
+
+				apiInstance.CopyFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Comparisondocs' folder copied as 'Comparisondocs1'.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Copy_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.comparison.api.*;
+import com.groupdocs.cloud.comparison.client.ApiException;
+import com.groupdocs.cloud.comparison.model.requests.*;
+import examples.Utils;
+
+public class Comparison_Java_Copy_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			CopyFolderRequest request = new CopyFolderRequest("Comparisondocs", "Comparisondocs1", Utils.MYStorage,
+					Utils.MYStorage);
+			apiInstance.copyFolder(request);
+			System.out.println("Expected response type is Void: 'Comparisondocs' folder copied as 'Comparisondocs1'.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Copy_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Comparison\Model\Requests\CopyFolderRequest("comparisondocs", "comparisondocs1", CommonUtils::$MyStorage, CommonUtils::$MyStorage);
+		$apiInstance->copyFolder($request);
+		
+		echo "Expected response type is Void: 'comparisondocs' folder copied as 'comparisondocs1'.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Copy_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Copy_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::CopyFolderRequest.new("comparisondocs", "comparisondocs1", $myStorage, $myStorage)
+    $response = $api.copy_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs' folder copied as 'comparisondocs1'.")
+  end
+end
+```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Copy_Folder.js >}}
+```js
+"use strict";
+class Comparison_Node_Copy_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_comparison_cloud_1.CopyFolderRequest("Comparisondocs", "Comparisondocs1", myStorage, myStorage);
+		folderApi.copyFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Comparisondocs' folder copied as 'Comparisondocs1'.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Comparison_Node_Copy_Folder;
+
+```
 
 {{< /tab >}} {{< tab "Python" >}}
 
-{{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Copy_Folder.py >}}
+```python
+# Import modules
+import groupdocs_comparison_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Comparison_Python_Copy_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_comparison_cloud.CopyFolderRequest("comparisondocs", "comparisondocs1", Common_Utilities.myStorage, Common_Utilities.myStorage)
+            api.copy_folder(request)
+            
+            print("Expected response type is Void: 'comparisondocs' folder copied as 'comparisondocs1'.")
+        except groupdocs_comparison_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}} {{< /tabs >}}
 
@@ -365,26 +872,152 @@ Our API is completely independent of your operating system, database system or d
 
 {{< tabs "example10">}} {{< tab "C#" >}}
 
-{{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Move_Folder.cs >}}
+```csharp
+using GroupDocs.Comparison.Cloud.Sdk.Api;
+using GroupDocs.Comparison.Cloud.Sdk.Client;
+using GroupDocs.Comparison.Cloud.Sdk.Model.Requests;
+using System;
+
+namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+{
+	// Move Folder
+	class Move_Folder
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+			var apiInstance = new FolderApi(configuration);
+
+			try
+			{
+				var request = new MoveFolderRequest("Comparisondocs1", "Comparisondocs\\Comparisondocs1", Common.MyStorage, Common.MyStorage);
+
+				apiInstance.MoveFolder(request);
+				Console.WriteLine("Expected response type is Void: 'Comparisondocs1' folder moved to 'Comparisondocs/Comparisondocs1'.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling FolderApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Move_Folder.java >}}
+```java
+package examples.Working_With_Folder;
+
+import com.groupdocs.cloud.comparison.api.*;
+import com.groupdocs.cloud.comparison.client.ApiException;
+import com.groupdocs.cloud.comparison.model.requests.*;
+import examples.Utils;
+
+public class Comparison_Java_Move_Folder {
+
+	public static void main(String[] args) {
+
+		FolderApi apiInstance = new FolderApi(Utils.AppSID, Utils.AppKey);
+		try {
+			MoveFolderRequest request = new MoveFolderRequest("Comparisondocs1", "Comparisondocs\\Comparisondocs1",
+					Utils.MYStorage, Utils.MYStorage);
+			apiInstance.moveFolder(request);
+			System.out.println(
+					"Expected response type is Void: 'Comparisondocs1' folder moved to 'Comparisondocs/Comparisondocs1'.");
+		} catch (ApiException e) {
+			System.err.println("Exception while calling FolderApi:");
+			e.printStackTrace();
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Move_Folder.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+	try {
+		$apiInstance = CommonUtils::GetFolderApiInstance();
+
+		$request = new GroupDocs\Comparison\Model\Requests\MoveFolderRequest("comparisondocs1", "comparisondocs1\\comparisondocs1", CommonUtils::$MyStorage, CommonUtils::$MyStorage, true);
+		$apiInstance->moveFolder($request);
+		
+		echo "Expected response type is Void: 'comparisondocs1' folder moved to 'comparisondocs1/comparisondocs1'.", "<br />";
+	} catch (Exception $e) {
+		echo "Something went wrong: ", $e->getMessage(), "\n";
+	}
+?>
+```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Move_Folder.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Move_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+
+    $request = GroupDocsComparisonCloud::MoveFolderRequest.new("comparisondocs1", "comparisondocs/comparisondocs1", $myStorage, $myStorage)
+    $response = $api.move_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs1' folder moved to 'comparisondocs/comparisondocs1'.")
+  end
+end
+```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
-{{< gist groupdocscloud 7999207c55ecfba6c2a125f5b77ca0d8 Comparison_Node_Move_Folder.js >}}
+```js
+"use strict";
+class Comparison_Node_Move_Folder {
+	static Run() {
+		// retrieve supported file-formats
+		var request = new groupdocs_comparison_cloud_1.MoveFolderRequest("Comparisondocs1", "Comparisondocs/Comparisondocs1", myStorage, myStorage);
+		folderApi.moveFolder(request)
+			.then(function () {
+				console.log("Expected response type is Void: 'Comparisondocs1' folder moved to 'Comparisondocs/Comparisondocs1'.");
+			})
+			.catch(function (error) {
+				console.log("Error: " + error.message);
+			});
+	}
+}
+module.exports = Comparison_Node_Move_Folder;
+
+```
 
 {{< /tab >}} {{< tab "Python" >}}
 
-{{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Move_Folder.py >}}
+```python
+# Import modules
+import groupdocs_comparison_cloud
+
+from Common_Utilities.Utils import Common_Utilities
+
+
+class Comparison_Python_Move_Folder:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_FolderApi_Instance()
+        
+        try:
+            request = groupdocs_comparison_cloud.MoveFolderRequest("comparisondocs1", "comparisondocs1\\comparisondocs", Common_Utilities.myStorage, Common_Utilities.myStorage)
+            api.move_folder(request)
+            
+            print("Expected response type is Void: 'comparisondocs1' folder moved to 'comparisondocs/comparisondocs1'.")
+        except groupdocs_comparison_cloud.ApiException as e:
+            print("Exception while calling API: {0}".format(e.message))
+```
 
 {{< /tab >}} {{< /tabs >}}

@@ -289,5 +289,34 @@ request = GroupDocsComparisonCloud::PostChangesRequest.new(options)
 changes = apiInstance.post_changes(request)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+    
+// Upload files for comparison to cloud storage
+List<ContentVersion> contentVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title  = 'source.docx' LIMIT 1];
+fileApi.uploadFile(new UploadFileRequest('source.docx', contentVersions[0].VersionData, null));
+
+List<ContentVersion> contentVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title  = 'target.docx' LIMIT 1];
+fileApi.uploadFile(new UploadFileRequest('target.docx', contentVersions[0].VersionData, null));
+
+// Get comparison changes
+ComparisonOptions options = new ComparisonOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath='source.docx';
+options.TargetFiles = new List<FileInfo>();
+options.TargetFiles.add(new FileInfo());
+options.TargetFiles[0].FilePath = 'target.docx';
+options.Settings = new Settings();
+options.Settings.CalculateCcomponentCoordinates = true;
+
+List<ChangeInfo> response = compareApi.postChanges(new PostChangesRequest(options));
+System.debug('The num of changes: ' + response.size());
+
+```
 {{< /tab >}} {{< /tabs >}}

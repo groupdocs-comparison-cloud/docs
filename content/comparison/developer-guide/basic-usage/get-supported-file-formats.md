@@ -171,19 +171,119 @@ The API is completely independent of your operating system, database system or d
 
 {{< tabs "example2">}} {{< tab "C#" >}}
 
-{{< gist groupdocscloud 622c78dd86e4c5ade7e870295b6db376 Comparison_CSharp_Get_Supported_Formats.cs >}}
+```csharp
+using System;
+using GroupDocs.Comparison.Cloud.Sdk.Api;
+using GroupDocs.Comparison.Cloud.Sdk.Client;
+
+namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+{
+	// Get All Supported Formats
+	class Get_All_Supported_Formats
+	{
+		public static void Run()
+		{
+			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+
+			var apiInstance = new InfoApi(configuration);
+
+			try
+			{
+				// Get supported file formats
+				var response = apiInstance.GetSupportedFileFormats();
+
+				foreach (var entry in response.Formats)
+				{
+					Console.WriteLine(string.Format("{0}: {1}", entry.FileFormat, string.Join(",", entry.Extension)));
+				}
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Exception while calling Comparison InfoApi: " + e.Message);
+			}
+		}
+	}
+}
+```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-{{< gist groupdocscloud fcf2013d068abf714662f99cba3c0d47 Comparison_Java_Get_Supported_Formats.java >}}
+```java
+package examples.Supported_File_Formats;
+
+import com.groupdocs.cloud.comparison.client.*;
+import com.groupdocs.cloud.comparison.model.*;
+import java.util.List;
+import com.groupdocs.cloud.comparison.client.Configuration;
+import com.groupdocs.cloud.comparison.api.*;
+import examples.Utils;
+
+public class Comparison_Java_Get_Supported_Formats {
+
+	public static void main(String[] args) {
+
+		Configuration configuration = new Configuration(Utils.AppSID, Utils.AppKey);
+		InfoApi apiInstance = new InfoApi(configuration);
+
+        try {
+            FormatsResult response = apiInstance.getSupportedFileFormats();
+            for (Format format : response.getFormats()) {
+                System.out.println(format.getFileFormat());
+            }
+        } catch (ApiException e) {
+            System.err.println("Exception while calling InfoApi:");
+            e.printStackTrace();
+        }
+	}
+}
+
+```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
-{{< gist groupdocscloud 24ad96946345493cb230d7124f22c176 Comparison_Php_Get_Supported_Formats.php >}}
+```php
+<?php
+
+include(dirname(__DIR__) . '\CommonUtils.php');
+
+try {
+    $apiInstance = CommonUtils::GetInfoApiInstance();
+
+    $response = $apiInstance->getSupportedFileFormats();
+
+    echo '<b>Supported file formats<br /></b>';
+	foreach($response->getFormats() as $key => $format) {
+	  echo $format->getFileFormat(), "(", $format->getExtension(), ")<br />";
+	}
+} catch (Exception $e) {
+    echo "Something went wrong: ", $e->getMessage(), "\n";
+}
+```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
-{{< gist groupdocscloud f830f503cb44c7aa38a757cb86b34f5d Comparison_Ruby_Get_Supported_Formats.rb >}}
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class File_Formats
+  def self.Comparison_Ruby_Get_Supported_Formats()
+
+    # Getting instance of the API
+    api = Common_Utilities.Get_InfoApi_Instance()
+
+    # Retrieve supported file-formats
+    $response = api.get_supported_file_formats()
+
+    # Print out supported file-formats
+    puts("Supported file-formats:")
+    $response.formats.each do |format|
+      puts("#{format.file_format} (#{format.extension})")
+    end
+  end
+end
+```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -208,6 +308,30 @@ try {
 
 {{< /tab >}} {{< tab "Python" >}}
 
-{{< gist groupdocscloud 5b471172e33a251d70b08127085d200e Comparison_Python_Get_Supported_Formats.py >}}
+```python
+# Import modules
+import groupdocs_comparison_cloud
+
+from Common_Utilities.Utils import Common_Utilities;
+
+
+class Comparison_Python_Get_Supported_Formats:
+    
+    @classmethod
+    def Run(self):
+        # Create instance of the API
+        api = Common_Utilities.Get_InfoApi_Instance()
+        
+        try:
+            # Retrieve supported file-formats
+            response = api.get_supported_file_formats()
+    
+            # Print out supported file-formats
+            print("Supported file-formats:")
+            for fileformat in response.formats:
+                print('{0} ({1})'.format(fileformat.file_format, fileformat.extension))
+        except groupdocs_comparison_cloud.ApiException as e:
+            print("Exception when calling get_supported_comparison_types: {0}".format(e.message))
+```
 
 {{< /tab >}} {{< /tabs >}}
