@@ -309,5 +309,58 @@ request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
 response = apiInstance.comparisons(request)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+
+// Upload source file with password to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source_protected.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source_protected.docx', sourceVersions[0].VersionData, null));
+}
+
+// Upload target files with passwords to cloud storage
+List<ContentVersion> targetVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title IN ('target_protected.docx', 'target_1_protected.docx', 'target_2_protected.docx')];
+for (ContentVersion targetVersion : targetVersions) {
+    String filePath = 'target_files/word/' + targetVersion.Title;
+    fileApi.uploadFile(new UploadFileRequest(filePath, targetVersion.VersionData, null));
+}
+
+// Set up comparison options
+ComparisonOptions options = new ComparisonOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/word/source_protected.docx';
+options.SourceFile.Password = '1231';
+
+options.TargetFiles = new List<FileInfo>();
+
+FileInfo targetFile1 = new FileInfo();
+targetFile1.FilePath = 'target_files/word/target_protected.docx';
+targetFile1.Password = '5784';
+options.TargetFiles.add(targetFile1);
+
+FileInfo targetFile2 = new FileInfo();
+targetFile2.FilePath = 'target_files/word/target_1_protected.docx';
+targetFile2.Password = '5784';
+options.TargetFiles.add(targetFile2);
+
+FileInfo targetFile3 = new FileInfo();
+targetFile3.FilePath = 'target_files/word/target_2_protected.docx';
+targetFile3.Password = '5784';
+options.TargetFiles.add(targetFile3);
+
+options.OutputPath = 'output/result.docx';
+
+// Execute comparison
+ComparisonsRequest request = new ComparisonsRequest(options);
+Link response = compareApi.comparisons(request);
+
+// Debug the result
+System.debug('Comparison complete. Output file link: ' + response.href);
+
+```
 {{< /tab >}} {{< /tabs >}}

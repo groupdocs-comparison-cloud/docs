@@ -410,5 +410,57 @@ options.changes = changes
 response = apiInstance.put_changes_document(GroupDocsComparisonCloud::PutChangesDocumentRequest.new(options))
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+
+// Upload source file to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source.docx', sourceVersions[0].VersionData, null));
+}
+
+// Upload target file to cloud storage
+List<ContentVersion> targetVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'target.docx' LIMIT 1];
+if (targetVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('target_files/word/target.docx', targetVersions[0].VersionData, null));
+}
+
+// Set up update options
+UpdatesOptions options = new UpdatesOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/word/source.docx';
+
+options.TargetFiles = new List<FileInfo>();
+FileInfo targetFileInfo = new FileInfo();
+targetFileInfo.FilePath = 'target_files/word/target.docx';
+options.TargetFiles.add(targetFileInfo);
+
+options.OutputPath = 'output/result.docx';
+
+// Get changes from comparison
+List<ChangeInfo> changes = compareApi.postChanges(new PostChangesRequest(options));
+
+// Modify changes: reject all by default
+for (ChangeInfo change : changes) {
+    change.ComparisonAction = 'Reject';
+}
+
+// Accept the first change
+if (!changes.isEmpty()) {
+    changes[0].ComparisonAction = 'Accept';
+}
+
+// Apply changes to the document
+options.Changes = changes;
+CompareResult result = compareApi.putChangesDocument(new PutChangesDocumentRequest(options));
+
+// Debug the result
+System.debug('Changes applied. Output file path: ' + result.href);
+
+```
 {{< /tab >}} {{< /tabs >}}

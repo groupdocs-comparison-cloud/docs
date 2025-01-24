@@ -130,27 +130,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Files
-  def self.Comparison_Ruby_Download_File()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FileApi_Instance()
-
-    $request = GroupDocsComparisonCloud::DownloadFileRequest.new("comparisondocs/one-page.docx", $myStorage)
-    $response = $api.download_file($request)
-    
-    puts("Expected response type is Stream: " + ($response).to_s)
-  end
-end
-```
-
 {{< /tab >}} {{< tab "Node.js" >}}
 
 ```js
@@ -195,7 +174,41 @@ class Comparison_Python_Download_File:
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
 ```
+{{< /tab >}} {{< tab "Ruby" >}}
 
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Files
+  def self.Comparison_Ruby_Download_File()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FileApi_Instance()
+
+    $request = GroupDocsComparisonCloud::DownloadFileRequest.new("comparisondocs/one-page.docx", $myStorage)
+    $response = $api.download_file($request)
+    
+    puts("Expected response type is Stream: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+
+Configuration configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+FileApi apiInstance = new FileApi(configuration);
+
+DownloadFileRequest request = new DownloadFileRequest();
+request.Path = 'Comparisondocs/one-page.docx';
+
+Stream response = apiInstance.downloadFile(request);
+System.debug('Expected response type is Stream. Length: ' + response.getBytes().size());
+
+```
 {{< /tab >}} {{< /tabs >}}
 
 ##  Upload File API
@@ -345,31 +358,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Files
-  def self.Comparison_Ruby_Upload_File()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FileApi_Instance()
-
-    $fileStream = File.new("src\\Resources\\comparisondocs\\source.docx", "r")
-
-    $request = GroupDocsComparisonCloud::UploadFileRequest.new("comparisondocs/source1.docx", $fileStream, $myStorage)
-    $response = $api.upload_file($request)
-
-    $fileStream.close()
-
-    puts("Expected response type is FilesUploadResult: " + ($response).to_s)
-  end
-end
-```
-
 {{< /tab >}} {{< tab "Node.js" >}}
 
 ```js
@@ -421,6 +409,60 @@ class Comparison_Python_Upload_File:
             print("Exception while calling API: {0}".format(e.message))
 ```
 
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Files
+  def self.Comparison_Ruby_Upload_File()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FileApi_Instance()
+
+    $fileStream = File.new("src\\Resources\\comparisondocs\\source.docx", "r")
+
+    $request = GroupDocsComparisonCloud::UploadFileRequest.new("comparisondocs/source1.docx", $fileStream, $myStorage)
+    $response = $api.upload_file($request)
+
+    $fileStream.close()
+
+    puts("Expected response type is FilesUploadResult: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FileApi fileApi = new FileApi(config);
+
+try {
+    // Fetch the file content from Salesforce
+    List<ContentVersion> contentVersions = [SELECT Id, Title, VersionData 
+                                             FROM ContentVersion 
+                                             WHERE Title = 'one-page.docx' 
+                                             LIMIT 1];
+    if (contentVersions.isEmpty()) {
+        throw new Exception('File one-page.docx not found in ContentVersion.');
+    }
+
+    // Prepare the upload request
+    UploadFileRequest uploadRequest = new UploadFileRequest('Comparisondocs/one-page1.docx', contentVersions[0].VersionData, null);
+
+    // Upload the file
+    FilesUploadResult response = fileApi.uploadFile(uploadRequest);
+
+    // Log the result
+    System.debug('Expected response type is FilesUploadResult: ' + response.Uploaded.size());
+} catch (Exception e) {
+    System.debug('Exception while calling FileApi: ' + e.getMessage());
+}
+```
 {{< /tab >}} {{< /tabs >}}
 
 ## Delete File API
@@ -543,27 +585,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Files
-  def self.Comparison_Ruby_Delete_File()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FileApi_Instance()
-
-    $request = GroupDocsComparisonCloud::DeleteFileRequest.new("comparisondocs1/source.docx", $myStorage)
-    $response = $api.delete_file($request)
-
-    puts("Expected response type is Void: 'comparisondocs1/one-page.docx' deleted.")
-  end
-end
-```
-
 {{< /tab >}} {{< tab "Node.js" >}}
 
 ```js
@@ -607,6 +628,49 @@ class Comparison_Python_Delete_File:
             print("Expected response type is Void: 'comparisondocs1/source.docx' deleted.")
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Files
+  def self.Comparison_Ruby_Delete_File()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FileApi_Instance()
+
+    $request = GroupDocsComparisonCloud::DeleteFileRequest.new("comparisondocs1/source.docx", $myStorage)
+    $response = $api.delete_file($request)
+
+    puts("Expected response type is Void: 'comparisondocs1/one-page.docx' deleted.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FileApi fileApi = new FileApi(config);
+
+try {
+    // Prepare the delete file request
+    DeleteFileRequest deleteRequest = new DeleteFileRequest('Comparisondocs1/one-page1.docx', null);
+
+    // Delete the file
+    fileApi.deleteFile(deleteRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs1/one-page1.docx\' deleted.');
+} catch (Exception e) {
+    System.debug('Exception while calling FileApi: ' + e.getMessage());
+}
+
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -737,27 +801,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Files
-  def self.Comparison_Ruby_Copy_File()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FileApi_Instance()
-
-    $request = GroupDocsComparisonCloud::CopyFileRequest.new("source.docx", "comparisondocs\\source.docx", $myStorage, $myStorage)
-    $response = $api.copy_file($request)
-
-    puts("Expected response type is Void: 'comparisondocs/source.docx' file copied as 'comparisondocs/source-copied.docx'.")
-  end
-end
-```
-
 {{< /tab >}} {{< tab "Node.js" >}}
 
 ```js
@@ -801,6 +844,48 @@ class Comparison_Python_Copy_File:
             print("Expected response type is Void: 'comparisondocs/source.docx' file copied as 'comparisondocs/source-copied.docx'.")
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Files
+  def self.Comparison_Ruby_Copy_File()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FileApi_Instance()
+
+    $request = GroupDocsComparisonCloud::CopyFileRequest.new("source.docx", "comparisondocs\\source.docx", $myStorage, $myStorage)
+    $response = $api.copy_file($request)
+
+    puts("Expected response type is Void: 'comparisondocs/source.docx' file copied as 'comparisondocs/source-copied.docx'.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FileApi fileApi = new FileApi(config);
+
+try {
+    // Prepare the copy file request
+    CopyFileRequest copyRequest = new CopyFileRequest('Comparisondocs/one-page1.docx', 'Comparisondocs/one-page-copied.docx', null, null);
+
+    // Copy the file
+    fileApi.copyFile(copyRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs/one-page1.docx\' file copied as \'Comparisondocs/one-page-copied.docx\'.');
+} catch (Exception e) {
+    System.debug('Exception while calling FileApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -930,27 +1015,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Files
-  def self.Comparison_Ruby_Move_File()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FileApi_Instance()
-
-    $request = GroupDocsComparisonCloud::MoveFileRequest.new("comparisondocs/source.docx", "comparisondocs1/source.docx", $myStorage, $myStorage)
-    $response = $api.move_file($request)
-
-    puts("Expected response type is Void: 'comparisondocs/source.docx' file moved to 'comparisondocs1/source.docx'.")
-  end
-end
-```
-
 {{< /tab >}} {{< tab "Node.js" >}}
 
 ```js
@@ -994,6 +1058,49 @@ class Comparison_Python_Move_File:
             print("Expected response type is Void: 'comparisondocs/source.docx' file moved to 'comparisondocs1/source.docx'.")
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Files
+  def self.Comparison_Ruby_Move_File()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FileApi_Instance()
+
+    $request = GroupDocsComparisonCloud::MoveFileRequest.new("comparisondocs/source.docx", "comparisondocs1/source.docx", $myStorage, $myStorage)
+    $response = $api.move_file($request)
+
+    puts("Expected response type is Void: 'comparisondocs/source.docx' file moved to 'comparisondocs1/source.docx'.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FileApi fileApi = new FileApi(config);
+
+try {
+    // Prepare the move file request
+    MoveFileRequest moveRequest = new MoveFileRequest('Comparisondocs/one-page1.docx', 'Comparisondocs1/one-page1.docx', null, null);
+
+    // Move the file
+    fileApi.moveFile(moveRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs/one-page1.docx\' file moved to \'Comparisondocs1/one-page1.docx\'.');
+} catch (Exception e) {
+    System.debug('Exception while calling FileApi: ' + e.getMessage());
+}
+
 ```
 
 {{< /tab >}} {{< /tabs >}}

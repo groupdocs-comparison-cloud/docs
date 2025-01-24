@@ -296,5 +296,45 @@ request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
 response = apiInstance.comparisons(request)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+
+// Upload source file to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source.docx', sourceVersions[0].VersionData, null));
+}
+
+// Upload target file to cloud storage
+List<ContentVersion> targetVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'target.docx' LIMIT 1];
+if (targetVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('target_files/word/target.docx', targetVersions[0].VersionData, null));
+}
+
+// Set up comparison options
+ComparisonOptions options = new ComparisonOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/word/source.docx';
+
+options.TargetFiles = new List<FileInfo>();
+FileInfo targetFileInfo = new FileInfo();
+targetFileInfo.FilePath = 'target_files/word/target.docx';
+options.TargetFiles.add(targetFileInfo);
+
+options.Settings = new Settings();
+options.Settings.SensitivityOfComparison = 100; // Set sensitivity level for comparison
+
+options.OutputPath = 'output/result.docx';
+
+// Perform comparison
+ComparisonsRequest request = new ComparisonsRequest(options);
+CompareResult result = compareApi.comparisons(request);
+System.debug('Comparison completed. Output file path: ' + result.href);
+
+```
 {{< /tab >}} {{< /tabs >}}

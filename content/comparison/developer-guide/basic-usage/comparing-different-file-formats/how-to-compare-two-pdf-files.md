@@ -239,5 +239,44 @@ request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
 response = apiInstance.comparisons(request)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+
+// Upload source PDF file to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source.pdf' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/pdf/source.pdf', sourceVersions[0].VersionData, null));
+}
+
+// Upload target PDF file to cloud storage
+List<ContentVersion> targetVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'target.pdf' LIMIT 1];
+if (targetVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('target_files/pdf/target.pdf', targetVersions[0].VersionData, null));
+}
+
+// Set up comparison options
+ComparisonOptions options = new ComparisonOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/pdf/source.pdf';
+
+options.TargetFiles = new List<FileInfo>();
+FileInfo targetFile = new FileInfo();
+targetFile.FilePath = 'target_files/pdf/target.pdf';
+options.TargetFiles.add(targetFile);
+
+options.OutputPath = 'output/result.pdf';
+
+// Execute comparison
+ComparisonsRequest request = new ComparisonsRequest(options);
+Link response = compareApi.comparisons(request);
+
+// Debug the result
+System.debug('Comparison complete. Output file link: ' + response.href);
+
+```
 {{< /tab >}} {{< /tabs >}}

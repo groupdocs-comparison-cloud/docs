@@ -127,26 +127,6 @@ try {
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Storage
-  def self.Comparison_Ruby_Storage_Exist()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_StorageApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::StorageExistsRequest.new($myStorage)
-    $response = $api.storage_exists($request)
-
-    puts("Expected response type is StorageExist: " + ($response).to_s)
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -192,6 +172,48 @@ class Comparison_Python_Storage_Exist:
             print("Expected response type is StorageExist: " + str(response))
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Storage
+  def self.Comparison_Ruby_Storage_Exist()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_StorageApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::StorageExistsRequest.new($myStorage)
+    $response = $api.storage_exists($request)
+
+    puts("Expected response type is StorageExist: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+StorageApi storageApi = new StorageApi(config);
+
+try {
+    // Prepare the storage exists request
+    StorageExistsRequest storageExistsRequest = new StorageExistsRequest('MyStorageName'); // Replace 'MyStorageName' with your storage name
+
+    // Check if the storage exists
+    StorageExist response = storageApi.storageExists(storageExistsRequest);
+
+    // Log the response
+    System.debug('Expected response type is StorageExist: ' + response.Exists);
+} catch (Exception e) {
+    System.debug('Exception while calling StorageApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -318,26 +340,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Storage
-  def self.Comparison_Ruby_Object_Exists()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_StorageApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::ObjectExistsRequest.new("comparisondocs/one-page.docx", $myStorage)
-    $response = $api.object_exists($request)
-
-    puts("Expected response type is ObjectExist: " + ($response).to_s)
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -383,6 +385,48 @@ class Comparison_Python_Object_Exists:
             print("Expected response type is ObjectExist: " + str(response))
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Storage
+  def self.Comparison_Ruby_Object_Exists()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_StorageApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::ObjectExistsRequest.new("comparisondocs/one-page.docx", $myStorage)
+    $response = $api.object_exists($request)
+
+    puts("Expected response type is ObjectExist: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+StorageApi storageApi = new StorageApi(config);
+
+try {
+    // Prepare the object exists request
+    ObjectExistsRequest objectExistsRequest = new ObjectExistsRequest('Comparisondocs/one-page.docx', null);
+
+    // Check if the object exists
+    ObjectExist response = storageApi.objectExists(objectExistsRequest);
+
+    // Log the response
+    System.debug('Expected response type is ObjectExist: ' + response.Exists);
+} catch (Exception e) {
+    System.debug('Exception while calling StorageApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -505,26 +549,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Storage
-  def self.Comparison_Ruby_Get_Disc_Usage()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_StorageApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::GetDiscUsageRequest.new($myStorage)
-    $response = $api.get_disc_usage($request)
-
-    puts("Expected response type is DiscUsage: " + ($response).to_s)
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -570,6 +594,48 @@ class Comparison_Python_Get_Disc_Usage:
             print("Expected response type is DiscUsage: " + str(response))
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Storage
+  def self.Comparison_Ruby_Get_Disc_Usage()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_StorageApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::GetDiscUsageRequest.new($myStorage)
+    $response = $api.get_disc_usage($request)
+
+    puts("Expected response type is DiscUsage: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+StorageApi storageApi = new StorageApi(config);
+
+try {
+    // Prepare the disk usage request
+    GetDiscUsageRequest getDiscUsageRequest = new GetDiscUsageRequest(null);
+
+    // Retrieve the disk usage
+    DiscUsage response = storageApi.getDiscUsage(getDiscUsageRequest);
+
+    // Log the used size
+    System.debug('Expected response type is DiscUsage: ' + response.UsedSize);
+} catch (Exception e) {
+    System.debug('Exception while calling StorageApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -704,26 +770,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Storage
-  def self.Comparison_Ruby_Get_File_Versions()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_StorageApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::GetFileVersionsRequest.new("comparisondocs/one-page.docx", $myStorage)
-    $response = $api.get_file_versions($request)
-
-    puts("Expected response type is FileVersions: " + ($response).to_s)
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -769,6 +815,48 @@ class Comparison_Python_Get_File_Versions:
             print("Expected response type is FileVersions: " + str(response))
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Storage
+  def self.Comparison_Ruby_Get_File_Versions()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_StorageApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::GetFileVersionsRequest.new("comparisondocs/one-page.docx", $myStorage)
+    $response = $api.get_file_versions($request)
+
+    puts("Expected response type is FileVersions: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+StorageApi storageApi = new StorageApi(config);
+
+try {
+    // Prepare the file versions request
+    GetFileVersionsRequest getFileVersionsRequest = new GetFileVersionsRequest('one-page.docx', null);
+
+    // Retrieve the file versions
+    FileVersions response = storageApi.getFileVersions(getFileVersionsRequest);
+
+    // Log the count of file versions
+    System.debug('Expected response type is FileVersions: ' + response.Value.size());
+} catch (Exception e) {
+    System.debug('Exception while calling StorageApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}

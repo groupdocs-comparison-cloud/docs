@@ -193,26 +193,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Folder
-  def self.Comparison_Ruby_Get_Files_List()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FolderApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::GetFilesListRequest.new("comparisondocs/sample.docx", $myStorage)
-    $response = $api.get_files_list($request)
-
-    puts("Expected response type is FilesList: " + ($response).to_s)
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -258,6 +238,48 @@ class Comparison_Python_Get_Files_List:
             print("Expected response type is FilesList: " + str(response))
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Get_Files_List()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::GetFilesListRequest.new("comparisondocs/sample.docx", $myStorage)
+    $response = $api.get_files_list($request)
+
+    puts("Expected response type is FilesList: " + ($response).to_s)
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FolderApi folderApi = new FolderApi(config);
+
+try {
+    // Prepare the get files list request
+    GetFilesListRequest filesListRequest = new GetFilesListRequest('Comparisondocs', null);
+
+    // Get the list of files
+    FilesList response = folderApi.getFilesList(filesListRequest);
+
+    // Log the number of files in the folder
+    System.debug('Expected response type is FilesList: ' + response.Value.size());
+} catch (Exception e) {
+    System.debug('Exception while calling FolderApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -383,26 +405,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Folder
-  def self.Comparison_Ruby_Create_Folder()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FolderApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::CreateFolderRequest.new("comparisondocs", $myStorage)
-    $response = $api.create_folder($request)
-
-    puts("Expected response type is Void: 'comparisondocs' folder created.")
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -448,6 +450,49 @@ class Comparison_Python_Create_Folder:
             print("Expected response type is Void: 'comparisondocs' folder created.")
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Create_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::CreateFolderRequest.new("comparisondocs", $myStorage)
+    $response = $api.create_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs' folder created.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FolderApi folderApi = new FolderApi(config);
+
+try {
+    // Prepare the create folder request
+    CreateFolderRequest createFolderRequest = new CreateFolderRequest('Comparisondocs', null);
+
+    // Create the folder
+    folderApi.createFolder(createFolderRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs\' folder created.');
+} catch (Exception e) {
+    System.debug('Exception while calling FolderApi: ' + e.getMessage());
+}
+
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -571,26 +616,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Folder
-  def self.Comparison_Ruby_Delete_Folder()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FolderApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::DeleteFolderRequest.new("comparisondocs1", $myStorage, true)
-    $response = $api.delete_folder($request)
-
-    puts("Expected response type is Void: 'comparisondocs/comparisondocs1' folder deleted recursively.")
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -636,6 +661,48 @@ class Comparison_Python_Delete_Folder:
             print("Expected response type is Void: 'comparisondocs/comparisondocs1' folder deleted recursively.")
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Delete_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::DeleteFolderRequest.new("comparisondocs1", $myStorage, true)
+    $response = $api.delete_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs/comparisondocs1' folder deleted recursively.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FolderApi folderApi = new FolderApi(config);
+
+try {
+    // Prepare the delete folder request
+    DeleteFolderRequest deleteFolderRequest = new DeleteFolderRequest('Comparisondocs/Comparisondocs1', null, true);
+
+    // Delete the folder recursively
+    folderApi.deleteFolder(deleteFolderRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs/Comparisondocs1\' folder deleted recursively.');
+} catch (Exception e) {
+    System.debug('Exception while calling FolderApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -762,26 +829,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Folder
-  def self.Comparison_Ruby_Copy_Folder()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FolderApi_Instance()
-    
-    $request = GroupDocsComparisonCloud::CopyFolderRequest.new("comparisondocs", "comparisondocs1", $myStorage, $myStorage)
-    $response = $api.copy_folder($request)
-
-    puts("Expected response type is Void: 'comparisondocs' folder copied as 'comparisondocs1'.")
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -827,6 +874,48 @@ class Comparison_Python_Copy_Folder:
             print("Expected response type is Void: 'comparisondocs' folder copied as 'comparisondocs1'.")
         except groupdocs_comparison_cloud.ApiException as e:
             print("Exception while calling API: {0}".format(e.message))
+```
+
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Copy_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+    
+    $request = GroupDocsComparisonCloud::CopyFolderRequest.new("comparisondocs", "comparisondocs1", $myStorage, $myStorage)
+    $response = $api.copy_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs' folder copied as 'comparisondocs1'.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FolderApi folderApi = new FolderApi(config);
+
+try {
+    // Prepare the copy folder request
+    CopyFolderRequest copyFolderRequest = new CopyFolderRequest('Comparisondocs', 'Comparisondocs1', null, null);
+
+    // Copy the folder
+    folderApi.copyFolder(copyFolderRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs\' folder copied as \'Comparisondocs1\'.');
+} catch (Exception e) {
+    System.debug('Exception while calling FolderApi: ' + e.getMessage());
+}
 ```
 
 {{< /tab >}} {{< /tabs >}}
@@ -953,26 +1042,6 @@ include(dirname(__DIR__) . '\CommonUtils.php');
 ?>
 ```
 
-{{< /tab >}} {{< tab "Ruby" >}}
-
-```ruby
-# Load the gem
-require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
-
-class Working_With_Folder
-  def self.Comparison_Ruby_Move_Folder()
-
-    # Getting instance of the API
-    $api = Common_Utilities.Get_FolderApi_Instance()
-
-    $request = GroupDocsComparisonCloud::MoveFolderRequest.new("comparisondocs1", "comparisondocs/comparisondocs1", $myStorage, $myStorage)
-    $response = $api.move_folder($request)
-
-    puts("Expected response type is Void: 'comparisondocs1' folder moved to 'comparisondocs/comparisondocs1'.")
-  end
-end
-```
 
 {{< /tab >}} {{< tab "Node.js" >}}
 
@@ -1020,4 +1089,45 @@ class Comparison_Python_Move_Folder:
             print("Exception while calling API: {0}".format(e.message))
 ```
 
+{{< /tab >}} {{< tab "Ruby" >}}
+
+```ruby
+# Load the gem
+require 'groupdocs_comparison_cloud'
+require 'common_utilities/Utils.rb'
+
+class Working_With_Folder
+  def self.Comparison_Ruby_Move_Folder()
+
+    # Getting instance of the API
+    $api = Common_Utilities.Get_FolderApi_Instance()
+
+    $request = GroupDocsComparisonCloud::MoveFolderRequest.new("comparisondocs1", "comparisondocs/comparisondocs1", $myStorage, $myStorage)
+    $response = $api.move_folder($request)
+
+    puts("Expected response type is Void: 'comparisondocs1' folder moved to 'comparisondocs/comparisondocs1'.")
+  end
+end
+```
+
+{{< /tab >}} {{< tab "Apex" >}}
+
+```javascript
+// Create config and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Replace with your credentials
+FolderApi folderApi = new FolderApi(config);
+
+try {
+    // Prepare the move folder request
+    MoveFolderRequest moveFolderRequest = new MoveFolderRequest('Comparisondocs1', 'Comparisondocs/Comparisondocs1', null, null);
+
+    // Move the folder
+    folderApi.moveFolder(moveFolderRequest);
+
+    // Log success message
+    System.debug('Expected response type is Void: \'Comparisondocs1\' folder moved to \'Comparisondocs/Comparisondocs1\'.');
+} catch (Exception e) {
+    System.debug('Exception while calling FolderApi: ' + e.getMessage());
+}
+```
 {{< /tab >}} {{< /tabs >}}

@@ -223,5 +223,32 @@ revisions = apiInstance.get_revisions(request)
 puts("Revisions count: " + revisions.length.to_s)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+ReviewApi reviewApi = new ReviewApi(config);
+
+// Upload the source file with revisions to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source_with_revs.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source_with_revs.docx', sourceVersions[0].VersionData, null));
+}
+
+// Create FileInfo for the source file
+FileInfo sourceFile = new FileInfo();
+sourceFile.FilePath = 'source_files/word/source_with_revs.docx';
+
+// Create request to get revisions
+GetRevisionsRequest request = new GetRevisionsRequest(sourceFile);
+
+// Retrieve revisions from the document
+List<RevisionInfo> revisions = reviewApi.getRevisions(request);
+
+// Debug the count of revisions
+System.debug('GetListOfRevisions: Revisions count: ' + revisions.size());
+
+```
 {{< /tab >}} {{< /tabs >}}

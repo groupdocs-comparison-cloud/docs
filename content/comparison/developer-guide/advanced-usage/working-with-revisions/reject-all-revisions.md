@@ -240,5 +240,33 @@ response = apiInstance.apply_revisions(GroupDocsComparisonCloud::ApplyRevisionsR
 puts("Output file link: " + response.href)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+ReviewApi reviewApi = new ReviewApi(config);
+
+// Upload source file with revisions to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source_with_revs.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source_with_revs.docx', sourceVersions[0].VersionData, null));
+}
+
+// Set up options to reject all revisions
+ApplyRevisionsOptions options = new ApplyRevisionsOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/word/source_with_revs.docx';
+options.RejectAll = true; // Reject all revisions in the document
+options.OutputPath = 'output/result.docx';
+
+// Apply revisions
+ApplyRevisionsRequest request = new ApplyRevisionsRequest(options);
+ApplyRevisionsResult result = reviewApi.applyRevisions(request);
+
+// Debug the result
+System.debug('ApplyRevisions: Output file link: ' + result.href);
+
+```
 {{< /tab >}} {{< /tabs >}}

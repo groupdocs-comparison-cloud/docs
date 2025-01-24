@@ -263,5 +263,44 @@ request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
 response = apiInstance.comparisons(request)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+
+// Upload source file to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source_protected.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source_protected.docx', sourceVersions[0].VersionData, null));
+}
+
+// Upload target file to cloud storage
+List<ContentVersion> targetVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'target_protected.docx' LIMIT 1];
+if (targetVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('target_files/word/target_protected.docx', targetVersions[0].VersionData, null));
+}
+
+// Set up comparison options for password-protected files
+ComparisonOptions options = new ComparisonOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/word/source_protected.docx';
+options.SourceFile.Password = '1231'; // Password for source file
+
+options.TargetFiles = new List<FileInfo>();
+FileInfo targetFileInfo = new FileInfo();
+targetFileInfo.FilePath = 'target_files/word/target_protected.docx';
+targetFileInfo.Password = '5784'; // Password for target file
+options.TargetFiles.add(targetFileInfo);
+
+options.OutputPath = 'output/result.docx';
+
+// Perform comparison
+ComparisonsRequest request = new ComparisonsRequest(options);
+CompareResult result = compareApi.comparisons(request);
+System.debug('Comparison completed. Output file path: ' + result.href);
+
+```
 {{< /tab >}} {{< /tabs >}}

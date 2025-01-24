@@ -309,5 +309,9 @@ request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
 response = apiInstance.comparisons(request)
 
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+
+```
 {{< /tab >}} {{< /tabs >}}
