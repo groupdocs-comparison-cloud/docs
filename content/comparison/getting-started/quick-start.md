@@ -25,99 +25,88 @@ GroupDocs Cloud SDK is written in different languages, all you need to get start
 
 ## Make an API request from the SDK of your choice
 
-Use the **Client Id** and the **Client Secret** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating using Formats API to get all supported file formats in GroupDocs.Comparison Cloud.
+Use the **Client Id** and the **Client Secret** from the API app client you created in step one and replace in the corresponding code. Below is an example demonstrating how to compare two docx documents using GroupDocs.Comparison Cloud.
 
 {{< alert style="info" >}}The GitHub repository for [GroupDocs.Comparison Cloud](https://github.com/groupdocs-comparison-cloud) has a complete set of examples, demonstrating our API capabilities.{{< /alert >}}
 
-{{< tabs "example1">}} {{< tab "C#" >}}
+{{< tabs "example2">}} {{< tab "C#" >}}
 
 ```csharp
-using System;
-using GroupDocs.Comparison.Cloud.Sdk.Api;
-using GroupDocs.Comparison.Cloud.Sdk.Client;
 
-namespace GroupDocs.Comparison.Cloud.Examples.CSharp
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-dotnet-samples
+string MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+string MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+
+var configuration = new Configuration(MyClientId, MyClientSecret);
+
+var apiInstance = new CompareApi(configuration);
+var options = new ComparisonOptions
 {
-	// Get All Supported Formats
-	class Get_All_Supported_Formats
-	{
-		public static void Run()
-		{
-			var configuration = new Configuration(Common.MyAppSid, Common.MyAppKey);
+    SourceFile = new FileInfo {FilePath = "source_files/word/source.docx"},
+    TargetFiles = new List<FileInfo> {new FileInfo {FilePath = "target_files/word/target.docx"}},
+    OutputPath = "output/result.docx"
+};
+var request = new ComparisonsRequest(options);
+var response = apiInstance.Comparisons(request);
 
-			var apiInstance = new InfoApi(configuration);
-
-			try
-			{
-				// Get supported file formats
-				var response = apiInstance.GetSupportedFileFormats();
-
-				foreach (var entry in response.Formats)
-				{
-					Console.WriteLine(string.Format("{0}: {1}", entry.FileFormat, string.Join(",", entry.Extension)));
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("Exception while calling Comparison InfoApi: " + e.Message);
-			}
-		}
-	}
-}
 ```
 
 {{< /tab >}} {{< tab "Java" >}}
 
-```java
-package examples.Supported_File_Formats;
+```Java
 
-import com.groupdocs.cloud.comparison.client.*;
-import com.groupdocs.cloud.comparison.model.*;
-import java.util.List;
-import com.groupdocs.cloud.comparison.client.Configuration;
-import com.groupdocs.cloud.comparison.api.*;
-import examples.Utils;
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-java-samples
+String MyClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+String MyClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-public class Comparison_Java_Get_Supported_Formats {
+Configuration configuration = new Configuration(MyClientId, MyClientSecret);
 
-	public static void main(String[] args) {
+CompareApi apiInstance = new CompareApi(configuration);
+FileInfo sourceFileInfo = new FileInfo();
+sourceFileInfo.setFilePath("source_files/word/source.docx");
+FileInfo targetFileInfo = new FileInfo();
+targetFileInfo.setFilePath("target_files/word/target.docx");
 
-		Configuration configuration = new Configuration(Utils.AppSID, Utils.AppKey);
-		InfoApi apiInstance = new InfoApi(configuration);
+ComparisonOptions options = new ComparisonOptions();
+options.setSourceFile(sourceFileInfo);
+options.addTargetFilesItem(targetFileInfo);
+options.setOutputPath("output/result.docx");
 
-        try {
-            FormatsResult response = apiInstance.getSupportedFileFormats();
-            for (Format format : response.getFormats()) {
-                System.out.println(format.getFileFormat());
-            }
-        } catch (ApiException e) {
-            System.err.println("Exception while calling InfoApi:");
-            e.printStackTrace();
-        }
-	}
-}
+ComparisonsRequest request = new ComparisonsRequest(options);
+
+Link response = apiInstance.comparisons(request);
 
 ```
 
 {{< /tab >}} {{< tab "PHP" >}}
 
 ```php
-<?php
 
-include(dirname(__DIR__) . '\CommonUtils.php');
+// For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-php-samples
+use GroupDocs\Comparison\Model;
+use GroupDocs\Comparison\Model\Requests;
 
-try {
-    $apiInstance = CommonUtils::GetInfoApiInstance();
+$ClientId = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$ClientSecret = ""; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-    $response = $apiInstance->getSupportedFileFormats();
+$configuration = new GroupDocs\Comparison\Configuration();
+$configuration->setAppSid($ClientId);
+$configuration->setAppKey($ClientSecret);
 
-    echo '<b>Supported file formats<br /></b>';
-	foreach($response->getFormats() as $key => $format) {
-	  echo $format->getFileFormat(), "(", $format->getExtension(), ")<br />";
-	}
-} catch (Exception $e) {
-    echo "Something went wrong: ", $e->getMessage(), "\n";
-}
+$apiInstance = new GroupDocs\Comparison\CompareApi($configuration);
+
+$sourceFile = new Model\FileInfo();
+$sourceFile->setFilePath("source_files/word/source.docx");
+$targetFile = new Model\FileInfo();
+$targetFile->setFilePath("target_files/word/target.docx");
+$options = new Model\ComparisonOptions();
+$options->setSourceFile($sourceFile);
+$options->setTargetFiles([$targetFile]);
+$options->setOutputPath("output/result.docx");
+
+$request = new Requests\ComparisonsRequest($options);
+$response = $apiInstance->comparisons($request);
+
 ```
 
 {{< /tab >}} {{< tab "Node.js" >}}
@@ -130,11 +119,22 @@ global.comparison_cloud = require("groupdocs-comparison-cloud");
 global.clientId = "XXXX-XXXX-XXXX-XXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 global.clientSecret = "XXXXXXXXXXXXXXXX"; // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-global.infoApi = comparison_cloud.InfoApi.fromKeys(clientId, clientSecret);
+global.compareApi = comparison_cloud.CompareApi.fromKeys(clientId, clientSecret);
 
 try {
- let response = await infoApi.getSupportedFileFormats();
- console.log("Formats count: " + response.formats.length); 
+ let source = new comparison_cloud.FileInfo();
+ source.filePath = "source_files/word/source.docx";
+ let target = new comparison_cloud.FileInfo();
+ target.filePath = "target_files/word/target.docx";
+ let options = new comparison_cloud.ComparisonOptions();
+ options.sourceFile = source;
+ options.targetFiles = [target];
+ options.outputPath = "output/result.docx";
+
+ let request = new comparison_cloud.ComparisonsRequest(options);  
+
+ let response = await compareApi.comparisons(request);
+ console.log("Output file link: " + response.href); 
 } catch (error) {
  console.log(error.message);
 }
@@ -144,54 +144,93 @@ try {
 {{< /tab >}} {{< tab "Python" >}}
 
 ```python
-# Import modules
+
+# For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-python-samples
 import groupdocs_comparison_cloud
 
-from Common_Utilities.Utils import Common_Utilities;
+client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
+api_instance = groupdocs_comparison_cloud.CompareApi.from_keys(client_id, client_secret)
 
-class Comparison_Python_Get_Supported_Formats:
-    
-    @classmethod
-    def Run(self):
-        # Create instance of the API
-        api = Common_Utilities.Get_InfoApi_Instance()
-        
-        try:
-            # Retrieve supported file-formats
-            response = api.get_supported_file_formats()
-    
-            # Print out supported file-formats
-            print("Supported file-formats:")
-            for fileformat in response.formats:
-                print('{0} ({1})'.format(fileformat.file_format, fileformat.extension))
-        except groupdocs_comparison_cloud.ApiException as e:
-            print("Exception when calling get_supported_comparison_types: {0}".format(e.message))
+source = groupdocs_comparison_cloud.FileInfo()
+source.file_path = "source_files/word/source.docx"
+target = groupdocs_comparison_cloud.FileInfo()
+target.file_path = "target_files/word/target.docx"
+options = groupdocs_comparison_cloud.ComparisonOptions()
+options.source_file = source
+options.target_files = [target]
+options.output_path = "output/result.docx"
+
+request = groupdocs_comparison_cloud.ComparisonsRequest(options)
+response = api_instance.comparisons(request)
+
 ```
 
 {{< /tab >}} {{< tab "Ruby" >}}
 
 ```ruby
-# Load the gem
+
+# For complete examples and data files, please go to https://github.com/groupdocs-comparison-cloud/groupdocs-comparison-cloud-ruby-samples
 require 'groupdocs_comparison_cloud'
-require 'common_utilities/Utils.rb'
 
-class File_Formats
-  def self.Comparison_Ruby_Get_Supported_Formats()
+$client_id = "XXXX-XXXX-XXXX-XXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+$client_secret = "XXXXXXXXXXXXXXXX" # Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
 
-    # Getting instance of the API
-    api = Common_Utilities.Get_InfoApi_Instance()
+api_instance = GroupDocsComparisonCloud::CompareApi.from_keys($client_id, $client_secret)
 
-    # Retrieve supported file-formats
-    $response = api.get_supported_file_formats()
+source = GroupDocsComparisonCloud::FileInfo.new
+source.file_path = "source_files/word/source.docx"
+target = GroupDocsComparisonCloud::FileInfo.new
+target.file_path = "target_files/word/target.docx"
+options = GroupDocsComparisonCloud::ComparisonOptions.new
+options.source_file = source
+options.target_files = [target]
+options.output_path = "output/result.docx"
 
-    # Print out supported file-formats
-    puts("Supported file-formats:")
-    $response.formats.each do |format|
-      puts("#{format.file_format} (#{format.extension})")
-    end
-  end
-end
+request = GroupDocsComparisonCloud::ComparisonsRequest.new(options)
+response = apiInstance.comparisons(request)
+
 ```
+{{< /tab >}} {{< tab "Apex" >}}
 
+```javascript
+// Create configuration and API instances
+Configuration config = new Configuration('YOUR_API_KEY', 'YOUR_API_SECRET'); // Get ClientId and ClientSecret from https://dashboard.groupdocs.cloud
+FileApi fileApi = new FileApi(config);
+CompareApi compareApi = new CompareApi(config);
+
+// Upload source Word file to cloud storage
+List<ContentVersion> sourceVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'source.docx' LIMIT 1];
+if (sourceVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('source_files/word/source.docx', sourceVersions[0].VersionData, null));
+}
+
+// Upload target Word file to cloud storage
+List<ContentVersion> targetVersions = [SELECT Id, Title, VersionData FROM ContentVersion WHERE Title = 'target.docx' LIMIT 1];
+if (targetVersions.size() > 0) {
+    fileApi.uploadFile(new UploadFileRequest('target_files/word/target.docx', targetVersions[0].VersionData, null));
+}
+
+// Set up comparison options
+ComparisonOptions options = new ComparisonOptions();
+options.SourceFile = new FileInfo();
+options.SourceFile.FilePath = 'source_files/word/source.docx';
+
+options.TargetFiles = new List<FileInfo>();
+FileInfo targetFile = new FileInfo();
+targetFile.FilePath = 'target_files/word/target.docx';
+options.TargetFiles.add(targetFile);
+
+options.OutputPath = 'output/result.docx';
+
+// Execute comparison
+ComparisonsRequest request = new ComparisonsRequest(options);
+Link response = compareApi.comparisons(request);
+
+// Debug the result
+System.debug('Comparison complete. Output file link: ' + response.href);
+
+```
 {{< /tab >}} {{< /tabs >}}
+
