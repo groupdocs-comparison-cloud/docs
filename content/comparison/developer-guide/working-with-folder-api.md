@@ -26,11 +26,32 @@ This API allows you to get a list of all files of a specific folder from the 
 
 ### cURL example
 
-{{< tabs "example1">}} {{< tab "Request" >}}
+{{< tabs "example1">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X GET 'https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage' \
+  -H 'accept: application/json' \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage" ^
+    -H "accept: application/json" ^
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -303,11 +324,32 @@ Required. Can be passed as query string parameter or as part of the URL
 
 ### cURL example
 
-{{< tabs "example3">}} {{< tab "Request" >}}
+{{< tabs "example3">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X POST 'https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage' \
+  -H 'accept: application/json' \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage" ^
+    -H "accept: application/json" ^
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -514,10 +556,32 @@ This API allows you to delete a particular Folder in the specified Cloud Storage
 
 ### cURL example
 
-{{< tabs "example5">}} {{< tab "Request" >}}
+{{< tabs "example5">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName#MyStorage&#x26;recursive#true" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X DELETE 'https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage&recursive=true' \
+  -H 'accept: application/json' \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage&recursive=true" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/comparisondocs?storageName=MyStorage&recursive=true" ^
+    -H "accept: application/json" ^
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -726,11 +790,32 @@ This API allows you to copy a Folder to another location in the GroupDocs Cloud 
 
 ### cURL example
 
-{{< tabs "example7">}} {{< tab "Request" >}}
+{{< tabs "example7">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/comparisondocs?destPath#comparisondocs&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X PUT 'https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/comparisondocs?destPath=comparisondocs&srcStorageName=MyStorage&destStorageName=MyStorage' \
+  -H 'accept: application/json' \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/comparisondocs?destPath=comparisondocs&srcStorageName=MyStorage&destStorageName=MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/copy/comparisondocs?destPath=comparisondocs&srcStorageName=MyStorage&destStorageName=MyStorage" ^
+    -H "accept: application/json" ^
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -939,10 +1024,32 @@ This API allows you to move a Folder to another location in the GroupDocs Cloud 
 
 ### cURL example
 
-{{< tabs "example9">}} {{< tab "Request" >}}
+{{< tabs "example9">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/comparisondocs?destPath#comparisondocs1&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+curl -X PUT 'https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/comparisondocs?destPath=comparisondocs1&srcStorageName=MyStorage&destStorageName=MyStorage' \
+  -H 'accept: application/json' \
+  -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+curl.exe -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/comparisondocs?destPath=comparisondocs1&srcStorageName=MyStorage&destStorageName=MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/folder/move/comparisondocs?destPath=comparisondocs1&srcStorageName=MyStorage&destStorageName=MyStorage" ^
+    -H "accept: application/json" ^
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}

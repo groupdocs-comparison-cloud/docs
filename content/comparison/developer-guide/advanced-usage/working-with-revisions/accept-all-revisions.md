@@ -27,32 +27,78 @@ Steps 1 and 3 are storage operations, please refer to this [File API document
 
 ## cURL example
 
-{{< tabs "example1">}} {{< tab "Request" >}}
+{{< tabs "example1">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-
-// First get JSON Web Token
-// Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
+# First get JSON Web Token
+# Place your Client Id and Client Secret in $CLIENT_ID and $CLIENT_SECRET environment variables.
 curl -v "https://api.groupdocs.cloud/connect/token" \
--X POST \
--d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
--H "Content-Type: application/x-www-form-urlencoded" \
--H "Accept: application/json"
-  
-// cURL example to get document information
-curl -v "https://api.groupdocs.cloud/v2.0/comparison/revisions" \
--X PUT \
--H "Content-Type: application/json" \
--H "Accept: application/json" \
--H "Authorization: Bearer <jwt token>"
--d "{
-  'SourceFile': {
-    'FilePath': 'source_files/word/source_with_revs.docx'
-  },
-  'AcceptAll': true,
-  'OutputPath': 'output/result.docx'
-}"
+  -X POST \
+  -d "grant_type=client_credentials&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Accept: application/json"
 
+# cURL example to get document information
+curl -v "https://api.groupdocs.cloud/v2.0/comparison/revisions" \
+  -X PUT \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $JWT_TOKEN" \
+  -d '{
+    "SourceFile": {
+      "FilePath": "source_files/word/source_with_revs.docx"
+    },
+    "AcceptAll": true,
+    "OutputPath": "output/result.docx"
+  }'
+```
+
+{{< /tab >}}
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# First get JSON Web Token
+# Set your Client Id and Client Secret in $env:CLIENT_ID and $env:CLIENT_SECRET environment variables.
+curl.exe -v "https://api.groupdocs.cloud/connect/token" `
+  -X POST `
+  -d "grant_type=client_credentials&client_id=$env:CLIENT_ID&client_secret=$env:CLIENT_SECRET" `
+  -H "Content-Type: application/x-www-form-urlencoded" `
+  -H "Accept: application/json"
+
+# cURL example to get document information
+curl.exe -v "https://api.groupdocs.cloud/v2.0/comparison/revisions" `
+  -X PUT `
+  -H "Content-Type: application/json" `
+  -H "Accept: application/json" `
+  -H "Authorization: Bearer $env:JWT_TOKEN" `
+  -d "{ 
+    'SourceFile': { 
+        'FilePath': 'source_files/word/source_with_revs.docx' 
+    }, 
+    'AcceptAll': true, 
+    'OutputPath': 'output/result.docx' 
+}"
+```
+
+{{< /tab >}}
+{{< tab "Windows CMD" >}}
+
+```cmd
+REM First get JSON Web Token
+REM Set your Client Id and Client Secret in %CLIENT_ID% and %CLIENT_SECRET% environment variables.
+curl -v "https://api.groupdocs.cloud/connect/token" ^
+  -X POST ^
+  -d "grant_type=client_credentials&client_id=%CLIENT_ID%&client_secret=%CLIENT_SECRET%" ^
+  -H "Content-Type: application/x-www-form-urlencoded" ^
+  -H "Accept: application/json"
+
+REM cURL example to get document information
+curl -v "https://api.groupdocs.cloud/v2.0/comparison/revisions" ^
+  -X PUT ^
+  -H "Content-Type: application/json" ^
+  -H "Accept: application/json" ^
+  -H "Authorization: Bearer %JWT_TOKEN%" ^
+  -d "{\"SourceFile\":{\"FilePath\":\"source_files/word/source_with_revs.docx\"},\"AcceptAll\":true,\"OutputPath\":\"output/result.docx\"}"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}

@@ -23,25 +23,70 @@ The following GroupDocs.Viewer Cloud REST API resource has been used to get [do
 
 ## cURL example
 
-{{< tabs "example1">}} {{< tab "Request" >}}
+{{< tabs "example1">}} {{< tab "Linux/MacOS/Bash" >}}
 ```bash
-* First get JSON Web Token
-* Please get your Client Id and Client Secret from <https://dashboard.groupdocs.cloud/applications>. Kindly place Client Id in "client_id" and Client Secret in "client_secret" argument.
-curl -v "https://api.groupdocs.cloud/connect/token" \
--X POST \
--d "grant_type=client_credentials&client_id=xxxx&client_secret=xxxx" \
--H "Content-Type: application/x-www-form-urlencoded" \
--H "Accept: application/json"
+# First get JSON Web Token
+# Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications.
+# Place Client Id in $CLIENT_ID and Client Secret in $CLIENT_SECRET environment variables.
+curl -v 'https://api.groupdocs.cloud/connect/token' \
+  -X POST \
+  -d "grant_type=client_credentials&client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET" \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Accept: application/json'
 
-* cURL example to get document information
-curl -v "https://api.groupdocs.cloud/v2.0/comparison/info" \
--X POST \
--H "Content-Type: application/json" \
--H "Accept: application/json" \
--H "Authorization: Bearer <jwt token>"
--d "{
-         'FilePath': 'source_files/word/source.docx'
-    }"
+# cURL example to get document information
+curl -v 'https://api.groupdocs.cloud/v2.0/comparison/info' \
+  -X POST \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H "Authorization: Bearer $JWT_TOKEN" \
+  -d '{
+        "FilePath": "source_files/word/source.docx"
+      }'
+```
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+```powershell
+# First get JSON Web Token
+# Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications.
+# Place them in $env:CLIENT_ID and $env:CLIENT_SECRET environment variables.
+curl.exe -v "https://api.groupdocs.cloud/connect/token" `
+  -X POST `
+  -d "grant_type=client_credentials&client_id=$env:CLIENT_ID&client_secret=$env:CLIENT_SECRET" `
+  -H "Content-Type: application/x-www-form-urlencoded" `
+  -H "Accept: application/json"
+
+# cURL example to get document information
+curl.exe -v "https://api.groupdocs.cloud/v2.0/comparison/info" `
+  -X POST `
+  -H "Content-Type: application/json" `
+  -H "Accept: application/json" `
+  -H "Authorization: Bearer $env:JWT_TOKEN" `
+  -d "{
+        'FilePath': 'source_files/word/source.docx'
+      }"
+```
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+```cmd
+:: First get JSON Web Token
+:: Please get your Client Id and Client Secret from https://dashboard.groupdocs.cloud/applications.
+:: Place them in %CLIENT_ID% and %CLIENT_SECRET% environment variables.
+curl -v "https://api.groupdocs.cloud/connect/token" ^
+  -X POST ^
+  -d "grant_type=client_credentials&client_id=%CLIENT_ID%&client_secret=%CLIENT_SECRET%" ^
+  -H "Content-Type: application/x-www-form-urlencoded" ^
+  -H "Accept: application/json"
+
+:: cURL example to get document information
+curl -v "https://api.groupdocs.cloud/v2.0/comparison/info" ^
+  -X POST ^
+  -H "Content-Type: application/json" ^
+  -H "Accept: application/json" ^
+  -H "Authorization: Bearer %JWT_TOKEN%" ^
+  -d "{\"FilePath\":\"source_files/word/source.docx\"}"
 ```
 {{< /tab >}} {{< tab "Response" >}}
 

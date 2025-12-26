@@ -25,11 +25,35 @@ This API allows you to download a file from [GroupDocs Cloud Storage](https://da
 
 ### cURL example
 
-{{< tabs "example1">}} {{< tab "Request" >}}
+{{< tabs "example1">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/file/one-page.docx?storageName#MyStorage" -H  "accept: multipart/form-data" -H  "authorization: Bearer [Access Token]"
+# GET file from storage
+curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/file/one-page.docx?storageName#MyStorage" \
+    -H "accept: multipart/form-data" \
+    -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# GET file from storage
+curl.exe -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/file/one-page.docx?storageName#MyStorage" `
+    -H "accept: multipart/form-data" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+REM GET file from storage
+curl -X GET "https://api.groupdocs.cloud/v2.0/comparison/storage/file/one-page.docx?storageName#MyStorage" ^ 
+    -H "accept: multipart/form-data" ^ 
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -229,11 +253,35 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 
 ### cURL example
 
-{{< tabs "example3">}} {{< tab "Request" >}}
+{{< tabs "example3">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+# POST file to storage
+curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" \
+    -H "accept: application/json" \
+    -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# POST file to storage
+curl.exe -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+REM POST file to storage
+curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" ^ 
+    -H "accept: application/json" ^ 
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -483,10 +531,35 @@ This API allows you to delete specific file from [GroupDocs Cloud Storage](htt
 
 ### cURL example
 
-{{< tabs "example5">}} {{< tab "Request" >}}
+{{< tabs "example5">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page1.docx?storageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+# DELETE file from storage
+curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page1.docx?storageName#MyStorage" \
+    -H "accept: application/json" \
+    -H "authorization: Bearer $JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# DELETE file from storage
+curl.exe -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page1.docx?storageName#MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+REM DELETE file from storage
+curl -X DELETE "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page1.docx?storageName#MyStorage" ^ 
+    -H "accept: application/json" ^ 
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -695,11 +768,35 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https
 
 ### cURL example
 
-{{< tabs "example7">}} {{< tab "Request" >}}
+{{< tabs "example7">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/copy/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+# COPY file within storage
+curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/copy/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" \
+    -H "accept: application/json" \
+    -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# COPY file within storage
+curl.exe -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/copy/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+REM COPY file within storage
+curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/copy/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" ^ 
+    -H "accept: application/json" ^ 
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
@@ -910,11 +1007,35 @@ This API allows you to copy specific file from [GroupDocs Cloud Storage](https:
 
 ### cURL example
 
-{{< tabs "example9">}} {{< tab "Request" >}}
+{{< tabs "example9">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/move/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" -H  "accept: application/json" -H  "authorization: Bearer [Access Token]"
+# MOVE file within storage
+curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/move/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" \
+    -H "accept: application/json" \
+    -H "authorization: Bearer $JWT_TOKEN"
+```
 
+{{< /tab >}}
+
+{{< tab "Windows PowerShell" >}}
+
+```powershell
+# MOVE file within storage
+curl.exe -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/move/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" `
+    -H "accept: application/json" `
+    -H "authorization: Bearer $env:JWT_TOKEN"
+```
+
+{{< /tab >}}
+
+{{< tab "Windows CMD" >}}
+
+```cmd
+REM MOVE file within storage
+curl -X PUT "https://api.groupdocs.cloud/v2.0/comparison/storage/file/move/comparisondocs%2Fone-page1.docx?destPath#comparisondocs%2Fone-page1.docx'&#x26;srcStorageName#MyStorage&#x26;destStorageName#MyStorage" ^ 
+    -H "accept: application/json" ^ 
+    -H "authorization: Bearer %JWT_TOKEN%"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
