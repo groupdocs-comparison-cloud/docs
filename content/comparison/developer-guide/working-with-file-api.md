@@ -256,10 +256,12 @@ This API allows you to upload files to the [GroupDocs Cloud Storage](https://
 {{< tabs "example3">}} {{< tab "Linux/MacOS/Bash" >}}
 
 ```bash
-# POST file to storage
-curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" \
-    -H "accept: application/json" \
-    -H "authorization: Bearer $JWT_TOKEN"
+# PUT file to storage
+curl -X PUT \
+  "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs/one-page1.docx?storageName=MyStorage" \
+  -H "Authorization: Bearer $JWT_TOKEN" \
+  -H "Accept: application/json" \
+  -F "File=@one-page1.docx"
 ```
 
 {{< /tab >}}
@@ -267,10 +269,12 @@ curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/compariso
 {{< tab "Windows PowerShell" >}}
 
 ```powershell
-# POST file to storage
-curl.exe -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" `
-    -H "accept: application/json" `
-    -H "authorization: Bearer $env:JWT_TOKEN"
+# PUT file to storage
+curl.exe -X PUT `
+  "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs/one-page1.docx?storageName=MyStorage" `
+  -H "Authorization: Bearer $env:JWT_TOKEN" `
+  -H "Accept: application/json" `
+  -F "File=@one-page1.docx"
 ```
 
 {{< /tab >}}
@@ -278,10 +282,12 @@ curl.exe -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/compa
 {{< tab "Windows CMD" >}}
 
 ```cmd
-REM POST file to storage
-curl -X POST "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs%2Fone-page2.docx?storageName#MyStorage" ^ 
-    -H "accept: application/json" ^ 
-    -H "authorization: Bearer %JWT_TOKEN%"
+REM PUT file to storage
+curl -X PUT ^
+  "https://api.groupdocs.cloud/v2.0/comparison/storage/file/comparisondocs/one-page1.docx?storageName=MyStorage" ^
+  -H "Authorization: Bearer %JWT_TOKEN%" ^
+  -H "Accept: application/json" ^
+  -F "File=@one-page1.docx"
 ```
 
 {{< /tab >}} {{< tab "Response" >}}
